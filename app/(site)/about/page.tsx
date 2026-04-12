@@ -28,6 +28,84 @@ export default function AboutPage() {
           </p>
         </section>
 
+        {/* History */}
+        <section className="bg-white rounded-xl border border-gray-100 shadow-sm p-6 sm:p-8">
+          <h2 className="text-xl font-bold text-gray-900 mb-6">Historia</h2>
+          <p className="text-gray-600 leading-relaxed mb-8">
+            La AUS nació de la iniciativa de un grupo de speedcubers uruguayos
+            que buscaban darle estructura oficial a la comunidad y garantizar la
+            continuidad de las competencias WCA en el país.
+          </p>
+
+          {/* Timeline */}
+          <ol className="relative border-l-2 border-brand-blue/20 space-y-8 ml-3">
+            <li className="pl-6">
+              <span className="absolute -left-[9px] w-4 h-4 rounded-full bg-brand-blue border-2 border-white shadow" />
+              <time className="text-xs font-bold uppercase tracking-wider text-brand-blue">
+                10 de agosto de 2022
+              </time>
+              <h3 className="font-semibold text-gray-900 mt-1">Fundación de la AUS</h3>
+              <p className="text-sm text-gray-600 mt-0.5 leading-relaxed">
+                En la ciudad de Montevideo, bajo la presidencia de Sebastiano
+                Benato Moreira, se reúnen los miembros fundadores y firman el
+                acta constitutiva de la Asociación Uruguaya de Speedcubing. El
+                objetivo declarado: <em>organizar, desarrollar, fomentar y
+                difundir la práctica del speedcubing en Uruguay</em>.
+              </p>
+            </li>
+            <li className="pl-6">
+              <span className="absolute -left-[9px] w-4 h-4 rounded-full bg-brand-gold border-2 border-white shadow" />
+              <time className="text-xs font-bold uppercase tracking-wider text-brand-blue">
+                10 de febrero de 2023
+              </time>
+              <h3 className="font-semibold text-gray-900 mt-1">Personería Jurídica</h3>
+              <p className="text-sm text-gray-600 mt-0.5 leading-relaxed">
+                El Ministerio de Educación y Cultura aprueba el estatuto de la
+                AUS y le reconoce calidad de persona jurídica mediante la
+                Resolución M.E.C 0185/023, firmada por el Dr. Pablo da
+                Silveira.
+              </p>
+            </li>
+          </ol>
+        </section>
+
+        {/* Founding members */}
+        <section className="bg-white rounded-xl border border-gray-100 shadow-sm p-6 sm:p-8">
+          <h2 className="text-xl font-bold text-gray-900 mb-2">Miembros Fundadores</h2>
+          <p className="text-sm text-gray-500 mb-6">
+            Las 12 personas que firmaron el acta constitutiva el 10 de agosto de 2022.
+          </p>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {[
+              { name: "Sebastiano Gabriel Benato Moreira", role: "Presidente" },
+              { name: "Agustín Diano Scarpa", role: "Secretario" },
+              { name: "Gennaro Vincenzo Monetti Cracco", role: "Tesorero" },
+              { name: "Diego Martín Moraes Fernández", role: "Suplente CD" },
+              { name: "María Belén Carozo Jocin", role: "Suplente CD" },
+              { name: "Ernesto Cabrera Martínez", role: "Sindicatura" },
+              { name: "Ignacio Goñi Spinoglio", role: "Suplente Sindicatura" },
+              { name: "Brian Rudy Hambeck Varela", role: "Miembro fundador" },
+              { name: "Víctor Manuel Gálvez González", role: "Miembro fundador" },
+              { name: "Franco Campanella Aurrecochea", role: "Miembro fundador" },
+              { name: "Oscar Daniel Leiton Martínez", role: "Miembro fundador" },
+              { name: "Damián Méndez Soria", role: "Miembro fundador" },
+            ].map((m) => (
+              <li
+                key={m.name}
+                className="flex items-center gap-3 px-4 py-3 rounded-lg bg-gray-50 border border-gray-100"
+              >
+                <div className="w-8 h-8 rounded-full bg-brand-blue/10 text-brand-blue flex items-center justify-center text-xs font-bold shrink-0">
+                  {m.name.split(" ").map((n) => n[0]).join("").slice(0, 2).toUpperCase()}
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-gray-900 leading-tight">{m.name}</p>
+                  <p className="text-xs text-gray-500">{m.role}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+
         {/* WCA Affiliation */}
         <section className="bg-white rounded-xl border border-gray-100 shadow-sm p-6 sm:p-8">
           <h2 className="text-xl font-bold text-gray-900 mb-4">Afiliación WCA</h2>

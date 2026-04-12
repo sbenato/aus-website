@@ -127,3 +127,24 @@ export type CompetitionStatus =
   | "in_progress"
   | "past"
   | "cancelled";
+
+export interface WCAResult {
+  id: number;
+  competition_id: string;
+  event_id: string;
+  round_type_id: string;
+  pos: number;
+  best: number;
+  average: number;
+  wca_id: string;
+  name: string;
+  country_iso2: string;
+}
+
+export interface ActiveCompetitor {
+  wca_id: string;
+  name: string;
+  country_iso2: string;
+  /** Number of Uruguay competitions attended in the last 2 years */
+  uy_competition_count: number;
+}

@@ -1,28 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
-import { getUruguayPersons } from "@/lib/wca-api";
-import { MedalCount } from "@/components/members/MedalCount";
+import { getActiveUruguayCompetitors } from "@/lib/wca-api";
 import { Card, CardBody } from "@/components/ui/Card";
 import { EmptyState } from "@/components/ui/EmptyState";
-import type { WCAPerson } from "@/lib/types";
+import type { ActiveCompetitor } from "@/lib/types";
 
 export const metadata: Metadata = {
   title: "Miembros",
-  description: "Todos los competidores uruguayos registrados en la WCA.",
+  description: "Competidores activos en Uruguay según la WCA.",
 };
 
-interface PageProps {
-  searchParams: Promise<{ page?: string }>;
-}
-
-export default async function MembersPage({ searchParams }: PageProps) {
-  const params = await searchParams;
-  const page = Number(params.page ?? 1);
-
-  let persons: WCAPerson[] = [];
+export default async function MembersPage() {
+  let competitors: ActiveCompetitor[] = [];
   try {
-    persons = await getUruguayPersons(page);
+    competitors = await getActiveUruguayCompetitors();
   } catch {
     // API unavailable
   }
@@ -32,14 +23,20 @@ export default async function MembersPage({ searchParams }: PageProps) {
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900">Miembros</h1>
         <p className="text-gray-500 mt-2">
-          Competidores uruguayos registrados en la World Cube Association
+          Competidores que participaron en torneos en Uruguay en los últimos 2
+          años · ordenados por actividad
         </p>
+        {competitors.length > 0 && (
+          <p className="text-sm text-gray-400 mt-1">
+            {competitors.length} competidores encontrados
+          </p>
+        )}
       </div>
 
-      {persons.length > 0 ? (
+      {competitors.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-          {persons.map((p) => (
-            <MemberCard key={p.person.wca_id ?? p.person.id} person={p} />
+          {competitors.map((c, idx) => (
+            <MemberCard key={c.wca_id} competitor={c} rank={idx + 1} />
           ))}
         </div>
       ) : (
@@ -49,84 +46,71 @@ export default async function MembersPage({ searchParams }: PageProps) {
           icon="👤"
         />
       )}
-
-      {/* Pagination */}
-      {persons.length === 24 && (
-        <div className="flex justify-center gap-3 mt-10">
-          {page > 1 && (
-            <a
-              href={`?page=${page - 1}`}
-              className="px-4 py-2 text-sm font-medium text-brand-blue border border-brand-blue rounded-lg hover:bg-blue-50 transition-colors"
-            >
-              ← Anterior
-            </a>
-          )}
-          <a
-            href={`?page=${page + 1}`}
-            className="px-4 py-2 text-sm font-medium bg-brand-blue text-white rounded-lg hover:bg-brand-blue-dark transition-colors"
-          >
-            Siguiente →
-          </a>
-        </div>
-      )}
     </div>
   );
 }
 
-function MemberCard({ person: p }: { person: WCAPerson }) {
-  const { person, medals, competition_count } = p;
-  const initials = person.name
+function MemberCard({
+  competitor,
+  rank,
+}: {
+  competitor: ActiveCompetitor;
+  rank: number;
+}) {
+  const { wca_id, name, country_iso2, uy_competition_count } = competitor;
+
+  const initials = name
     .split(" ")
     .map((n) => n[0])
     .join("")
     .slice(0, 2)
     .toUpperCase();
 
+  const isUruguayan = country_iso2 === "UY";
+
   return (
     <Card hover className="group">
       <CardBody className="flex flex-col items-center text-center gap-3 py-6">
-        {/* Avatar */}
-        {person.avatar && !person.avatar.is_default ? (
-          <Image
-            src={person.avatar.thumb_url}
-            alt={person.name}
-            width={64}
-            height={64}
-            className="rounded-full border-2 border-white shadow"
-          />
-        ) : (
+        {/* Avatar placeholder with rank */}
+        <div className="relative">
           <div className="w-16 h-16 rounded-full bg-brand-blue/10 text-brand-blue flex items-center justify-center text-xl font-bold">
             {initials}
           </div>
-        )}
+          {rank <= 3 && (
+            <span className="absolute -top-1 -right-1 text-lg">
+              {rank === 1 ? "🥇" : rank === 2 ? "🥈" : "🥉"}
+            </span>
+          )}
+        </div>
 
         {/* Name */}
         <div>
           <h3 className="font-semibold text-gray-900 group-hover:text-brand-blue transition-colors text-balance">
-            {person.name}
+            {name}
           </h3>
-          {person.wca_id && (
-            <p className="text-xs text-gray-400 font-mono">{person.wca_id}</p>
+          <p className="text-xs text-gray-400 font-mono">{wca_id}</p>
+          {!isUruguayan && (
+            <p className="text-xs text-gray-400 mt-0.5">{country_iso2}</p>
           )}
         </div>
 
-        {/* Stats */}
-        <div className="flex items-center gap-4 text-sm text-gray-500">
-          <span title="Competencias">🏆 {competition_count}</span>
-          {medals.total > 0 && (
-            <MedalCount medals={medals} compact />
-          )}
+        {/* Uruguay competition count */}
+        <div className="text-sm text-gray-500">
+          <span title="Torneos en Uruguay (últimos 2 años)">
+            🏆{" "}
+            {uy_competition_count === 1
+              ? "1 torneo en Uruguay"
+              : `${uy_competition_count} torneos en Uruguay`}
+          </span>
         </div>
 
         {/* Link */}
-        {person.wca_id && (
-          <Link
-            href={`/members/${person.wca_id}`}
-            className="text-xs font-semibold text-brand-blue hover:text-brand-blue-dark transition-colors"
-          >
-            Ver perfil →
-          </Link>
-        )}
+        <Link
+          href={`/members/${wca_id}`}
+          className="text-xs font-semibold text-brand-blue hover:text-brand-blue-dark transition-colors"
+        >
+          Ver perfil →
+        </Link>
       </CardBody>
     </Card>
   );

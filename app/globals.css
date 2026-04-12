@@ -28,6 +28,11 @@
   }
 }
 
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
 @layer utilities {
   .gradient-hero {
     background: linear-gradient(135deg, #0d3b6e 0%, #0070BD 60%, #3394d4 100%);
@@ -37,3 +42,4 @@
     text-wrap: balance;
   }
 }
+

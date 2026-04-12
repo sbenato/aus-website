@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getUruguayCompetitions } from "@/lib/wca-api";
 import { CompetitionCard } from "@/components/competitions/CompetitionCard";
 import { EmptyState } from "@/components/ui/EmptyState";
+import { OrganizeCTA } from "@/components/ui/OrganizeCTA";
 
 export const metadata: Metadata = {
   title: "Competencias",
@@ -31,6 +32,7 @@ export default async function CompetitionsPage({ searchParams }: PageProps) {
   }
 
   return (
+    <>
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       {/* Header */}
       <div className="mb-8">
@@ -106,6 +108,9 @@ export default async function CompetitionsPage({ searchParams }: PageProps) {
           </a>
         </div>
       )}
+
     </div>
+    <OrganizeCTA />
+    </>
   );
 }

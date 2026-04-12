@@ -1,4 +1,4 @@
-import type { WCACompetition, WCAPerson, WCAUser } from "./types";
+import type { ActiveCompetitor, WCACompetition, WCAPerson, WCAResult, WCAUser } from "./types";
 
 const WCA_BASE = "https://www.worldcubeassociation.org/api/v0";
 
@@ -65,6 +65,77 @@ export async function getUruguayPersons(page = 1): Promise<WCAPerson[]> {
   return wcaFetch<WCAPerson[]>(
     `/persons?country_iso2=UY&page=${page}&per_page=24`
   );
+}
+
+/**
+ * Returns all competitors who attended at least one Uruguay competition
+ * in the last 2 years, sorted by number of Uruguay competitions (desc).
+ */
+export async function getActiveUruguayCompetitors(): Promise<ActiveCompetitor[]> {
+  const twoYearsAgo = new Date();
+  twoYearsAgo.setFullYear(twoYearsAgo.getFullYear() - 2);
+  const startDate = twoYearsAgo.toISOString().split("T")[0];
+  const today = new Date().toISOString().split("T")[0];
+
+  const query = new URLSearchParams({
+    country_iso2: "UY",
+    start: startDate,
+    end: today,
+    sort: "-start_date",
+    per_page: "100",
+  });
+
+  const competitions = await wcaFetch<WCACompetition[]>(
+    `/competitions?${query}`,
+    { next: { revalidate: 3600 } }
+  );
+
+  const withResults = competitions.filter((c) => c.results_posted_at !== null);
+
+  // Fetch results in batches to avoid overloading the WCA API
+  const BATCH_SIZE = 5;
+  const personMap = new Map<string, { name: string; country_iso2: string; count: number }>();
+
+  for (let i = 0; i < withResults.length; i += BATCH_SIZE) {
+    const batch = withResults.slice(i, i + BATCH_SIZE);
+    const batchResults = await Promise.allSettled(
+      batch.map((comp) =>
+        wcaFetch<WCAResult[]>(`/competitions/${comp.id}/results`, {
+          next: { revalidate: 86400 }, // results are historical — cache 24h
+        })
+      )
+    );
+
+    for (const settled of batchResults) {
+      if (settled.status !== "fulfilled") continue;
+
+      const seenInComp = new Set<string>();
+      for (const row of settled.value) {
+        if (!row.wca_id || seenInComp.has(row.wca_id)) continue;
+        seenInComp.add(row.wca_id);
+
+        const existing = personMap.get(row.wca_id);
+        if (existing) {
+          existing.count++;
+        } else {
+          personMap.set(row.wca_id, {
+            name: row.name,
+            country_iso2: row.country_iso2,
+            count: 1,
+          });
+        }
+      }
+    }
+  }
+
+  return Array.from(personMap.entries())
+    .map(([wca_id, data]) => ({
+      wca_id,
+      name: data.name,
+      country_iso2: data.country_iso2,
+      uy_competition_count: data.count,
+    }))
+    .sort((a, b) => b.uy_competition_count - a.uy_competition_count);
 }
 
 export async function getPersonByWcaId(wcaId: string): Promise<WCAPerson> {

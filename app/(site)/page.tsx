@@ -2,6 +2,8 @@ import Link from "next/link";
 import { getUpcomingUruguayCompetitions } from "@/lib/wca-api";
 import { CompetitionCard } from "@/components/competitions/CompetitionCard";
 import { LoginButton } from "@/components/auth/LoginButton";
+import { OrganizeCTA } from "@/components/ui/OrganizeCTA";
+import { HeroSun } from "@/components/ui/HeroSun";
 import { auth } from "@/auth";
 
 export default async function HomePage() {
@@ -18,41 +20,49 @@ export default async function HomePage() {
     <div className="flex flex-col">
       {/* Hero */}
       <section className="gradient-hero text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white/90 text-sm font-medium px-4 py-1.5 rounded-full mb-6 border border-white/20">
-              🇺🇾 Uruguay · @aus.uy
-            </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-balance mb-6">
-              Asociación Uruguaya de{" "}
-              <span className="text-brand-gold">Speedcubing</span>
-            </h1>
-            <p className="text-lg sm:text-xl text-blue-100 max-w-2xl leading-relaxed mb-10">
-              La comunidad oficial de speedcubing en Uruguay. Organizamos
-              competencias homologadas por la WCA, conectamos cubers de todo
-              el país y fomentamos el crecimiento del cubo de Rubik.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Link
-                href="/competitions"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-brand-gold text-gray-900 font-semibold hover:bg-brand-gold-dark transition-colors text-base"
-              >
-                Ver Competencias
-                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-              {!session && (
-                <LoginButton size="lg" className="bg-white/10 border border-white/30 hover:bg-white/20" />
-              )}
-              {session && (
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-28">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:gap-12">
+            {/* Text */}
+            <div className="flex-1">
+              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white/90 text-sm font-medium px-4 py-1.5 rounded-full mb-6 border border-white/20">
+                🇺🇾 Uruguay · @aus.uy
+              </div>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-balance mb-6">
+                Asociación Uruguaya de{" "}
+                <span className="text-brand-gold">Speedcubing</span>
+              </h1>
+              <p className="text-lg sm:text-xl text-blue-100 max-w-2xl leading-relaxed mb-10">
+                La comunidad oficial de speedcubing en Uruguay. Organizamos
+                competencias homologadas por la WCA, conectamos cubers de todo
+                el país y fomentamos el crecimiento del cubo de Rubik.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3">
                 <Link
-                  href="/dashboard"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-white/10 border border-white/30 text-white font-semibold hover:bg-white/20 transition-colors text-base"
+                  href="/competitions"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-brand-gold text-gray-900 font-semibold hover:bg-brand-gold-dark transition-colors text-base"
                 >
-                  Mi Perfil
+                  Ver Competencias
+                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
                 </Link>
-              )}
+                {!session && (
+                  <LoginButton size="lg" className="bg-white/10 border border-white/30 hover:bg-white/20" />
+                )}
+                {session && (
+                  <Link
+                    href="/dashboard"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-white/10 border border-white/30 text-white font-semibold hover:bg-white/20 transition-colors text-base"
+                  >
+                    Mi Perfil
+                  </Link>
+                )}
+              </div>
+            </div>
+
+            {/* Animated sun */}
+            <div className="hidden lg:flex justify-center items-center shrink-0">
+              <HeroSun />
             </div>
           </div>
         </div>
@@ -155,13 +165,12 @@ export default async function HomePage() {
               </div>
             </div>
 
-            {/* Decorative cube grid */}
-            <div className="hidden lg:flex justify-center">
-              <CubeDecoration />
-            </div>
           </div>
         </div>
       </section>
+
+      {/* Organize CTA */}
+      <OrganizeCTA />
 
       {/* Login CTA */}
       {!session && (
@@ -191,23 +200,3 @@ function StatItem({ value, label }: { value: string; label: string }) {
   );
 }
 
-function CubeDecoration() {
-  const colors = [
-    ["bg-red-500", "bg-white", "bg-blue-600"],
-    ["bg-brand-gold", "bg-green-500", "bg-orange-500"],
-    ["bg-blue-600", "bg-red-500", "bg-white"],
-  ];
-
-  return (
-    <div className="grid grid-cols-3 gap-2 opacity-80 rotate-12">
-      {colors.map((row, ri) =>
-        row.map((color, ci) => (
-          <div
-            key={`${ri}-${ci}`}
-            className={`w-20 h-20 rounded-lg ${color} shadow-lg`}
-          />
-        ))
-      )}
-    </div>
-  );
-}

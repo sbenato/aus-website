@@ -87,7 +87,7 @@ export default async function MemberProfilePage({ params }: Props) {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
               </a>
-              <span>🇺🇾 Uruguay</span>
+              <span>{person.country.name}</span>
               {person.delegate_status && (
                 <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-brand-gold/20 text-amber-800">
                   ⭐ Delegado WCA
@@ -105,7 +105,7 @@ export default async function MemberProfilePage({ params }: Props) {
           <StatCard value={total_solves.toLocaleString()} label="Soluciones" icon="🔢" />
         )}
         <StatCard value={String(medals.total)} label="Medallas" icon="🎖️" />
-        <StatCard value={String(records.national)} label="Records Nacionales" icon="🇺🇾" />
+        <StatCard value={String(records.national)} label="Records Nacionales" icon="🏅" />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
