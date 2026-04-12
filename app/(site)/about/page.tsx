@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+import { getUruguayDelegates } from "@/lib/wca-api";
 
 export const metadata: Metadata = {
   title: "Sobre AUS",
@@ -7,7 +9,8 @@ export const metadata: Metadata = {
     "Conocé la Asociación Uruguaya de Speedcubing: nuestra historia, misión y cómo participar.",
 };
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const delegates = await getUruguayDelegates().catch(() => [] as Awaited<ReturnType<typeof getUruguayDelegates>>);
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <div className="mb-10">
@@ -76,27 +79,51 @@ export default function AboutPage() {
             Delegados oficiales de la World Cube Association en Uruguay.
           </p>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {[
-              { name: "Sebastiano Benato", role: "Delegate · Presidente AUS" },
-              { name: "Gennaro Monetti", role: "Delegate · Tesorero AUS" },
-              { name: "Manuel Malvarez", role: "Delegate" },
-              { name: "Xabier Monsalve", role: "Delegate" },
-              { name: "Víctor Gálvez", role: "Delegate" },
-              { name: "Brian Hambeck", role: "Delegate" },
-            ].map((d) => (
-              <li
-                key={d.name}
-                className="flex items-center gap-3 px-4 py-3 rounded-lg bg-gray-50 border border-gray-100"
-              >
-                <div className="w-8 h-8 rounded-full bg-brand-blue/10 text-brand-blue flex items-center justify-center text-xs font-bold shrink-0">
-                  {d.name.split(" ").map((n) => n[0]).join("").slice(0, 2).toUpperCase()}
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-gray-900 leading-tight">{d.name}</p>
-                  <p className="text-xs text-gray-500">{d.role}</p>
-                </div>
-              </li>
-            ))}
+            {delegates.map((d) => {
+              const initials = d.name.split(" ").map((n) => n[0]).join("").slice(0, 2).toUpperCase();
+              const wcaUrl = d.wca_id
+                ? `https://www.worldcubeassociation.org/persons/${d.wca_id}`
+                : undefined;
+              const inner = (
+                <>
+                  {d.avatar_thumb_url ? (
+                    <Image
+                      src={d.avatar_thumb_url}
+                      alt={d.name}
+                      width={32}
+                      height={32}
+                      className="w-8 h-8 rounded-full object-cover shrink-0"
+                    />
+                  ) : (
+                    <div className="w-8 h-8 rounded-full bg-brand-blue/10 text-brand-blue flex items-center justify-center text-xs font-bold shrink-0">
+                      {initials}
+                    </div>
+                  )}
+                  <div>
+                    <p className="text-sm font-semibold text-gray-900 leading-tight">{d.name}</p>
+                    <p className="text-xs text-gray-500">{d.role}</p>
+                  </div>
+                </>
+              );
+              return (
+                <li key={d.name}>
+                  {wcaUrl ? (
+                    <a
+                      href={wcaUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 px-4 py-3 rounded-lg bg-gray-50 border border-gray-100 hover:border-brand-blue/40 hover:bg-brand-blue/5 transition-colors"
+                    >
+                      {inner}
+                    </a>
+                  ) : (
+                    <div className="flex items-center gap-3 px-4 py-3 rounded-lg bg-gray-50 border border-gray-100">
+                      {inner}
+                    </div>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </section>
 

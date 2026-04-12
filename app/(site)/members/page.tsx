@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { getActiveUruguayCompetitors } from "@/lib/wca-api";
+import { getActiveUruguayCompetitors, getPersonAvatars } from "@/lib/wca-api";
 import { Card, CardBody } from "@/components/ui/Card";
 import { EmptyState } from "@/components/ui/EmptyState";
 import type { ActiveCompetitor } from "@/lib/types";
@@ -12,8 +13,10 @@ export const metadata: Metadata = {
 
 export default async function MembersPage() {
   let competitors: ActiveCompetitor[] = [];
+  let avatarMap = new Map<string, string>();
   try {
     competitors = await getActiveUruguayCompetitors();
+    avatarMap = await getPersonAvatars(competitors.map((c) => c.wca_id));
   } catch {
     // API unavailable
   }
@@ -36,7 +39,7 @@ export default async function MembersPage() {
       {competitors.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
           {competitors.map((c, idx) => (
-            <MemberCard key={c.wca_id} competitor={c} rank={idx + 1} />
+            <MemberCard key={c.wca_id} competitor={c} rank={idx + 1} avatarUrl={avatarMap.get(c.wca_id)} />
           ))}
         </div>
       ) : (
@@ -53,9 +56,11 @@ export default async function MembersPage() {
 function MemberCard({
   competitor,
   rank,
+  avatarUrl,
 }: {
   competitor: ActiveCompetitor;
   rank: number;
+  avatarUrl?: string;
 }) {
   const { wca_id, name, country_iso2, uy_competition_count } = competitor;
 
@@ -71,11 +76,21 @@ function MemberCard({
   return (
     <Card hover className="group">
       <CardBody className="flex flex-col items-center text-center gap-3 py-6">
-        {/* Avatar placeholder with rank */}
+        {/* Avatar with rank badge */}
         <div className="relative">
-          <div className="w-16 h-16 rounded-full bg-brand-blue/10 text-brand-blue flex items-center justify-center text-xl font-bold">
-            {initials}
-          </div>
+          {avatarUrl ? (
+            <Image
+              src={avatarUrl}
+              alt={name}
+              width={64}
+              height={64}
+              className="w-16 h-16 rounded-full object-cover"
+            />
+          ) : (
+            <div className="w-16 h-16 rounded-full bg-brand-blue/10 text-brand-blue flex items-center justify-center text-xl font-bold">
+              {initials}
+            </div>
+          )}
           {rank <= 3 && (
             <span className="absolute -top-1 -right-1 text-lg">
               {rank === 1 ? "🥇" : rank === 2 ? "🥈" : "🥉"}

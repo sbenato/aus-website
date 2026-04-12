@@ -8,6 +8,11 @@ const nextConfig: NextConfig = {
         hostname: "avatars.worldcubeassociation.org",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "www.worldcubeassociation.org",
+        pathname: "/**",
+      },
     ],
   },
 };

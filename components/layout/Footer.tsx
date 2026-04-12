@@ -31,7 +31,7 @@ export function Footer() {
             <h3 className="font-semibold text-sm uppercase tracking-wider text-blue-300 mb-4">
               Navegación
             </h3>
-            <nav aria-label="Footer" className="flex flex-col gap-2">
+            <nav className="flex flex-col gap-2">
               {[
                 { href: "/", label: "Inicio" },
                 { href: "/competitions", label: "Competencias" },
@@ -66,7 +66,7 @@ export function Footer() {
                 @aus.uy
               </a>
               <a
-                href="https://www.worldcubeassociation.org/organizations/AUS"
+                href="https://www.worldcubeassociation.org/organizations"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-blue-200 hover:text-white transition-colors"
