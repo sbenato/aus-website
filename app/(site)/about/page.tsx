@@ -69,37 +69,31 @@ export default function AboutPage() {
           </ol>
         </section>
 
-        {/* Founding members */}
+        {/* Delegates */}
         <section className="bg-white rounded-xl border border-gray-100 shadow-sm p-6 sm:p-8">
-          <h2 className="text-xl font-bold text-gray-900 mb-2">Miembros Fundadores</h2>
+          <h2 className="text-xl font-bold text-gray-900 mb-2">Delegados WCA</h2>
           <p className="text-sm text-gray-500 mb-6">
-            Las 12 personas que firmaron el acta constitutiva el 10 de agosto de 2022.
+            Delegados oficiales de la World Cube Association en Uruguay.
           </p>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {[
-              { name: "Sebastiano Gabriel Benato Moreira", role: "Presidente" },
-              { name: "Agustín Diano Scarpa", role: "Secretario" },
-              { name: "Gennaro Vincenzo Monetti Cracco", role: "Tesorero" },
-              { name: "Diego Martín Moraes Fernández", role: "Suplente CD" },
-              { name: "María Belén Carozo Jocin", role: "Suplente CD" },
-              { name: "Ernesto Cabrera Martínez", role: "Sindicatura" },
-              { name: "Ignacio Goñi Spinoglio", role: "Suplente Sindicatura" },
-              { name: "Brian Rudy Hambeck Varela", role: "Miembro fundador" },
-              { name: "Víctor Manuel Gálvez González", role: "Miembro fundador" },
-              { name: "Franco Campanella Aurrecochea", role: "Miembro fundador" },
-              { name: "Oscar Daniel Leiton Martínez", role: "Miembro fundador" },
-              { name: "Damián Méndez Soria", role: "Miembro fundador" },
-            ].map((m) => (
+              { name: "Sebastiano Benato", role: "Delegate · Presidente AUS" },
+              { name: "Gennaro Monetti", role: "Delegate · Tesorero AUS" },
+              { name: "Manuel Malvarez", role: "Delegate" },
+              { name: "Xabier Monsalve", role: "Delegate" },
+              { name: "Víctor Gálvez", role: "Delegate" },
+              { name: "Brian Hambeck", role: "Delegate" },
+            ].map((d) => (
               <li
-                key={m.name}
+                key={d.name}
                 className="flex items-center gap-3 px-4 py-3 rounded-lg bg-gray-50 border border-gray-100"
               >
                 <div className="w-8 h-8 rounded-full bg-brand-blue/10 text-brand-blue flex items-center justify-center text-xs font-bold shrink-0">
-                  {m.name.split(" ").map((n) => n[0]).join("").slice(0, 2).toUpperCase()}
+                  {d.name.split(" ").map((n) => n[0]).join("").slice(0, 2).toUpperCase()}
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-gray-900 leading-tight">{m.name}</p>
-                  <p className="text-xs text-gray-500">{m.role}</p>
+                  <p className="text-sm font-semibold text-gray-900 leading-tight">{d.name}</p>
+                  <p className="text-xs text-gray-500">{d.role}</p>
                 </div>
               </li>
             ))}
