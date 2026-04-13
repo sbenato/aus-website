@@ -43,8 +43,8 @@ export function UserAvatar() {
           <Image
             src={user.image}
             alt={user.name ?? "Avatar"}
-            width={36}
-            height={36}
+            width={45}
+            height={45}
             className="rounded-full border-2 border-white shadow-sm"
           />
         ) : (

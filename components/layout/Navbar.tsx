@@ -14,7 +14,7 @@ export async function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0">
-            <AUSLogo className="h-10 w-auto" variant="negro" />
+            <AUSLogo className="h-13 w-auto" variant="negro" />
           </Link>
 
           {/* Desktop nav */}

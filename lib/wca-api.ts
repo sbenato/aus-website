@@ -142,6 +142,100 @@ export async function getPersonByWcaId(wcaId: string): Promise<WCAPerson> {
   return wcaFetch<WCAPerson>(`/persons/${wcaId}`);
 }
 
+// ── Uruguay delegates ─────────────────────────────────────────────────────────
+
+const DELEGATE_CONFIG = [
+  { name: "Sebastiano Benato", matchKey: "benato",   role: "Delegate · Presidente AUS", wcaId: undefined       },
+  { name: "Gennaro Monetti",   matchKey: "monetti",  role: "Delegate · Tesorero AUS",   wcaId: undefined       },
+  { name: "Manuel Malvarez",   matchKey: "malvarez", role: "Delegate",                  wcaId: undefined       },
+  { name: "Xabier Monsalve",   matchKey: "monsalve", role: "Delegate",                  wcaId: "2021MONS01"    },
+  { name: "Víctor Gálvez",     matchKey: "galvez",   role: "Delegate",                  wcaId: undefined       },
+  { name: "Brian Hambeck",     matchKey: "hambeck",  role: "Delegate",                  wcaId: undefined       },
+];
+
+function normalizeName(s: string) {
+  return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
+export interface UruguayDelegate {
+  name: string;
+  role: string;
+  wca_id?: string;
+  avatar_thumb_url?: string;
+}
+
+/**
+ * Returns the 6 known Uruguay WCA delegates with their profile avatars.
+ * Identifies them by name-matching against competition delegate lists, then
+ * fetches each profile individually for the most up-to-date avatar.
+ */
+export async function getUruguayDelegates(): Promise<UruguayDelegate[]> {
+  const competitions = await getUruguayCompetitions({ past: true, perPage: 20 });
+
+  const foundUsers = new Map<string, WCAUser>();
+  for (const comp of competitions) {
+    for (const d of comp.delegates ?? []) {
+      const normalName = normalizeName(d.name);
+      for (const { matchKey } of DELEGATE_CONFIG) {
+        if (!foundUsers.has(matchKey) && normalName.includes(matchKey)) {
+          foundUsers.set(matchKey, d);
+        }
+      }
+    }
+  }
+
+  return Promise.all(
+    DELEGATE_CONFIG.map(async ({ name, role, matchKey, wcaId: knownWcaId }) => {
+      const user = foundUsers.get(matchKey);
+      const resolvedWcaId = knownWcaId ?? user?.wca_id ?? undefined;
+      let avatar_thumb_url: string | undefined;
+
+      if (resolvedWcaId) {
+        const person = await wcaFetch<WCAPerson>(`/persons/${resolvedWcaId}`, {
+          next: { revalidate: 86400 },
+        }).catch(() => null);
+
+        if (person && !person.person.avatar.is_default) {
+          avatar_thumb_url = person.person.avatar.thumb_url;
+        } else if (user?.avatar && !user.avatar.is_default) {
+          avatar_thumb_url = user.avatar.thumb_url;
+        }
+      }
+
+      return { name, role, wca_id: resolvedWcaId, avatar_thumb_url };
+    })
+  );
+}
+
+/**
+ * Fetches avatar thumb URLs for a list of WCA IDs.
+ * Results are cached 24 h per profile. Fetched in batches of 10 to avoid
+ * overwhelming the WCA API on cold starts.
+ */
+export async function getPersonAvatars(
+  wcaIds: string[]
+): Promise<Map<string, string>> {
+  const map = new Map<string, string>();
+  const BATCH = 10;
+
+  for (let i = 0; i < wcaIds.length; i += BATCH) {
+    const batch = wcaIds.slice(i, i + BATCH);
+    const results = await Promise.allSettled(
+      batch.map((id) =>
+        wcaFetch<WCAPerson>(`/persons/${id}`, { next: { revalidate: 86400 } })
+      )
+    );
+    batch.forEach((id, j) => {
+      const r = results[j];
+      if (r.status === "fulfilled" && !r.value.person.avatar.is_default) {
+        map.set(id, r.value.person.avatar.thumb_url);
+      }
+    });
+  }
+
+  return map;
+}
+
 // ── Authenticated endpoints ───────────────────────────────────────────────────
 
 export async function getAuthenticatedUser(
