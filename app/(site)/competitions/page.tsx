@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { getUruguayCompetitions } from "@/lib/wca-api";
 import { CompetitionCard } from "@/components/competitions/CompetitionCard";
@@ -14,11 +15,58 @@ interface PageProps {
   searchParams: Promise<{ filter?: string; page?: string }>;
 }
 
+type Filter = "upcoming" | "past" | "all";
+
+const FILTER_TABS: { value: Filter; label: string }[] = [
+  { value: "upcoming", label: "Próximas" },
+  { value: "past", label: "Pasadas" },
+  { value: "all", label: "Todas" },
+];
+
 export default async function CompetitionsPage({ searchParams }: PageProps) {
   const params = await searchParams;
-  const filter = (params.filter ?? "upcoming") as "upcoming" | "past" | "all";
+  const filter = (params.filter ?? "upcoming") as Filter;
   const page = Number(params.page ?? 1);
 
+  return (
+    <>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold text-gray-900">Competencias</h1>
+          <p className="text-gray-500 mt-2">
+            Competencias WCA oficiales celebradas en Uruguay
+          </p>
+        </div>
+
+        {/* Filter tabs */}
+        <div className="flex gap-1 mb-8 bg-gray-100 p-1 rounded-lg w-fit">
+          {FILTER_TABS.map((tab) => (
+            <a
+              key={tab.value}
+              href={`?filter=${tab.value}`}
+              className={[
+                "px-4 py-2 rounded-md text-sm font-medium transition-colors",
+                filter === tab.value
+                  ? "bg-white shadow-sm text-brand-blue"
+                  : "text-gray-600 hover:text-gray-900",
+              ].join(" ")}
+            >
+              {tab.label}
+            </a>
+          ))}
+        </div>
+
+        {/* Grid with streaming */}
+        <Suspense fallback={<CompetitionsGridSkeleton />} key={`${filter}-${page}`}>
+          <CompetitionsList filter={filter} page={page} />
+        </Suspense>
+      </div>
+      <OrganizeCTA />
+    </>
+  );
+}
+
+async function CompetitionsList({ filter, page }: { filter: Filter; page: number }) {
   let competitions: Awaited<ReturnType<typeof getUruguayCompetitions>> = [];
   try {
     competitions = await getUruguayCompetitions({
@@ -31,65 +79,32 @@ export default async function CompetitionsPage({ searchParams }: PageProps) {
     // API unavailable
   }
 
+  if (competitions.length === 0) {
+    return (
+      <EmptyState
+        title={
+          filter === "upcoming"
+            ? "No hay competencias próximas"
+            : "No hay competencias registradas"
+        }
+        description={
+          filter === "upcoming"
+            ? "Seguí @aus.uy en Instagram para enterarte de las próximas competencias."
+            : "No se encontraron competencias para los filtros seleccionados."
+        }
+        icon="🏆"
+      />
+    );
+  }
+
   return (
     <>
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Competencias</h1>
-        <p className="text-gray-500 mt-2">
-          Competencias WCA oficiales celebradas en Uruguay
-        </p>
-      </div>
-
-      {/* Filter tabs */}
-      <div className="flex gap-1 mb-8 bg-gray-100 p-1 rounded-lg w-fit">
-        {(
-          [
-            { value: "upcoming", label: "Próximas" },
-            { value: "past", label: "Pasadas" },
-            { value: "all", label: "Todas" },
-          ] as const
-        ).map((tab) => (
-          <a
-            key={tab.value}
-            href={`?filter=${tab.value}`}
-            className={[
-              "px-4 py-2 rounded-md text-sm font-medium transition-colors",
-              filter === tab.value
-                ? "bg-white shadow-sm text-brand-blue"
-                : "text-gray-600 hover:text-gray-900",
-            ].join(" ")}
-          >
-            {tab.label}
-          </a>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {competitions.map((comp) => (
+          <CompetitionCard key={comp.id} competition={comp} />
         ))}
       </div>
 
-      {/* Grid */}
-      {competitions.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {competitions.map((comp) => (
-            <CompetitionCard key={comp.id} competition={comp} />
-          ))}
-        </div>
-      ) : (
-        <EmptyState
-          title={
-            filter === "upcoming"
-              ? "No hay competencias próximas"
-              : "No hay competencias registradas"
-          }
-          description={
-            filter === "upcoming"
-              ? "Seguí @aus.uy en Instagram para enterarte de las próximas competencias."
-              : "No se encontraron competencias para los filtros seleccionados."
-          }
-          icon="🏆"
-        />
-      )}
-
-      {/* Pagination */}
       {competitions.length === 24 && (
         <div className="flex justify-center gap-3 mt-10">
           {page > 1 && (
@@ -108,9 +123,24 @@ export default async function CompetitionsPage({ searchParams }: PageProps) {
           </a>
         </div>
       )}
-
-    </div>
-    <OrganizeCTA />
     </>
+  );
+}
+
+function CompetitionsGridSkeleton() {
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {Array.from({ length: 6 }).map((_, i) => (
+        <div
+          key={i}
+          className="bg-white rounded-xl border border-gray-100 shadow-sm p-6 flex flex-col gap-3 animate-pulse"
+        >
+          <div className="h-5 w-3/4 bg-gray-200 rounded" />
+          <div className="h-4 w-1/2 bg-gray-200 rounded" />
+          <div className="h-4 w-2/3 bg-gray-200 rounded" />
+          <div className="h-4 w-1/3 bg-gray-200 rounded mt-2" />
+        </div>
+      ))}
+    </div>
   );
 }

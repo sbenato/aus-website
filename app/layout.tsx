@@ -15,8 +15,9 @@ export const metadata: Metadata = {
     "La comunidad oficial de speedcubing en Uruguay. Competencias, rankings y más. Seguinos en Instagram: @aus.uy",
   icons: {
     icon: [
-      { url: "/logos/logo-negro-chico.svg", type: "image/svg+xml" },
-      { url: "/logos/logo-negro.png", type: "image/png" },
+      { url: "/logos/logo-favicon.webp", type: "image/webp"},
+      { url: "/logos/logo-negro-chico.svg", type: "image/svg+xml"},
+      { url: "/logos/logo-negro-chico.png", type: "image/png" },
     ],
   },
   openGraph: {
