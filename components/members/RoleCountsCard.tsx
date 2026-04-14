@@ -15,26 +15,31 @@ interface Props {
 export function RoleCountsCard({ wcaId }: Props) {
   const [delegated, setDelegated] = useState(0);
   const [organized, setOrganized] = useState(0);
+  const [both, setBoth] = useState(0);
   const [upcoming, setUpcoming] = useState(0);
   const [phase, setPhase] = useState("Iniciando…");
   const [done, setDone] = useState(false);
 
   useEffect(() => {
     const tally = (comps: MapCompetition[]) => {
-      let d = 0, o = 0, u = 0;
+      let d = 0, o = 0, b = 0, u = 0;
       for (const c of comps) {
-        if (c.delegated) d++;
-        if (c.organized) o++;
         if (c.startDate >= TODAY) u++;
+        else {
+          if (c.delegated) d++;
+          if (c.organized) o++;
+          if (c.organized && c.delegated) b++;
+        }
       }
-      return { d, o, u };
+      return { d, o, b, u };
     };
 
     return subscribeToMap(wcaId, {
       onInit: (comps) => {
-        const { d, o, u } = tally(comps);
+        const { d, o, b, u } = tally(comps);
         setDelegated(d);
         setOrganized(o);
+        setBoth(b);
         setUpcoming(u);
       },
       onCompetition: (comp) => {
@@ -47,7 +52,7 @@ export function RoleCountsCard({ wcaId }: Props) {
     });
   }, [wcaId]);
 
-  const total = delegated + organized;
+  const total = delegated + organized - both;
 
   return (
     <Card>
@@ -68,6 +73,11 @@ export function RoleCountsCard({ wcaId }: Props) {
             {organized > 0 && (
               <span className="px-1.5 py-0.5 rounded text-xs font-bold text-brand-blue bg-blue-50">
                 {organized} org.
+              </span>
+            )}
+            {both > 0 && (
+              <span className="px-1.5 py-0.5 rounded text-xs font-bold text-brand-violet bg-violet-50">
+                {both} org. y del.
               </span>
             )}
             {upcoming > 0 && (
