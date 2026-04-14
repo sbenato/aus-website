@@ -43,9 +43,13 @@ export function RoleCountsCard({ wcaId }: Props) {
         setUpcoming(u);
       },
       onCompetition: (comp) => {
-        if (comp.delegated) setDelegated((d) => d + 1);
-        if (comp.organized) setOrganized((o) => o + 1);
-        if (comp.startDate >= TODAY) setUpcoming((u) => u + 1);
+        if (comp.startDate >= TODAY) {
+          setUpcoming((u) => u + 1);
+        } else {
+          if (comp.delegated) setDelegated((d) => d + 1);
+          if (comp.organized) setOrganized((o) => o + 1);
+          if (comp.organized && comp.delegated) setBoth((b) => b + 1);
+        }
       },
       onPhase: setPhase,
       onDone: () => setDone(true),
