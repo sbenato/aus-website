@@ -79,7 +79,7 @@ export function UserAvatar() {
           </div>
           <nav className="py-1">
             <Link
-              href="/dashboard"
+              href={user.wcaId ? `/members/${user.wcaId}` : "/members"}
               onClick={() => setOpen(false)}
               className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
             >

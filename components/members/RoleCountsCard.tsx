@@ -55,7 +55,7 @@ export function RoleCountsCard({ wcaId }: Props) {
         <div className="text-2xl mb-1">📋</div>
         {total > 0
           ? <p className="text-2xl font-bold text-gray-900">{total}</p>
-          : <p className="text-2xl font-bold text-gray-300">—</p>
+          : <p className={`text-2xl font-bold text-gray-300 ${!done ? "animate-pulse" : ""}`}>—</p>
         }
         <p className="text-xs text-gray-500 mt-0.5">Org. / Delegadas</p>
         {total > 0 && (

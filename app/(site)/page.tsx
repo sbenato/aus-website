@@ -52,7 +52,7 @@ export default async function HomePage() {
                 )}
                 {session && (
                   <Link
-                    href="/dashboard"
+                    href={session.user.wcaId ? `/members/${session.user.wcaId}` : "/members"}
                     className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-white/10 border border-white/30 text-white font-semibold hover:bg-white/20 transition-colors text-base"
                   >
                     Mi Perfil

@@ -2,7 +2,7 @@
 
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { MapContainer, Marker, TileLayer, CircleMarker, Popup, useMap } from "react-leaflet";
 import type { MapCompetition } from "@/app/api/map/[wca_id]/route";
 import { subscribeToMap } from "@/lib/competitions-cache";
@@ -61,20 +61,49 @@ function buildClusters(competitions: MapCompetition[], threshold = 20): Cluster[
 }
 
 function clusterIcon(count: number) {
+  const size = count <= 9 ? 30 : count <= 99 ? 36 : 42;
+  const fontSize = count <= 9 ? 12 : count <= 99 ? 11 : 10;
+  const half = size / 2;
   return L.divIcon({
-    html: `<div style="background:#1e3a5f;color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.35)">${count}</div>`,
+    html: `<div style="background:#1e3a5f;color:#fff;width:${size}px;height:${size}px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:${fontSize}px;font-weight:700;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.35)">${count}</div>`,
     className: "",
-    iconSize: [28, 28],
-    iconAnchor: [14, 14],
-    popupAnchor: [0, -14],
+    iconSize: [size, size],
+    iconAnchor: [half, half],
+    popupAnchor: [0, -half],
   });
 }
 
-// ── Centrado automático ───────────────────────────────────────────────────────
+// ── Umbral dinámico según zoom ───────────────────────────────────────────────
 
-function AutoCenter({ competitions }: { competitions: MapCompetition[] }) {
+/** Metros por pixel a un zoom y latitud dados (fórmula estándar Mercator). */
+function metersPerPixel(zoom: number, lat: number) {
+  return (156543.03392 * Math.cos((lat * Math.PI) / 180)) / 2 ** zoom;
+}
+
+/** Radio en píxeles que define "cercanía visual" para agrupar marcadores. */
+const CLUSTER_PX = 60;
+
+function clusterThreshold(zoom: number, lat: number) {
+  return CLUSTER_PX * metersPerPixel(zoom, lat);
+}
+
+// ── Centrado automático + seguimiento de zoom ───────────────────────────────
+
+function MapEvents({
+  competitions,
+  onZoomChange,
+}: {
+  competitions: MapCompetition[];
+  onZoomChange: (z: number) => void;
+}) {
   const map = useMap();
   const centered = useRef(false);
+
+  useEffect(() => {
+    const handler = () => onZoomChange(map.getZoom());
+    map.on("zoomend", handler);
+    return () => { map.off("zoomend", handler); };
+  }, [map, onZoomChange]);
 
   useEffect(() => {
     if (centered.current || competitions.length === 0) return;
@@ -93,6 +122,7 @@ export default function CompetitionsMap({ wcaId }: { wcaId: string }) {
   const [competitions, setCompetitions] = useState<MapCompetition[]>([]);
   const [phase, setPhase] = useState("Iniciando…");
   const [done, setDone] = useState(false);
+  const [zoom, setZoom] = useState(2);
 
   useEffect(() => {
     return subscribeToMap(wcaId, {
@@ -103,7 +133,13 @@ export default function CompetitionsMap({ wcaId }: { wcaId: string }) {
     });
   }, [wcaId]);
 
-  const clusters = useMemo(() => buildClusters(competitions), [competitions]);
+  const handleZoom = useCallback((z: number) => setZoom(z), []);
+
+  const clusters = useMemo(() => {
+    if (competitions.length === 0) return [];
+    const avgLat = competitions.reduce((s, c) => s + c.lat, 0) / competitions.length;
+    return buildClusters(competitions, clusterThreshold(zoom, avgLat));
+  }, [competitions, zoom]);
   const upcomingCount = useMemo(() => competitions.filter(isUpcoming).length, [competitions]);
   const pastCount = competitions.length - upcomingCount;
 
@@ -138,7 +174,7 @@ export default function CompetitionsMap({ wcaId }: { wcaId: string }) {
           attribution='© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <AutoCenter competitions={competitions} />
+        <MapEvents competitions={competitions} onZoomChange={handleZoom} />
 
         {clusters.map((cluster) => {
           const { lat, lng, comps } = cluster;
@@ -178,7 +214,7 @@ export default function CompetitionsMap({ wcaId }: { wcaId: string }) {
             );
           }
 
-          // Cluster: varios en el mismo lugar
+          // Cluster: varias competencias agrupadas
           return (
             <Marker
               key={`cluster-${lat.toFixed(5)}-${lng.toFixed(5)}`}
@@ -188,9 +224,9 @@ export default function CompetitionsMap({ wcaId }: { wcaId: string }) {
               <Popup>
                 <div className="text-sm min-w-[200px]">
                   <p className="font-semibold mb-2">
-                    {comps.length} competencias en este lugar
+                    {comps.length} competencia{comps.length !== 1 ? "s" : ""} en esta zona
                   </p>
-                  <ul className="space-y-1.5">
+                  <ul className="space-y-1.5 max-h-[240px] overflow-y-auto pr-1">
                     {comps
                       .slice()
                       .sort((a, b) => b.startDate.localeCompare(a.startDate))

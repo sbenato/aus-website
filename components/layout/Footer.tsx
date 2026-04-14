@@ -37,7 +37,6 @@ export function Footer() {
                 { href: "/competitions", label: "Competencias" },
                 { href: "/members", label: "Miembros" },
                 { href: "/about", label: "Sobre AUS" },
-                { href: "/dashboard", label: "Mi Perfil" },
               ].map((link) => (
                 <Link
                   key={link.href}
