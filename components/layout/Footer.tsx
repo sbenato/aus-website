@@ -73,7 +73,7 @@ export function Footer() {
                 <TikTokIcon className="h-5 w-5" />
                 @aus.uy en TikTok
               </a>
-              <a
+              {/* <a
                 href="https://chat.whatsapp.com/I1n4zIW7p11Hd8Ouef6uTp"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -81,7 +81,7 @@ export function Footer() {
               >
                 <WhatsAppIcon className="h-5 w-5 group-hover:text-green-400 transition-colors" />
                 Comunidad de WhatsApp
-              </a>
+              </a> */}
               <a
                 href="https://www.worldcubeassociation.org/organizations"
                 target="_blank"

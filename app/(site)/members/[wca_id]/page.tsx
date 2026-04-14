@@ -39,7 +39,7 @@ export default async function MemberProfilePage({ params }: Props) {
 
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       {/* Breadcrumb */}
       <nav className="text-sm text-gray-500 mb-6 flex items-center gap-2">
         <Link href="/members" className="hover:text-brand-blue transition-colors">
@@ -101,7 +101,7 @@ export default async function MemberProfilePage({ params }: Props) {
       </Card>
 
       {/* Stats */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+      <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 mb-8">
         <StatCard value={String(competition_count)} label="Competencias" icon="🏆" />
         {total_solves !== undefined && (
           <StatCard value={total_solves.toLocaleString()} label="Soluciones" icon="🔢" />
