@@ -255,6 +255,23 @@ export async function getAuthenticatedUser(
   return json.me;
 }
 
+/**
+ * Returns the AUS-specific role (e.g. "Presidente AUS") for a given WCA ID,
+ * or null if the person has no AUS board role.
+ * Reuses the delegate resolution logic (cached 24 h).
+ */
+export async function getAusRoleByWcaId(wcaId: string): Promise<string | null> {
+  try {
+    const delegates = await getUruguayDelegates();
+    const match = delegates.find((d) => d.wca_id === wcaId);
+    if (!match) return null;
+    const parts = match.role.split("·");
+    return parts.length >= 2 ? parts[1].trim() : null;
+  } catch {
+    return null;
+  }
+}
+
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
 export function getCompetitionStatus(comp: WCACompetition) {

@@ -73,7 +73,7 @@ function MembersGridSkeleton() {
     <>
       <div className="h-4 w-44 bg-gray-200 rounded animate-pulse mb-6" />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-        {Array.from({ length: 10 }).map((_, i) => (
+        {Array.from({ length: 12 }).map((_, i) => (
           <div
             key={i}
             className="bg-white rounded-xl border border-gray-100 shadow-sm p-6 flex flex-col items-center gap-3 animate-pulse"

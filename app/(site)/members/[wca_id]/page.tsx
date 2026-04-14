@@ -2,11 +2,36 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getPersonByWcaId } from "@/lib/wca-api";
+import { getPersonByWcaId, getAusRoleByWcaId } from "@/lib/wca-api";
 import { RoleCountsCard } from "@/components/members/RoleCountsCard";
 import { PersonalBestTable } from "@/components/members/PersonalBestTable";
 import { MedalCount } from "@/components/members/MedalCount";
 import { Card, CardBody, CardHeader } from "@/components/ui/Card";
+
+const DELEGATE_STATUS_LABELS: Record<string, string> = {
+  candidate_delegate: "Delegado Candidato WCA",
+  delegate: "Delegado WCA",
+  senior_delegate: "Delegado Senior WCA",
+  regional_organizer: "Organizador Regional WCA",
+};
+
+const WCA_TEAM_NAMES: Record<string, string> = {
+  "wca-board":  "WCA Board",
+  "wqac":       "WCA Quality Assurance Committee",
+  "wrc":        "WCA Regulations Committee",
+  "wdc":        "WCA Disciplinary Committee",
+  "wec":        "WCA Ethics Committee",
+  "wfc":        "WCA Finance Committee",
+  "wac":        "WCA Advisory Council",
+  "wat":        "WCA Advisory Team",
+  "wmt":        "WCA Marketing Team",
+  "wit":        "WCA IT Team",
+  "wst":        "WCA Software Team",
+  "wct":        "WCA Communications Team",
+  "weat":       "WCA Education and Accessibility Team",
+  "wrt":        "WCA Results Team",
+  "wsat":       "WCA Speed Solving Algorithms Team",
+};
 
 interface Props {
   params: Promise<{ wca_id: string }>;
@@ -34,6 +59,8 @@ export default async function MemberProfilePage({ params }: Props) {
   } catch {
     notFound();
   }
+
+  const ausRole = await getAusRoleByWcaId(wca_id);
 
   const { person, medals, competition_count, total_solves, records, personal_records } = data;
 
@@ -90,12 +117,30 @@ export default async function MemberProfilePage({ params }: Props) {
                 </svg>
               </a>
               <span>{person.country.name}</span>
-              {person.delegate_status && (
-                <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-brand-gold/20 text-amber-800">
-                  ⭐ Delegado WCA
-                </span>
-              )}
             </div>
+            {(person.delegate_status || ausRole || (person.teams && person.teams.length > 0)) && (
+              <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 mt-2">
+                {person.delegate_status && (
+                  <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-brand-gold/20 text-amber-800">
+                    ⭐ {DELEGATE_STATUS_LABELS[person.delegate_status] ?? "Delegado WCA"}
+                  </span>
+                )}
+                {ausRole && (
+                  <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-brand-blue/10 text-brand-blue">
+                    🇺🇾 {ausRole}
+                  </span>
+                )}
+                {person.teams?.map((team) => (
+                  <span
+                    key={team.friendly_id}
+                    title={WCA_TEAM_NAMES[team.friendly_id] ?? team.friendly_id}
+                    className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-purple-50 text-purple-700"
+                  >
+                    {team.leader ? "★ " : ""}{WCA_TEAM_NAMES[team.friendly_id] ?? team.friendly_id.toUpperCase()}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
         </CardBody>
       </Card>

@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Card, CardBody } from "@/components/ui/Card";
 import type { ActiveCompetitor } from "@/lib/types";
 
-const PAGE_SIZE = 10;
+const PAGE_SIZE = 12;
 
 type CompetitorWithAvatar = ActiveCompetitor & { avatarUrl?: string };
 
@@ -29,7 +29,7 @@ export function MembersGrid({ competitors }: { competitors: CompetitorWithAvatar
       {hasMore && (
         <div className="mt-8 flex justify-center">
           <button
-            onClick={() => setVisibleCount((n) => n + PAGE_SIZE)}
+            onClick={() => setVisibleCount((n) => n * 2)}
             className="px-6 py-2.5 rounded-lg bg-white border border-gray-200 text-sm font-semibold text-gray-700 hover:bg-gray-50 hover:border-gray-300 transition-colors shadow-sm"
           >
             Cargar más ({competitors.length - visibleCount} restantes)
