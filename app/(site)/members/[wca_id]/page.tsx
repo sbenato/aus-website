@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getPersonByWcaId } from "@/lib/wca-api";
+import { RoleCountsCard } from "@/components/members/RoleCountsCard";
 import { PersonalBestTable } from "@/components/members/PersonalBestTable";
 import { MedalCount } from "@/components/members/MedalCount";
 import { Card, CardBody, CardHeader } from "@/components/ui/Card";
@@ -35,6 +36,7 @@ export default async function MemberProfilePage({ params }: Props) {
   }
 
   const { person, medals, competition_count, total_solves, records, personal_records } = data;
+
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -105,7 +107,8 @@ export default async function MemberProfilePage({ params }: Props) {
           <StatCard value={total_solves.toLocaleString()} label="Soluciones" icon="🔢" />
         )}
         <StatCard value={String(medals.total)} label="Medallas" icon="🎖️" />
-        <StatCard value={String(records.national)} label="Records Nacionales" icon="🏅" />
+        <RecordsCard records={records} />
+        <RoleCountsCard wcaId={wca_id} />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -155,6 +158,7 @@ export default async function MemberProfilePage({ params }: Props) {
           </Card>
         </div>
       </div>
+
     </div>
   );
 }
@@ -166,6 +170,39 @@ function StatCard({ value, label, icon }: { value: string; label: string; icon: 
         <div className="text-2xl mb-1">{icon}</div>
         <p className="text-2xl font-bold text-gray-900">{value}</p>
         <p className="text-xs text-gray-500 mt-0.5">{label}</p>
+      </CardBody>
+    </Card>
+  );
+}
+
+
+function RecordsCard({ records }: { records: { national: number; continental: number; world: number } }) {
+  const items = [
+    { key: "WR", count: records.world,       color: "text-red-600",   bg: "bg-red-100"   },
+    { key: "CR", count: records.continental, color: "text-amber-600", bg: "bg-amber-100" },
+    { key: "NR", count: records.national,    color: "text-blue-600",  bg: "bg-blue-100"  },
+  ].filter((r) => r.count > 0);
+
+  const total = records.national + records.continental + records.world;
+
+  return (
+    <Card>
+      <CardBody className="text-center py-5">
+        <div className="text-2xl mb-1">🏅</div>
+        <p className="text-2xl font-bold text-gray-900">{total}</p>
+        <p className="text-xs text-gray-500 mt-0.5">Records</p>
+        {items.length > 0 && (
+          <div className="flex items-center justify-center gap-1.5 mt-2 flex-wrap">
+            {items.map(({ key, count, color, bg }) => (
+              <span
+                key={key}
+                className={`inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded text-xs font-bold ${color} ${bg}`}
+              >
+                {count} {key}
+              </span>
+            ))}
+          </div>
+        )}
       </CardBody>
     </Card>
   );

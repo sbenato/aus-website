@@ -10,7 +10,7 @@ interface LoginButtonProps {
 }
 
 export function LoginButton({
-  callbackUrl = "/dashboard",
+  callbackUrl = "/members",
   className = "",
   size = "md",
 }: LoginButtonProps) {

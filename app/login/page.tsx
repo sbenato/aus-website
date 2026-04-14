@@ -12,13 +12,13 @@ export const metadata: Metadata = {
 export default async function LoginPage({
   searchParams,
 }: {
-  searchParams: Promise<{ callbackUrl?: string; error?: string }>;
+  searchParams: Promise<{ callbackUrl?: string; error?: string; reason?: string }>;
 }) {
   const session = await auth();
   const params = await searchParams;
 
   if (session) {
-    redirect(params.callbackUrl ?? "/dashboard");
+    redirect(params.callbackUrl ?? "/members");
   }
 
   const errorMessages: Record<string, string> = {
@@ -32,6 +32,8 @@ export default async function LoginPage({
   const errorMessage = params.error
     ? (errorMessages[params.error] ?? errorMessages.Default)
     : null;
+
+  const reasonMessage = params.reason ?? null;
 
   return (
     <div className="min-h-screen gradient-hero flex flex-col items-center justify-center px-4">
@@ -48,10 +50,10 @@ export default async function LoginPage({
 
       <div className="w-full max-w-md">
         {/* Card */}
-        <div className="bg-white rounded-2xl shadow-2xl p-8 sm:p-10">
+        <div className="bg-white rounded-2xl shadow-2xl p-8 sm:p-5">
           {/* Logo */}
           <div className="flex flex-col items-center mb-8">
-            <AUSLogo className="h-16 w-16 mb-4" />
+            <AUSLogo className="w-60 mb-4" />
             <h1 className="text-2xl font-bold text-gray-900 text-center">
               Ingresá a AUS
             </h1>
@@ -59,6 +61,16 @@ export default async function LoginPage({
               Asociación Uruguaya de Speedcubing
             </p>
           </div>
+
+          {/* Reason message (redirect from protected route) */}
+          {reasonMessage && !errorMessage && (
+            <div className="mb-6 flex items-start gap-3 bg-amber-50 border border-amber-200 rounded-lg px-4 py-3">
+              <svg className="h-5 w-5 text-amber-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+              </svg>
+              <p className="text-sm text-amber-800">{reasonMessage}</p>
+            </div>
+          )}
 
           {/* Error message */}
           {errorMessage && (
@@ -73,7 +85,7 @@ export default async function LoginPage({
           {/* WCA Login */}
           <div className="space-y-4">
             <LoginButton
-              callbackUrl={params.callbackUrl ?? "/dashboard"}
+              callbackUrl={params.callbackUrl ?? "/members"}
               size="lg"
               className="w-full justify-center"
             />

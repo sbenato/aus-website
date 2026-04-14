@@ -142,6 +142,7 @@ export async function getPersonByWcaId(wcaId: string): Promise<WCAPerson> {
   return wcaFetch<WCAPerson>(`/persons/${wcaId}`);
 }
 
+
 // ── Uruguay delegates ─────────────────────────────────────────────────────────
 
 const DELEGATE_CONFIG = [
