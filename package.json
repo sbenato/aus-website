@@ -11,5 +11,8 @@
     "build": "npm run build --workspace apps/web",
     "start": "npm run start --workspace apps/web",
     "lint": "npm run lint --workspaces --if-present"
+  },
+  "overrides": {
+    "postcss": "^8.5.15"
   }
 }
