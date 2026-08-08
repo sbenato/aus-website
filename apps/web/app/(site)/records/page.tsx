@@ -27,8 +27,8 @@ export default async function RecordsPage() {
         </p>
         <p className="text-sm text-gray-500 mt-3">
           Los valores son públicos. Editar la política, cargar aportes y registrar
-          pagos queda reservado a los delegados de la WCA que representan a
-          Uruguay.
+          pagos queda reservado a los delegados de la AUS autorizados a
+          administrar el fondo.
         </p>
       </header>
 

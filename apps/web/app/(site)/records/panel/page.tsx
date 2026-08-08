@@ -20,9 +20,9 @@ export default async function PanelPage() {
       <div className="max-w-2xl mx-auto px-4 py-16 text-center">
         <h1 className="text-2xl font-bold text-gray-900">Acceso restringido</h1>
         <p className="text-gray-600 mt-2">
-          El panel del fondo es solo para los delegados de la WCA que representan
-          a Uruguay. Los valores de los premios son públicos y los podés ver sin
-          permiso.
+          El panel del fondo es solo para los delegados de la AUS autorizados a
+          administrarlo. Los valores de los premios son públicos y los podés ver
+          sin permiso.
         </p>
         <Link
           href="/records"

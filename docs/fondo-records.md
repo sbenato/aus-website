@@ -3,10 +3,12 @@
 Implementación en `apps/web` de la especificación de [`records-spec.md`](records-spec.md).
 
 **Regla de acceso:** los valores de los premios son **públicos** (cualquiera, sin
-login, ve saldos, política vigente e historial). Editar es **solo para delegados de
-la WCA que representan a Uruguay**: la autoridad para mover plata se deriva de un
-rol que otorga y revoca la WCA, no de una variable de entorno. Una **banlist**
-gana sobre el rol, para cortar acceso sin esperar a la WCA.
+login, ve saldos, política vigente e historial). Editar pide **las dos**
+condiciones: ser delegado de la WCA por Uruguay **y** estar en `PANEL_WCA_IDS`
+(`lib/records/permissions.ts`). La lista restringe, no habilita: cruzada con el
+rol, un error deja gente afuera y nunca adentro. Vive en el código y no en el
+entorno para que cambiar quién mueve la plata quede en el historial de git (§9).
+Una **banlist** gana sobre ambas, para cortar acceso sin esperar a la WCA.
 
 ## Piezas
 
@@ -16,7 +18,7 @@ gana sobre el rol, para cortar acceso sin esperar a la WCA.
 | `lib/records/engine.ts` | Fórmulas puras: reparto (§3), pago (§4), bonus continental (§4.3). |
 | `lib/records/wca-live.ts` | Fetch de WR, SAR y NR a la API oficial de la WCA. |
 | `lib/records/store.ts` | Persistencia (JSON en disco o Postgres) + serialización de escrituras. |
-| `lib/records/permissions.ts` | Quién puede editar: delegados UY − banlist. |
+| `lib/records/permissions.ts` | Quién puede editar: delegados UY ∩ lista − banlist. |
 | `lib/records/service.ts` | Snapshot público y guard de escritura para las rutas. |
 | `app/(site)/records/page.tsx` | Página pública. |
 | `components/records/*` | Tabla de fondos, calculadora pública, panel de delegados, historial. |

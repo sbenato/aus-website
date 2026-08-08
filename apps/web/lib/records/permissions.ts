@@ -1,14 +1,13 @@
 import type { Session } from "next-auth";
 
 /**
- * Quién puede editar las variables del fondo.
+ * Quién puede editar las variables del fondo. Se piden **las dos** condiciones:
  *
- * **Solo delegados de la WCA que representan a Uruguay.** No hay allowlist: la
- * autoridad para mover plata del fondo se deriva de un rol que otorga y revoca
- * la WCA, no de una variable de entorno que se puede editar sin dejar rastro.
+ * 1. Ser delegado de la WCA representando a Uruguay.
+ * 2. Estar en `PANEL_WCA_IDS`.
  *
- * La banlist `AUS_RECORDS_BANNED` sigue existiendo y gana sobre todo: sirve para
- * cortarle el acceso a alguien sin esperar a que la WCA le saque el rol.
+ * La banlist `AUS_RECORDS_BANNED` gana sobre las dos: corta el acceso sin
+ * esperar a que la WCA saque el rol.
  *
  * Los valores de los premios son públicos; esto solo controla la escritura.
  */
@@ -24,6 +23,22 @@ function idSet(envValue: string | undefined): Set<string> {
 
 /** Acepta WCA IDs (2023CABR01) y también el id interno numérico de la WCA. */
 export const BANNED_IDS = () => idSet(process.env.AUS_RECORDS_BANNED);
+
+/**
+ * Quiénes de la AUS entran al panel del fondo.
+ *
+ * Es una lista que **restringe**, no que habilita: se cruza con el rol de
+ * delegado, así que agregar a alguien acá no le da acceso si la WCA no lo
+ * reconoce. Un error en esta lista deja gente afuera, nunca adentro.
+ *
+ * Va en el código y no en una variable de entorno a propósito: cambiar quién
+ * mueve la plata del fondo queda registrado en el historial de git, revisable,
+ * en vez de ser un campo que se edita en un dashboard sin dejar rastro (§9).
+ *
+ * - 2014BENA03 — Sebastiano Benato (presidente AUS)
+ * - 2017MONE01 — Gennaro Monetti (tesorero AUS)
+ */
+const PANEL_WCA_IDS = new Set(["2014BENA03", "2017MONE01"]);
 
 /** País cuyos récords administra esta instancia. */
 export const PAIS = process.env.AUS_RECORDS_COUNTRY ?? "Uruguay";
@@ -66,7 +81,10 @@ export function checkEditor(session: Session | null): EditorCheck {
     !!user.delegateStatus &&
     !!user.countryIso2 &&
     user.countryIso2.toUpperCase() === PAIS_ISO2.toUpperCase();
-  if (isDelegate) {
+
+  // Las dos condiciones. Un delegado sin WCA ID (solo id interno) tampoco entra:
+  // la lista se lleva por WCA ID y no hay con qué compararlo.
+  if (isDelegate && wcaId && PANEL_WCA_IDS.has(wcaId)) {
     return { canEdit: true, reason: "delegado", actor, wcaId, banned: false };
   }
 

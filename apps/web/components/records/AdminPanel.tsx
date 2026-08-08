@@ -81,7 +81,7 @@ export function AdminPanel({
         <div>
           <h2 className="font-bold text-gray-900">Panel de delegados</h2>
           <p className="text-xs text-gray-600">
-            Solo delegados de la WCA por Uruguay. Todo lo que hagas queda firmado
+            Solo delegados de la AUS autorizados. Todo lo que hagas queda firmado
             en el historial público.
           </p>
         </div>
