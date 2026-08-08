@@ -1,6 +1,6 @@
 /**
  * Fondo de Récords Nacionales — tipos.
- * Especificación: records/records.md (repo "AUS General").
+ * Especificación: docs/records-spec.md.
  */
 
 export type RecordKind = "single" | "average";
@@ -30,8 +30,27 @@ export interface WcaEventData {
   sarAvg: number | null;
   sarAvgPais: string | null;
   sarEsNuestro: boolean;
+  /** Cada vez que cayó el NR single, con quién lo rompió (§4). Fuente de verdad
+   *  para pagar: la API de récords de la WCA da valores, no personas. */
+  roturas?: RoturaExport[];
+  /** Lo mismo para la media. Vacío en los eventos sin media. */
+  roturasAvg?: RoturaExport[];
   lowerIsBetter: boolean;
   note: string | null;
+}
+
+/** Una rotura del récord nacional, tal como la emite `wca_datos_full.py`. */
+export interface RoturaExport {
+  /** Fecha de la competencia, `YYYY-MM-DD`. */
+  fecha: string;
+  /** Quién la rompió. Siempre presente: sale del `personId` del export. */
+  wcaId: string;
+  /** El récord que había antes. */
+  anterior: number;
+  /** El récord nuevo. */
+  nuevo: number;
+  /** Margen relativo de mejora (§4.2), redondeado a 6 decimales. */
+  m: number;
 }
 
 export interface WcaRecordsData {
@@ -78,11 +97,31 @@ export interface FundBalance {
   bonusPaidBy: string[];
 }
 
+/**
+ * Lo que comparte todo asiento. `id` es la referencia estable de un movimiento:
+ * antes la UI los indexaba por posición (`${at}-${i}`), que se corre solo con
+ * que entre un asiento nuevo — el ledger se escribe con `unshift`.
+ */
+interface LedgerBase {
+  /** Estable e irrepetible. Con qué el panel dice "este pago", no "el tercero". */
+  id: string;
+  at: string;
+  by: string;
+}
+
+/** Entrega real de la plata a la persona. Es distinto del pago contable: el
+ *  saldo del fondo baja al detectarse la rotura, la transferencia ocurre después
+ *  y la marca un delegado a mano. */
+export interface Entrega {
+  at: string;
+  /** Quién la marcó. */
+  by: string;
+  note?: string;
+}
+
 export type LedgerEntry =
-  | {
+  | (LedgerBase & {
       type: "reparto";
-      at: string;
-      by: string;
       amount: number;
       /** key del fondo → plata que le tocó */
       allocations: Record<string, number>;
@@ -90,11 +129,9 @@ export type LedgerEntry =
       note?: string;
       /** Clave de idempotencia: evita duplicar el aporte si se reintenta. */
       requestId?: string | null;
-    }
-  | {
+    })
+  | (LedgerBase & {
       type: "pago";
-      at: string;
-      by: string;
       key: string;
       wcaId: string;
       oldValue: number | null;
@@ -111,23 +148,24 @@ export type LedgerEntry =
       note?: string;
       /** Clave de idempotencia: evita duplicar el pago si se reintenta. */
       requestId?: string | null;
-    }
-  | {
+      /** null = calculado y descontado del fondo, pero todavía no entregado. */
+      entrega?: Entrega | null;
+      /** Cómo se identificó a la persona. `export` = del historial oficial;
+       *  `manual` = la cargó un delegado. */
+      origen?: "export" | "manual";
+    })
+  | (LedgerBase & {
       type: "config";
-      at: string;
-      by: string;
       before: FundConfig;
       after: FundConfig;
-    }
-  | {
+    })
+  | (LedgerBase & {
       type: "ajuste";
-      at: string;
-      by: string;
       key: string;
       fundBefore: number;
       fundAfter: number;
       note?: string;
-    };
+    });
 
 /** Récords de un evento tal como los devuelve la API oficial, ya decodificados. */
 export interface LiveEventRecords {

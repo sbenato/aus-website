@@ -15,6 +15,14 @@ import type {
   WcaRecordsData,
 } from "./types";
 
+/**
+ * Id de asiento del ledger. `randomUUID` existe tanto en el runtime de Node
+ * como en el edge, así que sirve en cualquier ruta.
+ */
+export function nuevoLedgerId(): string {
+  return globalThis.crypto.randomUUID();
+}
+
 /** MBLD no tiene media: 17 eventos × 2 − 1 = 33 fondos (§2). */
 export const SIN_MEDIA = new Set(["333mbf"]);
 /** MBLD se mide en puntos: más es mejor. */
@@ -573,6 +581,7 @@ export function applyReparto(
     b.fund = round2(b.fund + add);
   }
   const entry: LedgerEntry = {
+    id: nuevoLedgerId(),
     type: "reparto",
     at: new Date().toISOString(),
     by,
@@ -632,6 +641,7 @@ export function applyPago(
   }
 
   const entry: LedgerEntry = {
+    id: nuevoLedgerId(),
     type: "pago",
     at: new Date().toISOString(),
     by: input.by,
@@ -679,6 +689,7 @@ export function applyAjuste(
   const before = b.fund;
   b.fund = round2(newFund);
   const entry: LedgerEntry = {
+    id: nuevoLedgerId(),
     type: "ajuste",
     at: new Date().toISOString(),
     by,

@@ -1,6 +1,6 @@
 # Fondo de Récords en la web
 
-Implementación en `apps/web` de la especificación de `AUS General/records/records.md`.
+Implementación en `apps/web` de la especificación de [`records-spec.md`](records-spec.md).
 
 **Regla de acceso:** los valores de los premios son **públicos** (cualquiera, sin
 login, ve saldos, política vigente e historial). Editar es solo para **delegados de
@@ -104,20 +104,33 @@ Dos cosas que el fetch resuelve de paso:
   si el SAR coincide con el NR uruguayo, es nuestro — que es exactamente la condición
   del §4.3 (el bonus es por cambio de país).
 
-### 2. Export oficial — `wca_datos_full.py`
+### 2. Export oficial — `tools/wca_datos_full.py`
 
 Lo que la API **no** trae y sigue saliendo del export: **competidores por evento**
-(factor participación), **`m₀` por evento** (mediana histórica de mejoras) y el
-histórico continental.
+(factor participación), **`m₀` por evento** (mediana histórica de mejoras), el
+histórico continental y **quién rompió cada récord** (`roturas[]`) — la API de
+récords devuelve valores, nunca personas.
+
+La URL del export **no es fija**: hay que descubrirla por la API, que además trae
+`export_date` para saber si hay uno nuevo.
 
 ```bash
-cd "AUS General/records"
-python3 wca_datos_full.py            # escribe datos-wca.json
-cp datos-wca.json "../web/AUS/apps/web/data/wca-records.json"
+# 1. Descubrir y bajar el export vigente (~370 MB)
+URL=$(curl -s https://www.worldcubeassociation.org/api/v0/export/public \
+      | python3 -c 'import sys,json; print(json.load(sys.stdin)["tsv_url"])')
+curl -sL -o wca-export.zip "$URL"
+
+# 2. Generar (tarda ~11 s)
+python3 tools/wca_datos_full.py --zip wca-export.zip \
+        --country Uruguay --months 24 --out apps/web/data/wca-records.json
 ```
 
-Ya no urge hacerlo cada fin de semana: los récords se actualizan solos y esos tres
-datos se mueven despacio. Igual conviene cada tanto. El script nunca toca plata.
+El script nunca toca plata: solo lee el export y escribe el JSON.
+
+**Cuándo correrlo:** los saldos no dependen de esto, pero los **pagos sí** — las
+roturas con nombre salen de acá. Un récord roto no se puede pagar hasta que el
+export lo refleje. El endpoint en vivo detecta que algo cambió y avisa, pero no
+sabe a quién pagarle.
 
 ## Lo que la página muestra sin login
 

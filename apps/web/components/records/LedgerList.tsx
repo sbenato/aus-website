@@ -43,9 +43,9 @@ export function LedgerList({
         </p>
       ) : (
         <ul className="mt-4 space-y-3">
-          {ledger.slice(0, limit).map((e, i) => (
+          {ledger.slice(0, limit).map((e) => (
             <li
-              key={`${e.at}-${i}`}
+              key={e.id}
               className="border-l-2 border-gray-100 pl-3 py-0.5"
             >
               <div className="flex flex-wrap items-center gap-2 text-xs">

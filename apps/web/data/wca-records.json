@@ -4,7 +4,7 @@
     "pais": "Uruguay",
     "continente": "_South America",
     "ventana_meses": 24,
-    "generado": "2026-08-01",
+    "generado": "2026-08-08",
     "m0_fallback": 0.03,
     "m0_min_roturas": 3,
     "aviso": "Datos de la World Cube Association (worldcubeassociation.org/results). Los montos los carga la AUS a mano; este script nunca toca plata."
@@ -18,8 +18,8 @@
       "nrAvg": 8.17,
       "nrDate": "2023-10-08",
       "nrAvgDate": "2024-03-24",
-      "days": 1028,
-      "daysAvg": 860,
+      "days": 1035,
+      "daysAvg": 867,
       "ppl": 133,
       "pplAllTime": 509,
       "m0": 0.0399,
@@ -108,6 +108,388 @@
           "valor": 3.74
         }
       ],
+      "roturas": [
+        {
+          "fecha": "2013-10-19",
+          "wcaId": "2013RODR11",
+          "anterior": 22.19,
+          "nuevo": 19.43,
+          "m": 0.12438
+        },
+        {
+          "fecha": "2014-10-11",
+          "wcaId": "2014TINT01",
+          "anterior": 19.43,
+          "nuevo": 17.69,
+          "m": 0.089552
+        },
+        {
+          "fecha": "2014-10-11",
+          "wcaId": "2014TINT01",
+          "anterior": 17.69,
+          "nuevo": 16.84,
+          "m": 0.04805
+        },
+        {
+          "fecha": "2014-10-11",
+          "wcaId": "2013RODR11",
+          "anterior": 16.84,
+          "nuevo": 15.5,
+          "m": 0.079572
+        },
+        {
+          "fecha": "2014-10-11",
+          "wcaId": "2014TINT01",
+          "anterior": 15.5,
+          "nuevo": 15.45,
+          "m": 0.003226
+        },
+        {
+          "fecha": "2014-12-06",
+          "wcaId": "2014TINT01",
+          "anterior": 15.45,
+          "nuevo": 14.92,
+          "m": 0.034304
+        },
+        {
+          "fecha": "2014-12-06",
+          "wcaId": "2013RODR11",
+          "anterior": 14.92,
+          "nuevo": 14.81,
+          "m": 0.007373
+        },
+        {
+          "fecha": "2014-12-06",
+          "wcaId": "2014TINT01",
+          "anterior": 14.81,
+          "nuevo": 14.56,
+          "m": 0.01688
+        },
+        {
+          "fecha": "2014-12-06",
+          "wcaId": "2013RODR11",
+          "anterior": 14.56,
+          "nuevo": 13.13,
+          "m": 0.098214
+        },
+        {
+          "fecha": "2015-02-01",
+          "wcaId": "2013RODR11",
+          "anterior": 13.13,
+          "nuevo": 11.89,
+          "m": 0.09444
+        },
+        {
+          "fecha": "2015-02-01",
+          "wcaId": "2013RODR11",
+          "anterior": 11.89,
+          "nuevo": 10.16,
+          "m": 0.1455
+        },
+        {
+          "fecha": "2015-09-12",
+          "wcaId": "2011CAMP01",
+          "anterior": 10.16,
+          "nuevo": 9.94,
+          "m": 0.021654
+        },
+        {
+          "fecha": "2016-12-03",
+          "wcaId": "2015PINT04",
+          "anterior": 9.94,
+          "nuevo": 9.41,
+          "m": 0.05332
+        },
+        {
+          "fecha": "2017-03-05",
+          "wcaId": "2013RODR11",
+          "anterior": 9.41,
+          "nuevo": 9.22,
+          "m": 0.020191
+        },
+        {
+          "fecha": "2017-06-14",
+          "wcaId": "2011CAMP01",
+          "anterior": 9.22,
+          "nuevo": 8.8,
+          "m": 0.045553
+        },
+        {
+          "fecha": "2017-08-20",
+          "wcaId": "2011CAMP01",
+          "anterior": 8.8,
+          "nuevo": 8.79,
+          "m": 0.001136
+        },
+        {
+          "fecha": "2017-11-05",
+          "wcaId": "2015DIAN02",
+          "anterior": 8.79,
+          "nuevo": 8.59,
+          "m": 0.022753
+        },
+        {
+          "fecha": "2018-07-14",
+          "wcaId": "2015DIAN02",
+          "anterior": 8.59,
+          "nuevo": 8.32,
+          "m": 0.031432
+        },
+        {
+          "fecha": "2019-05-18",
+          "wcaId": "2011CAMP01",
+          "anterior": 8.32,
+          "nuevo": 8.18,
+          "m": 0.016827
+        },
+        {
+          "fecha": "2021-09-19",
+          "wcaId": "2016AROC02",
+          "anterior": 8.18,
+          "nuevo": 7.8,
+          "m": 0.046455
+        },
+        {
+          "fecha": "2021-12-12",
+          "wcaId": "2016AROC02",
+          "anterior": 7.8,
+          "nuevo": 7.61,
+          "m": 0.024359
+        },
+        {
+          "fecha": "2021-12-12",
+          "wcaId": "2014LEZA02",
+          "anterior": 7.61,
+          "nuevo": 6.44,
+          "m": 0.153745
+        },
+        {
+          "fecha": "2023-02-12",
+          "wcaId": "2016BURO02",
+          "anterior": 6.44,
+          "nuevo": 6.03,
+          "m": 0.063665
+        },
+        {
+          "fecha": "2023-10-08",
+          "wcaId": "2015PINT04",
+          "anterior": 6.03,
+          "nuevo": 6.0,
+          "m": 0.004975
+        }
+      ],
+      "roturasAvg": [
+        {
+          "fecha": "2013-10-19",
+          "wcaId": "2013RODR11",
+          "anterior": 24.25,
+          "nuevo": 23.02,
+          "m": 0.050722
+        },
+        {
+          "fecha": "2014-10-11",
+          "wcaId": "2014TINT01",
+          "anterior": 23.02,
+          "nuevo": 19.72,
+          "m": 0.143354
+        },
+        {
+          "fecha": "2014-10-11",
+          "wcaId": "2013RODR11",
+          "anterior": 19.72,
+          "nuevo": 19.56,
+          "m": 0.008114
+        },
+        {
+          "fecha": "2014-10-11",
+          "wcaId": "2014TINT01",
+          "anterior": 19.56,
+          "nuevo": 18.25,
+          "m": 0.066973
+        },
+        {
+          "fecha": "2014-10-11",
+          "wcaId": "2013RODR11",
+          "anterior": 18.25,
+          "nuevo": 18.19,
+          "m": 0.003288
+        },
+        {
+          "fecha": "2014-10-11",
+          "wcaId": "2014TINT01",
+          "anterior": 18.19,
+          "nuevo": 17.77,
+          "m": 0.02309
+        },
+        {
+          "fecha": "2014-12-06",
+          "wcaId": "2013RODR11",
+          "anterior": 17.77,
+          "nuevo": 17.52,
+          "m": 0.014069
+        },
+        {
+          "fecha": "2015-02-01",
+          "wcaId": "2013RODR11",
+          "anterior": 17.52,
+          "nuevo": 15.01,
+          "m": 0.143265
+        },
+        {
+          "fecha": "2015-05-09",
+          "wcaId": "2013RODR11",
+          "anterior": 15.01,
+          "nuevo": 14.97,
+          "m": 0.002665
+        },
+        {
+          "fecha": "2015-05-24",
+          "wcaId": "2013RODR11",
+          "anterior": 14.97,
+          "nuevo": 13.76,
+          "m": 0.080828
+        },
+        {
+          "fecha": "2015-10-10",
+          "wcaId": "2013RODR11",
+          "anterior": 13.76,
+          "nuevo": 13.75,
+          "m": 0.000727
+        },
+        {
+          "fecha": "2015-10-10",
+          "wcaId": "2013RODR11",
+          "anterior": 13.75,
+          "nuevo": 13.47,
+          "m": 0.020364
+        },
+        {
+          "fecha": "2016-02-14",
+          "wcaId": "2014ALON05",
+          "anterior": 13.47,
+          "nuevo": 13.3,
+          "m": 0.012621
+        },
+        {
+          "fecha": "2016-02-14",
+          "wcaId": "2015PINT04",
+          "anterior": 13.3,
+          "nuevo": 12.97,
+          "m": 0.024812
+        },
+        {
+          "fecha": "2016-07-24",
+          "wcaId": "2013RODR11",
+          "anterior": 12.97,
+          "nuevo": 12.4,
+          "m": 0.043948
+        },
+        {
+          "fecha": "2016-12-03",
+          "wcaId": "2015PINT04",
+          "anterior": 12.4,
+          "nuevo": 12.06,
+          "m": 0.027419
+        },
+        {
+          "fecha": "2017-03-05",
+          "wcaId": "2011CAMP01",
+          "anterior": 12.06,
+          "nuevo": 11.69,
+          "m": 0.03068
+        },
+        {
+          "fecha": "2017-03-05",
+          "wcaId": "2011CAMP01",
+          "anterior": 11.69,
+          "nuevo": 11.56,
+          "m": 0.011121
+        },
+        {
+          "fecha": "2017-03-05",
+          "wcaId": "2015PINT04",
+          "anterior": 11.56,
+          "nuevo": 11.47,
+          "m": 0.007785
+        },
+        {
+          "fecha": "2017-03-05",
+          "wcaId": "2015RIVA01",
+          "anterior": 11.47,
+          "nuevo": 11.03,
+          "m": 0.038361
+        },
+        {
+          "fecha": "2017-07-16",
+          "wcaId": "2011CAMP01",
+          "anterior": 11.03,
+          "nuevo": 10.58,
+          "m": 0.040798
+        },
+        {
+          "fecha": "2017-08-20",
+          "wcaId": "2011CAMP01",
+          "anterior": 10.58,
+          "nuevo": 10.22,
+          "m": 0.034026
+        },
+        {
+          "fecha": "2017-08-20",
+          "wcaId": "2011CAMP01",
+          "anterior": 10.22,
+          "nuevo": 9.99,
+          "m": 0.022505
+        },
+        {
+          "fecha": "2017-11-05",
+          "wcaId": "2011CAMP01",
+          "anterior": 9.99,
+          "nuevo": 9.7,
+          "m": 0.029029
+        },
+        {
+          "fecha": "2018-01-28",
+          "wcaId": "2011CAMP01",
+          "anterior": 9.7,
+          "nuevo": 9.42,
+          "m": 0.028866
+        },
+        {
+          "fecha": "2018-09-22",
+          "wcaId": "2011CAMP01",
+          "anterior": 9.42,
+          "nuevo": 9.1,
+          "m": 0.03397
+        },
+        {
+          "fecha": "2021-12-12",
+          "wcaId": "2015DIAN02",
+          "anterior": 9.1,
+          "nuevo": 8.94,
+          "m": 0.017582
+        },
+        {
+          "fecha": "2022-02-13",
+          "wcaId": "2019MALV01",
+          "anterior": 8.94,
+          "nuevo": 8.72,
+          "m": 0.024609
+        },
+        {
+          "fecha": "2022-05-28",
+          "wcaId": "2015DIAN02",
+          "anterior": 8.72,
+          "nuevo": 8.4,
+          "m": 0.036697
+        },
+        {
+          "fecha": "2024-03-24",
+          "wcaId": "2015DIAN02",
+          "anterior": 8.4,
+          "nuevo": 8.17,
+          "m": 0.027381
+        }
+      ],
       "lowerIsBetter": true,
       "note": null
     },
@@ -119,8 +501,8 @@
       "nrAvg": 2.25,
       "nrDate": "2025-06-01",
       "nrAvgDate": "2026-05-16",
-      "days": 426,
-      "daysAvg": 77,
+      "days": 433,
+      "daysAvg": 84,
       "ppl": 75,
       "pplAllTime": 274,
       "m0": 0.1194,
@@ -209,6 +591,325 @@
           "valor": 0.59
         }
       ],
+      "roturas": [
+        {
+          "fecha": "2014-10-11",
+          "wcaId": "2014PUME01",
+          "anterior": 8.84,
+          "nuevo": 7.69,
+          "m": 0.13009
+        },
+        {
+          "fecha": "2014-10-11",
+          "wcaId": "2014PIOT01",
+          "anterior": 7.69,
+          "nuevo": 6.52,
+          "m": 0.152146
+        },
+        {
+          "fecha": "2014-10-11",
+          "wcaId": "2014CABR05",
+          "anterior": 6.52,
+          "nuevo": 6.16,
+          "m": 0.055215
+        },
+        {
+          "fecha": "2014-10-11",
+          "wcaId": "2014PLAC02",
+          "anterior": 6.16,
+          "nuevo": 6.14,
+          "m": 0.003247
+        },
+        {
+          "fecha": "2014-10-11",
+          "wcaId": "2014CENT02",
+          "anterior": 6.14,
+          "nuevo": 5.91,
+          "m": 0.037459
+        },
+        {
+          "fecha": "2014-10-11",
+          "wcaId": "2013RODR11",
+          "anterior": 5.91,
+          "nuevo": 4.91,
+          "m": 0.169205
+        },
+        {
+          "fecha": "2014-10-11",
+          "wcaId": "2014PIOT01",
+          "anterior": 4.91,
+          "nuevo": 4.2,
+          "m": 0.144603
+        },
+        {
+          "fecha": "2014-12-06",
+          "wcaId": "2013RODR11",
+          "anterior": 4.2,
+          "nuevo": 3.87,
+          "m": 0.078571
+        },
+        {
+          "fecha": "2014-12-06",
+          "wcaId": "2014GONI01",
+          "anterior": 3.87,
+          "nuevo": 3.59,
+          "m": 0.072351
+        },
+        {
+          "fecha": "2015-05-09",
+          "wcaId": "2013RODR11",
+          "anterior": 3.59,
+          "nuevo": 3.0,
+          "m": 0.164345
+        },
+        {
+          "fecha": "2015-05-24",
+          "wcaId": "2014PIOT01",
+          "anterior": 3.0,
+          "nuevo": 2.61,
+          "m": 0.13
+        },
+        {
+          "fecha": "2015-05-24",
+          "wcaId": "2014MORA10",
+          "anterior": 2.61,
+          "nuevo": 2.2,
+          "m": 0.157088
+        },
+        {
+          "fecha": "2015-12-12",
+          "wcaId": "2014PERE28",
+          "anterior": 2.2,
+          "nuevo": 2.1,
+          "m": 0.045455
+        },
+        {
+          "fecha": "2015-12-12",
+          "wcaId": "2014PERE29",
+          "anterior": 2.1,
+          "nuevo": 2.01,
+          "m": 0.042857
+        },
+        {
+          "fecha": "2016-07-24",
+          "wcaId": "2014MORA10",
+          "anterior": 2.01,
+          "nuevo": 1.47,
+          "m": 0.268657
+        },
+        {
+          "fecha": "2021-09-19",
+          "wcaId": "2014GONI01",
+          "anterior": 1.47,
+          "nuevo": 1.31,
+          "m": 0.108844
+        },
+        {
+          "fecha": "2021-09-19",
+          "wcaId": "2014BENA03",
+          "anterior": 1.31,
+          "nuevo": 1.19,
+          "m": 0.091603
+        },
+        {
+          "fecha": "2025-06-01",
+          "wcaId": "2014LEZA02",
+          "anterior": 1.19,
+          "nuevo": 0.91,
+          "m": 0.235294
+        }
+      ],
+      "roturasAvg": [
+        {
+          "fecha": "2014-10-11",
+          "wcaId": "2014PUME01",
+          "anterior": 14.12,
+          "nuevo": 11.55,
+          "m": 0.182011
+        },
+        {
+          "fecha": "2014-10-11",
+          "wcaId": "2014MASS03",
+          "anterior": 11.55,
+          "nuevo": 11.24,
+          "m": 0.02684
+        },
+        {
+          "fecha": "2014-10-11",
+          "wcaId": "2014GONZ25",
+          "anterior": 11.24,
+          "nuevo": 10.94,
+          "m": 0.02669
+        },
+        {
+          "fecha": "2014-10-11",
+          "wcaId": "2014DIHA01",
+          "anterior": 10.94,
+          "nuevo": 10.69,
+          "m": 0.022852
+        },
+        {
+          "fecha": "2014-10-11",
+          "wcaId": "2014DAVY02",
+          "anterior": 10.69,
+          "nuevo": 9.87,
+          "m": 0.076707
+        },
+        {
+          "fecha": "2014-10-11",
+          "wcaId": "2014GONI01",
+          "anterior": 9.87,
+          "nuevo": 9.18,
+          "m": 0.069909
+        },
+        {
+          "fecha": "2014-10-11",
+          "wcaId": "2014CABR05",
+          "anterior": 9.18,
+          "nuevo": 9.02,
+          "m": 0.017429
+        },
+        {
+          "fecha": "2014-10-11",
+          "wcaId": "2014PLAC02",
+          "anterior": 9.02,
+          "nuevo": 8.67,
+          "m": 0.038803
+        },
+        {
+          "fecha": "2014-10-11",
+          "wcaId": "2014LEZA02",
+          "anterior": 8.67,
+          "nuevo": 8.11,
+          "m": 0.064591
+        },
+        {
+          "fecha": "2014-10-11",
+          "wcaId": "2014TINT01",
+          "anterior": 8.11,
+          "nuevo": 7.8,
+          "m": 0.038224
+        },
+        {
+          "fecha": "2014-10-11",
+          "wcaId": "2014CENT02",
+          "anterior": 7.8,
+          "nuevo": 7.68,
+          "m": 0.015385
+        },
+        {
+          "fecha": "2014-10-11",
+          "wcaId": "2013RODR11",
+          "anterior": 7.68,
+          "nuevo": 6.57,
+          "m": 0.144531
+        },
+        {
+          "fecha": "2014-10-11",
+          "wcaId": "2014PIOT01",
+          "anterior": 6.57,
+          "nuevo": 6.53,
+          "m": 0.006088
+        },
+        {
+          "fecha": "2014-10-11",
+          "wcaId": "2013RODR11",
+          "anterior": 6.53,
+          "nuevo": 5.97,
+          "m": 0.085758
+        },
+        {
+          "fecha": "2014-12-06",
+          "wcaId": "2013RODR11",
+          "anterior": 5.97,
+          "nuevo": 5.51,
+          "m": 0.077052
+        },
+        {
+          "fecha": "2015-05-09",
+          "wcaId": "2013RODR11",
+          "anterior": 5.51,
+          "nuevo": 5.25,
+          "m": 0.047187
+        },
+        {
+          "fecha": "2015-05-24",
+          "wcaId": "2014PIOT01",
+          "anterior": 5.25,
+          "nuevo": 4.61,
+          "m": 0.121905
+        },
+        {
+          "fecha": "2015-05-24",
+          "wcaId": "2013RODR11",
+          "anterior": 4.61,
+          "nuevo": 4.49,
+          "m": 0.02603
+        },
+        {
+          "fecha": "2015-11-07",
+          "wcaId": "2014FIGU02",
+          "anterior": 4.49,
+          "nuevo": 4.31,
+          "m": 0.040089
+        },
+        {
+          "fecha": "2016-02-14",
+          "wcaId": "2015RIVA01",
+          "anterior": 4.31,
+          "nuevo": 4.29,
+          "m": 0.00464
+        },
+        {
+          "fecha": "2016-02-14",
+          "wcaId": "2014ALON05",
+          "anterior": 4.29,
+          "nuevo": 4.14,
+          "m": 0.034965
+        },
+        {
+          "fecha": "2016-03-26",
+          "wcaId": "2014ALON05",
+          "anterior": 4.14,
+          "nuevo": 4.02,
+          "m": 0.028986
+        },
+        {
+          "fecha": "2016-03-26",
+          "wcaId": "2014PIOT01",
+          "anterior": 4.02,
+          "nuevo": 3.95,
+          "m": 0.017413
+        },
+        {
+          "fecha": "2016-06-11",
+          "wcaId": "2014MORA10",
+          "anterior": 3.95,
+          "nuevo": 3.73,
+          "m": 0.055696
+        },
+        {
+          "fecha": "2016-07-24",
+          "wcaId": "2014MORA10",
+          "anterior": 3.73,
+          "nuevo": 2.75,
+          "m": 0.262735
+        },
+        {
+          "fecha": "2022-12-18",
+          "wcaId": "2014LEZA02",
+          "anterior": 2.75,
+          "nuevo": 2.46,
+          "m": 0.105455
+        },
+        {
+          "fecha": "2026-05-16",
+          "wcaId": "2023CABR01",
+          "anterior": 2.46,
+          "nuevo": 2.25,
+          "m": 0.085366
+        }
+      ],
       "lowerIsBetter": true,
       "note": null
     },
@@ -220,8 +921,8 @@
       "nrAvg": 30.32,
       "nrDate": "2023-02-12",
       "nrAvgDate": "2021-12-12",
-      "days": 1266,
-      "daysAvg": 1693,
+      "days": 1273,
+      "daysAvg": 1700,
       "ppl": 41,
       "pplAllTime": 110,
       "m0": 0.056,
@@ -310,6 +1011,192 @@
           "valor": 18.84
         }
       ],
+      "roturas": [
+        {
+          "fecha": "2014-12-06",
+          "wcaId": "2014TINT01",
+          "anterior": 50.19,
+          "nuevo": 49.39,
+          "m": 0.015939
+        },
+        {
+          "fecha": "2015-05-09",
+          "wcaId": "2013RODR11",
+          "anterior": 49.39,
+          "nuevo": 48.95,
+          "m": 0.008909
+        },
+        {
+          "fecha": "2015-05-24",
+          "wcaId": "2014TINT01",
+          "anterior": 48.95,
+          "nuevo": 41.25,
+          "m": 0.157303
+        },
+        {
+          "fecha": "2016-03-26",
+          "wcaId": "2014ALON05",
+          "anterior": 41.25,
+          "nuevo": 40.9,
+          "m": 0.008485
+        },
+        {
+          "fecha": "2016-08-28",
+          "wcaId": "2014ALON05",
+          "anterior": 40.9,
+          "nuevo": 38.54,
+          "m": 0.057702
+        },
+        {
+          "fecha": "2017-04-28",
+          "wcaId": "2014ALON05",
+          "anterior": 38.54,
+          "nuevo": 36.38,
+          "m": 0.056046
+        },
+        {
+          "fecha": "2017-07-16",
+          "wcaId": "2014ALON05",
+          "anterior": 36.38,
+          "nuevo": 36.37,
+          "m": 0.000275
+        },
+        {
+          "fecha": "2017-07-16",
+          "wcaId": "2014ALON05",
+          "anterior": 36.37,
+          "nuevo": 36.18,
+          "m": 0.005224
+        },
+        {
+          "fecha": "2017-09-24",
+          "wcaId": "2014ALON05",
+          "anterior": 36.18,
+          "nuevo": 29.84,
+          "m": 0.175235
+        },
+        {
+          "fecha": "2021-09-19",
+          "wcaId": "2016AROC02",
+          "anterior": 29.84,
+          "nuevo": 27.88,
+          "m": 0.065684
+        },
+        {
+          "fecha": "2023-02-12",
+          "wcaId": "2016AROC02",
+          "anterior": 27.88,
+          "nuevo": 25.28,
+          "m": 0.093257
+        }
+      ],
+      "roturasAvg": [
+        {
+          "fecha": "2014-10-11",
+          "wcaId": "2014TINT01",
+          "anterior": 65.68,
+          "nuevo": 62.35,
+          "m": 0.0507
+        },
+        {
+          "fecha": "2014-12-06",
+          "wcaId": "2014TINT01",
+          "anterior": 62.35,
+          "nuevo": 55.91,
+          "m": 0.103288
+        },
+        {
+          "fecha": "2015-05-24",
+          "wcaId": "2014TINT01",
+          "anterior": 55.91,
+          "nuevo": 55.25,
+          "m": 0.011805
+        },
+        {
+          "fecha": "2015-09-12",
+          "wcaId": "2013RODR11",
+          "anterior": 55.25,
+          "nuevo": 53.66,
+          "m": 0.028778
+        },
+        {
+          "fecha": "2015-09-12",
+          "wcaId": "2014ALON05",
+          "anterior": 53.66,
+          "nuevo": 52.79,
+          "m": 0.016213
+        },
+        {
+          "fecha": "2015-11-07",
+          "wcaId": "2014TINT01",
+          "anterior": 52.79,
+          "nuevo": 48.06,
+          "m": 0.0896
+        },
+        {
+          "fecha": "2016-03-26",
+          "wcaId": "2014ALON05",
+          "anterior": 48.06,
+          "nuevo": 43.48,
+          "m": 0.095298
+        },
+        {
+          "fecha": "2017-03-05",
+          "wcaId": "2014ALON05",
+          "anterior": 43.48,
+          "nuevo": 43.24,
+          "m": 0.00552
+        },
+        {
+          "fecha": "2017-04-28",
+          "wcaId": "2014ALON05",
+          "anterior": 43.24,
+          "nuevo": 42.85,
+          "m": 0.009019
+        },
+        {
+          "fecha": "2017-04-28",
+          "wcaId": "2014ALON05",
+          "anterior": 42.85,
+          "nuevo": 42.6,
+          "m": 0.005834
+        },
+        {
+          "fecha": "2017-07-16",
+          "wcaId": "2014ALON05",
+          "anterior": 42.6,
+          "nuevo": 40.67,
+          "m": 0.045305
+        },
+        {
+          "fecha": "2017-09-24",
+          "wcaId": "2014ALON05",
+          "anterior": 40.67,
+          "nuevo": 37.1,
+          "m": 0.08778
+        },
+        {
+          "fecha": "2018-01-28",
+          "wcaId": "2014ALON05",
+          "anterior": 37.1,
+          "nuevo": 34.63,
+          "m": 0.066577
+        },
+        {
+          "fecha": "2021-09-19",
+          "wcaId": "2016AROC02",
+          "anterior": 34.63,
+          "nuevo": 33.93,
+          "m": 0.020214
+        },
+        {
+          "fecha": "2021-12-12",
+          "wcaId": "2016AROC02",
+          "anterior": 33.93,
+          "nuevo": 30.32,
+          "m": 0.106396
+        }
+      ],
       "lowerIsBetter": true,
       "note": null
     },
@@ -321,8 +1208,8 @@
       "nrAvg": 62.31,
       "nrDate": "2026-01-28",
       "nrAvgDate": "2026-01-28",
-      "days": 185,
-      "daysAvg": 185,
+      "days": 192,
+      "daysAvg": 192,
       "ppl": 29,
       "pplAllTime": 55,
       "m0": 0.0416,
@@ -411,6 +1298,248 @@
           "valor": 40.53
         }
       ],
+      "roturas": [
+        {
+          "fecha": "2015-02-01",
+          "wcaId": "2014BUKO01",
+          "anterior": 416.68,
+          "nuevo": 273.83,
+          "m": 0.342829
+        },
+        {
+          "fecha": "2015-02-01",
+          "wcaId": "2014GONI01",
+          "anterior": 273.83,
+          "nuevo": 194.44,
+          "m": 0.289924
+        },
+        {
+          "fecha": "2015-02-01",
+          "wcaId": "2013RODR11",
+          "anterior": 194.44,
+          "nuevo": 134.35,
+          "m": 0.309041
+        },
+        {
+          "fecha": "2015-05-24",
+          "wcaId": "2014TINT01",
+          "anterior": 134.35,
+          "nuevo": 99.67,
+          "m": 0.258132
+        },
+        {
+          "fecha": "2015-06-20",
+          "wcaId": "2014TINT01",
+          "anterior": 99.67,
+          "nuevo": 97.55,
+          "m": 0.02127
+        },
+        {
+          "fecha": "2015-12-12",
+          "wcaId": "2013RODR11",
+          "anterior": 97.55,
+          "nuevo": 96.31,
+          "m": 0.012711
+        },
+        {
+          "fecha": "2016-02-14",
+          "wcaId": "2013RODR11",
+          "anterior": 96.31,
+          "nuevo": 92.3,
+          "m": 0.041636
+        },
+        {
+          "fecha": "2016-12-03",
+          "wcaId": "2013RODR11",
+          "anterior": 92.3,
+          "nuevo": 89.34,
+          "m": 0.032069
+        },
+        {
+          "fecha": "2017-01-28",
+          "wcaId": "2013RODR11",
+          "anterior": 89.34,
+          "nuevo": 85.95,
+          "m": 0.037945
+        },
+        {
+          "fecha": "2017-03-05",
+          "wcaId": "2014ALON05",
+          "anterior": 85.95,
+          "nuevo": 80.61,
+          "m": 0.062129
+        },
+        {
+          "fecha": "2017-09-24",
+          "wcaId": "2014ALON05",
+          "anterior": 80.61,
+          "nuevo": 75.19,
+          "m": 0.067237
+        },
+        {
+          "fecha": "2017-09-24",
+          "wcaId": "2014ALON05",
+          "anterior": 75.19,
+          "nuevo": 72.24,
+          "m": 0.039234
+        },
+        {
+          "fecha": "2018-01-28",
+          "wcaId": "2014ALON05",
+          "anterior": 72.24,
+          "nuevo": 72.16,
+          "m": 0.001107
+        },
+        {
+          "fecha": "2018-03-25",
+          "wcaId": "2014ALON05",
+          "anterior": 72.16,
+          "nuevo": 71.14,
+          "m": 0.014135
+        },
+        {
+          "fecha": "2018-09-22",
+          "wcaId": "2014ALON05",
+          "anterior": 71.14,
+          "nuevo": 65.1,
+          "m": 0.084903
+        },
+        {
+          "fecha": "2021-12-12",
+          "wcaId": "2015DIAN02",
+          "anterior": 65.1,
+          "nuevo": 61.31,
+          "m": 0.058218
+        },
+        {
+          "fecha": "2022-02-13",
+          "wcaId": "2015DIAN02",
+          "anterior": 61.31,
+          "nuevo": 57.99,
+          "m": 0.054151
+        },
+        {
+          "fecha": "2024-03-24",
+          "wcaId": "2015DIAN02",
+          "anterior": 57.99,
+          "nuevo": 56.55,
+          "m": 0.024832
+        },
+        {
+          "fecha": "2026-01-28",
+          "wcaId": "2019GALV10",
+          "anterior": 56.55,
+          "nuevo": 56.14,
+          "m": 0.00725
+        }
+      ],
+      "roturasAvg": [
+        {
+          "fecha": "2015-02-01",
+          "wcaId": "2013RODR11",
+          "anterior": 216.85,
+          "nuevo": 171.98,
+          "m": 0.206917
+        },
+        {
+          "fecha": "2015-05-24",
+          "wcaId": "2014TINT01",
+          "anterior": 171.98,
+          "nuevo": 110.0,
+          "m": 0.360391
+        },
+        {
+          "fecha": "2016-02-14",
+          "wcaId": "2013RODR11",
+          "anterior": 110.0,
+          "nuevo": 102.12,
+          "m": 0.071636
+        },
+        {
+          "fecha": "2016-12-03",
+          "wcaId": "2013RODR11",
+          "anterior": 102.12,
+          "nuevo": 92.17,
+          "m": 0.097434
+        },
+        {
+          "fecha": "2017-01-28",
+          "wcaId": "2013RODR11",
+          "anterior": 92.17,
+          "nuevo": 90.91,
+          "m": 0.01367
+        },
+        {
+          "fecha": "2017-03-05",
+          "wcaId": "2014ALON05",
+          "anterior": 90.91,
+          "nuevo": 87.19,
+          "m": 0.04092
+        },
+        {
+          "fecha": "2017-04-28",
+          "wcaId": "2014ALON05",
+          "anterior": 87.19,
+          "nuevo": 85.93,
+          "m": 0.014451
+        },
+        {
+          "fecha": "2017-09-24",
+          "wcaId": "2014ALON05",
+          "anterior": 85.93,
+          "nuevo": 81.99,
+          "m": 0.045851
+        },
+        {
+          "fecha": "2017-09-24",
+          "wcaId": "2014ALON05",
+          "anterior": 81.99,
+          "nuevo": 78.56,
+          "m": 0.041834
+        },
+        {
+          "fecha": "2018-03-25",
+          "wcaId": "2014ALON05",
+          "anterior": 78.56,
+          "nuevo": 78.14,
+          "m": 0.005346
+        },
+        {
+          "fecha": "2018-09-22",
+          "wcaId": "2014ALON05",
+          "anterior": 78.14,
+          "nuevo": 69.18,
+          "m": 0.114666
+        },
+        {
+          "fecha": "2021-12-12",
+          "wcaId": "2015DIAN02",
+          "anterior": 69.18,
+          "nuevo": 66.27,
+          "m": 0.042064
+        },
+        {
+          "fecha": "2023-02-12",
+          "wcaId": "2015DIAN02",
+          "anterior": 66.27,
+          "nuevo": 65.85,
+          "m": 0.006338
+        },
+        {
+          "fecha": "2023-10-08",
+          "wcaId": "2016AROC02",
+          "anterior": 65.85,
+          "nuevo": 62.86,
+          "m": 0.045406
+        },
+        {
+          "fecha": "2026-01-28",
+          "wcaId": "2019GALV10",
+          "anterior": 62.86,
+          "nuevo": 62.31,
+          "m": 0.00875
+        }
+      ],
       "lowerIsBetter": true,
       "note": null
     },
@@ -422,8 +1551,8 @@
       "nrAvg": 119.73,
       "nrDate": "2024-09-15",
       "nrAvgDate": "2024-09-15",
-      "days": 685,
-      "daysAvg": 685,
+      "days": 692,
+      "daysAvg": 692,
       "ppl": 17,
       "pplAllTime": 26,
       "m0": 0.0469,
@@ -512,6 +1641,213 @@
           "valor": 74.92
         }
       ],
+      "roturas": [
+        {
+          "fecha": "2015-05-24",
+          "wcaId": "2013RODR11",
+          "anterior": 310.91,
+          "nuevo": 297.91,
+          "m": 0.041813
+        },
+        {
+          "fecha": "2015-05-24",
+          "wcaId": "2014TINT01",
+          "anterior": 297.91,
+          "nuevo": 221.46,
+          "m": 0.256621
+        },
+        {
+          "fecha": "2015-06-20",
+          "wcaId": "2014TINT01",
+          "anterior": 221.46,
+          "nuevo": 208.53,
+          "m": 0.058385
+        },
+        {
+          "fecha": "2016-02-14",
+          "wcaId": "2013RODR11",
+          "anterior": 208.53,
+          "nuevo": 197.31,
+          "m": 0.053805
+        },
+        {
+          "fecha": "2016-06-11",
+          "wcaId": "2013RODR11",
+          "anterior": 197.31,
+          "nuevo": 183.36,
+          "m": 0.070701
+        },
+        {
+          "fecha": "2016-12-03",
+          "wcaId": "2013RODR11",
+          "anterior": 183.36,
+          "nuevo": 173.54,
+          "m": 0.053556
+        },
+        {
+          "fecha": "2017-09-24",
+          "wcaId": "2014ALON05",
+          "anterior": 173.54,
+          "nuevo": 165.32,
+          "m": 0.047367
+        },
+        {
+          "fecha": "2018-03-25",
+          "wcaId": "2014ALON05",
+          "anterior": 165.32,
+          "nuevo": 164.06,
+          "m": 0.007622
+        },
+        {
+          "fecha": "2018-03-25",
+          "wcaId": "2014ALON05",
+          "anterior": 164.06,
+          "nuevo": 158.42,
+          "m": 0.034378
+        },
+        {
+          "fecha": "2018-03-25",
+          "wcaId": "2013RODR11",
+          "anterior": 158.42,
+          "nuevo": 150.99,
+          "m": 0.046901
+        },
+        {
+          "fecha": "2018-09-22",
+          "wcaId": "2015DIAN02",
+          "anterior": 150.99,
+          "nuevo": 150.0,
+          "m": 0.006557
+        },
+        {
+          "fecha": "2022-02-13",
+          "wcaId": "2015DIAN02",
+          "anterior": 150.0,
+          "nuevo": 121.25,
+          "m": 0.191667
+        },
+        {
+          "fecha": "2023-10-08",
+          "wcaId": "2015DIAN02",
+          "anterior": 121.25,
+          "nuevo": 115.82,
+          "m": 0.044784
+        },
+        {
+          "fecha": "2024-07-25",
+          "wcaId": "2019GALV10",
+          "anterior": 115.82,
+          "nuevo": 113.95,
+          "m": 0.016146
+        },
+        {
+          "fecha": "2024-09-15",
+          "wcaId": "2019GALV10",
+          "anterior": 113.95,
+          "nuevo": 111.96,
+          "m": 0.017464
+        }
+      ],
+      "roturasAvg": [
+        {
+          "fecha": "2015-05-24",
+          "wcaId": "2013RODR11",
+          "anterior": 323.85,
+          "nuevo": 312.05,
+          "m": 0.036437
+        },
+        {
+          "fecha": "2015-05-24",
+          "wcaId": "2014TINT01",
+          "anterior": 312.05,
+          "nuevo": 242.44,
+          "m": 0.223073
+        },
+        {
+          "fecha": "2015-06-20",
+          "wcaId": "2014TINT01",
+          "anterior": 242.44,
+          "nuevo": 215.46,
+          "m": 0.111285
+        },
+        {
+          "fecha": "2016-02-14",
+          "wcaId": "2013RODR11",
+          "anterior": 215.46,
+          "nuevo": 204.48,
+          "m": 0.050961
+        },
+        {
+          "fecha": "2016-06-11",
+          "wcaId": "2013RODR11",
+          "anterior": 204.48,
+          "nuevo": 191.78,
+          "m": 0.062109
+        },
+        {
+          "fecha": "2016-12-03",
+          "wcaId": "2013RODR11",
+          "anterior": 191.78,
+          "nuevo": 189.65,
+          "m": 0.011106
+        },
+        {
+          "fecha": "2017-09-24",
+          "wcaId": "2014ALON05",
+          "anterior": 189.65,
+          "nuevo": 178.99,
+          "m": 0.056209
+        },
+        {
+          "fecha": "2018-03-25",
+          "wcaId": "2014ALON05",
+          "anterior": 178.99,
+          "nuevo": 177.33,
+          "m": 0.009274
+        },
+        {
+          "fecha": "2018-03-25",
+          "wcaId": "2014ALON05",
+          "anterior": 177.33,
+          "nuevo": 176.48,
+          "m": 0.004793
+        },
+        {
+          "fecha": "2018-03-25",
+          "wcaId": "2013RODR11",
+          "anterior": 176.48,
+          "nuevo": 168.11,
+          "m": 0.047427
+        },
+        {
+          "fecha": "2018-09-22",
+          "wcaId": "2015DIAN02",
+          "anterior": 168.11,
+          "nuevo": 152.15,
+          "m": 0.094938
+        },
+        {
+          "fecha": "2022-02-13",
+          "wcaId": "2015DIAN02",
+          "anterior": 152.15,
+          "nuevo": 130.6,
+          "m": 0.141637
+        },
+        {
+          "fecha": "2023-10-08",
+          "wcaId": "2015DIAN02",
+          "anterior": 130.6,
+          "nuevo": 123.24,
+          "m": 0.056355
+        },
+        {
+          "fecha": "2024-09-15",
+          "wcaId": "2019GALV10",
+          "anterior": 123.24,
+          "nuevo": 119.73,
+          "m": 0.028481
+        }
+      ],
       "lowerIsBetter": true,
       "note": null
     },
@@ -523,8 +1859,8 @@
       "nrAvg": 181.47,
       "nrDate": "2024-08-18",
       "nrAvgDate": "2024-10-20",
-      "days": 713,
-      "daysAvg": 650,
+      "days": 720,
+      "daysAvg": 657,
       "ppl": 13,
       "pplAllTime": 22,
       "m0": 0.0568,
@@ -613,6 +1949,178 @@
           "valor": 115.06
         }
       ],
+      "roturas": [
+        {
+          "fecha": "2015-05-24",
+          "wcaId": "2014TINT01",
+          "anterior": 463.66,
+          "nuevo": 323.66,
+          "m": 0.301945
+        },
+        {
+          "fecha": "2016-02-14",
+          "wcaId": "2013RODR11",
+          "anterior": 323.66,
+          "nuevo": 295.59,
+          "m": 0.086727
+        },
+        {
+          "fecha": "2016-02-14",
+          "wcaId": "2013RODR11",
+          "anterior": 295.59,
+          "nuevo": 289.08,
+          "m": 0.022024
+        },
+        {
+          "fecha": "2016-12-03",
+          "wcaId": "2013RODR11",
+          "anterior": 289.08,
+          "nuevo": 285.13,
+          "m": 0.013664
+        },
+        {
+          "fecha": "2017-03-05",
+          "wcaId": "2013RODR11",
+          "anterior": 285.13,
+          "nuevo": 255.62,
+          "m": 0.103497
+        },
+        {
+          "fecha": "2017-04-28",
+          "wcaId": "2013RODR11",
+          "anterior": 255.62,
+          "nuevo": 255.14,
+          "m": 0.001878
+        },
+        {
+          "fecha": "2017-09-24",
+          "wcaId": "2013RODR11",
+          "anterior": 255.14,
+          "nuevo": 239.33,
+          "m": 0.061966
+        },
+        {
+          "fecha": "2018-03-25",
+          "wcaId": "2013RODR11",
+          "anterior": 239.33,
+          "nuevo": 230.47,
+          "m": 0.03702
+        },
+        {
+          "fecha": "2018-09-22",
+          "wcaId": "2015DIAN02",
+          "anterior": 230.47,
+          "nuevo": 214.52,
+          "m": 0.069206
+        },
+        {
+          "fecha": "2022-02-13",
+          "wcaId": "2015DIAN02",
+          "anterior": 214.52,
+          "nuevo": 183.53,
+          "m": 0.144462
+        },
+        {
+          "fecha": "2024-03-24",
+          "wcaId": "2015DIAN02",
+          "anterior": 183.53,
+          "nuevo": 179.89,
+          "m": 0.019833
+        },
+        {
+          "fecha": "2024-08-18",
+          "wcaId": "2019GALV10",
+          "anterior": 179.89,
+          "nuevo": 170.59,
+          "m": 0.051698
+        }
+      ],
+      "roturasAvg": [
+        {
+          "fecha": "2015-05-24",
+          "wcaId": "2014TINT01",
+          "anterior": 530.19,
+          "nuevo": 348.71,
+          "m": 0.342292
+        },
+        {
+          "fecha": "2016-02-14",
+          "wcaId": "2013RODR11",
+          "anterior": 348.71,
+          "nuevo": 308.59,
+          "m": 0.115053
+        },
+        {
+          "fecha": "2016-12-03",
+          "wcaId": "2013RODR11",
+          "anterior": 308.59,
+          "nuevo": 293.04,
+          "m": 0.05039
+        },
+        {
+          "fecha": "2017-03-05",
+          "wcaId": "2013RODR11",
+          "anterior": 293.04,
+          "nuevo": 285.72,
+          "m": 0.02498
+        },
+        {
+          "fecha": "2017-04-28",
+          "wcaId": "2013RODR11",
+          "anterior": 285.72,
+          "nuevo": 276.3,
+          "m": 0.032969
+        },
+        {
+          "fecha": "2017-06-14",
+          "wcaId": "2013RODR11",
+          "anterior": 276.3,
+          "nuevo": 259.78,
+          "m": 0.05979
+        },
+        {
+          "fecha": "2017-09-24",
+          "wcaId": "2013RODR11",
+          "anterior": 259.78,
+          "nuevo": 252.27,
+          "m": 0.028909
+        },
+        {
+          "fecha": "2018-03-25",
+          "wcaId": "2013RODR11",
+          "anterior": 252.27,
+          "nuevo": 252.07,
+          "m": 0.000793
+        },
+        {
+          "fecha": "2018-09-22",
+          "wcaId": "2015DIAN02",
+          "anterior": 252.07,
+          "nuevo": 236.02,
+          "m": 0.063673
+        },
+        {
+          "fecha": "2022-02-13",
+          "wcaId": "2015DIAN02",
+          "anterior": 236.02,
+          "nuevo": 200.0,
+          "m": 0.152614
+        },
+        {
+          "fecha": "2024-03-24",
+          "wcaId": "2015DIAN02",
+          "anterior": 200.0,
+          "nuevo": 186.42,
+          "m": 0.0679
+        },
+        {
+          "fecha": "2024-10-20",
+          "wcaId": "2019GALV10",
+          "anterior": 186.42,
+          "nuevo": 181.47,
+          "m": 0.026553
+        }
+      ],
       "lowerIsBetter": true,
       "note": null
     },
@@ -624,8 +2132,8 @@
       "nrAvg": 48.62,
       "nrDate": "2023-01-28",
       "nrAvgDate": "2023-01-28",
-      "days": 1281,
-      "daysAvg": 1281,
+      "days": 1288,
+      "daysAvg": 1288,
       "ppl": 9,
       "pplAllTime": 34,
       "m0": 0.1575,
@@ -714,6 +2222,108 @@
           "valor": 13.29
         }
       ],
+      "roturas": [
+        {
+          "fecha": "2015-02-01",
+          "wcaId": "2014GONI01",
+          "anterior": 237.28,
+          "nuevo": 159.55,
+          "m": 0.327588
+        },
+        {
+          "fecha": "2015-05-24",
+          "wcaId": "2014GONI01",
+          "anterior": 159.55,
+          "nuevo": 124.94,
+          "m": 0.216923
+        },
+        {
+          "fecha": "2015-06-20",
+          "wcaId": "2014GONI01",
+          "anterior": 124.94,
+          "nuevo": 92.49,
+          "m": 0.259725
+        },
+        {
+          "fecha": "2015-09-12",
+          "wcaId": "2014GONI01",
+          "anterior": 92.49,
+          "nuevo": 90.36,
+          "m": 0.02303
+        },
+        {
+          "fecha": "2015-12-06",
+          "wcaId": "2014GONI01",
+          "anterior": 90.36,
+          "nuevo": 88.78,
+          "m": 0.017486
+        },
+        {
+          "fecha": "2016-06-11",
+          "wcaId": "2014GONI01",
+          "anterior": 88.78,
+          "nuevo": 56.54,
+          "m": 0.363145
+        },
+        {
+          "fecha": "2016-07-24",
+          "wcaId": "2014GONI01",
+          "anterior": 56.54,
+          "nuevo": 50.42,
+          "m": 0.108242
+        },
+        {
+          "fecha": "2022-12-18",
+          "wcaId": "2014GONI01",
+          "anterior": 50.42,
+          "nuevo": 43.86,
+          "m": 0.130107
+        },
+        {
+          "fecha": "2023-01-28",
+          "wcaId": "2014GONI01",
+          "anterior": 43.86,
+          "nuevo": 36.95,
+          "m": 0.157547
+        }
+      ],
+      "roturasAvg": [
+        {
+          "fecha": "2015-06-20",
+          "wcaId": "2014CABR05",
+          "anterior": 241.65,
+          "nuevo": 190.87,
+          "m": 0.210139
+        },
+        {
+          "fecha": "2015-09-12",
+          "wcaId": "2014GONI01",
+          "anterior": 190.87,
+          "nuevo": 116.58,
+          "m": 0.389218
+        },
+        {
+          "fecha": "2015-12-06",
+          "wcaId": "2014GONI01",
+          "anterior": 116.58,
+          "nuevo": 98.77,
+          "m": 0.152771
+        },
+        {
+          "fecha": "2017-01-28",
+          "wcaId": "2014GONI01",
+          "anterior": 98.77,
+          "nuevo": 59.75,
+          "m": 0.395059
+        },
+        {
+          "fecha": "2023-01-28",
+          "wcaId": "2014GONI01",
+          "anterior": 59.75,
+          "nuevo": 48.62,
+          "m": 0.186276
+        }
+      ],
       "lowerIsBetter": true,
       "note": null
     },
@@ -725,8 +2335,8 @@
       "nrAvg": 28.33,
       "nrDate": "2025-03-23",
       "nrAvgDate": "2025-03-23",
-      "days": 496,
-      "daysAvg": 496,
+      "days": 503,
+      "daysAvg": 503,
       "ppl": 7,
       "pplAllTime": 36,
       "m0": 0.0938,
@@ -803,6 +2413,80 @@
           "valor": 17
         }
       ],
+      "roturas": [
+        {
+          "fecha": "2015-08-16",
+          "wcaId": "2014CABR05",
+          "anterior": 50,
+          "nuevo": 49,
+          "m": 0.02
+        },
+        {
+          "fecha": "2015-09-12",
+          "wcaId": "2014LEZA02",
+          "anterior": 49,
+          "nuevo": 46,
+          "m": 0.061224
+        },
+        {
+          "fecha": "2016-01-28",
+          "wcaId": "2014LEZA02",
+          "anterior": 46,
+          "nuevo": 41,
+          "m": 0.108696
+        },
+        {
+          "fecha": "2016-01-28",
+          "wcaId": "2014GONI01",
+          "anterior": 41,
+          "nuevo": 40,
+          "m": 0.02439
+        },
+        {
+          "fecha": "2016-02-14",
+          "wcaId": "2014GIAN05",
+          "anterior": 40,
+          "nuevo": 32,
+          "m": 0.2
+        },
+        {
+          "fecha": "2022-11-12",
+          "wcaId": "2014LEZA02",
+          "anterior": 32,
+          "nuevo": 29,
+          "m": 0.09375
+        },
+        {
+          "fecha": "2025-03-23",
+          "wcaId": "2014LEZA02",
+          "anterior": 29,
+          "nuevo": 23,
+          "m": 0.206897
+        }
+      ],
+      "roturasAvg": [
+        {
+          "fecha": "2016-01-28",
+          "wcaId": "2014LEZA02",
+          "anterior": 55.0,
+          "nuevo": 47.0,
+          "m": 0.145455
+        },
+        {
+          "fecha": "2022-11-12",
+          "wcaId": "2014LEZA02",
+          "anterior": 47.0,
+          "nuevo": 32.0,
+          "m": 0.319149
+        },
+        {
+          "fecha": "2025-03-23",
+          "wcaId": "2014LEZA02",
+          "anterior": 32.0,
+          "nuevo": 28.33,
+          "m": 0.114688
+        }
+      ],
       "lowerIsBetter": true,
       "note": "MBLD/FMC: revisar dificultad a mano"
     },
@@ -810,12 +2494,12 @@
       "name": "A una mano",
       "wr": 5.66,
       "nr": 10.3,
-      "wrAvg": 7.72,
+      "wrAvg": 6.99,
       "nrAvg": 12.91,
       "nrDate": "2023-02-19",
       "nrAvgDate": "2023-10-08",
-      "days": 1259,
-      "daysAvg": 1028,
+      "days": 1266,
+      "daysAvg": 1035,
       "ppl": 28,
       "pplAllTime": 98,
       "m0": 0.0931,
@@ -904,6 +2588,248 @@
           "valor": 6.8
         }
       ],
+      "roturas": [
+        {
+          "fecha": "2014-12-06",
+          "wcaId": "2014CABR05",
+          "anterior": 60.93,
+          "nuevo": 51.53,
+          "m": 0.154275
+        },
+        {
+          "fecha": "2014-12-06",
+          "wcaId": "2014PLAC02",
+          "anterior": 51.53,
+          "nuevo": 51.0,
+          "m": 0.010285
+        },
+        {
+          "fecha": "2014-12-06",
+          "wcaId": "2014MORA10",
+          "anterior": 51.0,
+          "nuevo": 46.22,
+          "m": 0.093725
+        },
+        {
+          "fecha": "2014-12-06",
+          "wcaId": "2014GONI01",
+          "anterior": 46.22,
+          "nuevo": 35.06,
+          "m": 0.241454
+        },
+        {
+          "fecha": "2014-12-06",
+          "wcaId": "2013RODR11",
+          "anterior": 35.06,
+          "nuevo": 26.03,
+          "m": 0.257558
+        },
+        {
+          "fecha": "2015-05-09",
+          "wcaId": "2013RODR11",
+          "anterior": 26.03,
+          "nuevo": 19.52,
+          "m": 0.250096
+        },
+        {
+          "fecha": "2015-11-15",
+          "wcaId": "2014GONI01",
+          "anterior": 19.52,
+          "nuevo": 18.28,
+          "m": 0.063525
+        },
+        {
+          "fecha": "2015-12-12",
+          "wcaId": "2014GONI01",
+          "anterior": 18.28,
+          "nuevo": 18.22,
+          "m": 0.003282
+        },
+        {
+          "fecha": "2016-02-14",
+          "wcaId": "2014GONI01",
+          "anterior": 18.22,
+          "nuevo": 16.5,
+          "m": 0.094402
+        },
+        {
+          "fecha": "2016-03-26",
+          "wcaId": "2014GONI01",
+          "anterior": 16.5,
+          "nuevo": 15.04,
+          "m": 0.088485
+        },
+        {
+          "fecha": "2017-03-05",
+          "wcaId": "2015RIVA01",
+          "anterior": 15.04,
+          "nuevo": 13.65,
+          "m": 0.09242
+        },
+        {
+          "fecha": "2021-09-19",
+          "wcaId": "2019MALV01",
+          "anterior": 13.65,
+          "nuevo": 11.6,
+          "m": 0.150183
+        },
+        {
+          "fecha": "2023-02-19",
+          "wcaId": "2019MALV01",
+          "anterior": 11.6,
+          "nuevo": 10.93,
+          "m": 0.057759
+        },
+        {
+          "fecha": "2023-02-19",
+          "wcaId": "2019MALV01",
+          "anterior": 10.93,
+          "nuevo": 10.3,
+          "m": 0.05764
+        }
+      ],
+      "roturasAvg": [
+        {
+          "fecha": "2014-12-06",
+          "wcaId": "2014CABR05",
+          "anterior": 69.26,
+          "nuevo": 58.01,
+          "m": 0.162431
+        },
+        {
+          "fecha": "2014-12-06",
+          "wcaId": "2014PLAC02",
+          "anterior": 58.01,
+          "nuevo": 55.67,
+          "m": 0.040338
+        },
+        {
+          "fecha": "2014-12-06",
+          "wcaId": "2014MORA10",
+          "anterior": 55.67,
+          "nuevo": 52.01,
+          "m": 0.065745
+        },
+        {
+          "fecha": "2014-12-06",
+          "wcaId": "2014LEZA02",
+          "anterior": 52.01,
+          "nuevo": 50.25,
+          "m": 0.03384
+        },
+        {
+          "fecha": "2014-12-06",
+          "wcaId": "2014GONI01",
+          "anterior": 50.25,
+          "nuevo": 42.32,
+          "m": 0.157811
+        },
+        {
+          "fecha": "2014-12-06",
+          "wcaId": "2013RODR11",
+          "anterior": 42.32,
+          "nuevo": 34.88,
+          "m": 0.175803
+        },
+        {
+          "fecha": "2015-05-09",
+          "wcaId": "2013RODR11",
+          "anterior": 34.88,
+          "nuevo": 32.29,
+          "m": 0.074255
+        },
+        {
+          "fecha": "2015-07-19",
+          "wcaId": "2013RODR11",
+          "anterior": 32.29,
+          "nuevo": 27.64,
+          "m": 0.144007
+        },
+        {
+          "fecha": "2015-11-07",
+          "wcaId": "2014GONI01",
+          "anterior": 27.64,
+          "nuevo": 25.25,
+          "m": 0.086469
+        },
+        {
+          "fecha": "2015-12-12",
+          "wcaId": "2014GONI01",
+          "anterior": 25.25,
+          "nuevo": 22.47,
+          "m": 0.110099
+        },
+        {
+          "fecha": "2016-02-14",
+          "wcaId": "2014GONI01",
+          "anterior": 22.47,
+          "nuevo": 20.47,
+          "m": 0.089008
+        },
+        {
+          "fecha": "2016-02-14",
+          "wcaId": "2014GONI01",
+          "anterior": 20.47,
+          "nuevo": 19.41,
+          "m": 0.051783
+        },
+        {
+          "fecha": "2017-01-28",
+          "wcaId": "2014GONI01",
+          "anterior": 19.41,
+          "nuevo": 19.04,
+          "m": 0.019062
+        },
+        {
+          "fecha": "2017-01-28",
+          "wcaId": "2014GONI01",
+          "anterior": 19.04,
+          "nuevo": 18.72,
+          "m": 0.016807
+        },
+        {
+          "fecha": "2017-04-28",
+          "wcaId": "2014GONI01",
+          "anterior": 18.72,
+          "nuevo": 18.53,
+          "m": 0.01015
+        },
+        {
+          "fecha": "2017-07-16",
+          "wcaId": "2014GONI01",
+          "anterior": 18.53,
+          "nuevo": 17.84,
+          "m": 0.037237
+        },
+        {
+          "fecha": "2017-12-03",
+          "wcaId": "2014GONI01",
+          "anterior": 17.84,
+          "nuevo": 16.76,
+          "m": 0.060538
+        },
+        {
+          "fecha": "2021-09-19",
+          "wcaId": "2019MALV01",
+          "anterior": 16.76,
+          "nuevo": 15.21,
+          "m": 0.092482
+        },
+        {
+          "fecha": "2022-02-06",
+          "wcaId": "2019MALV01",
+          "anterior": 15.21,
+          "nuevo": 13.35,
+          "m": 0.122288
+        },
+        {
+          "fecha": "2023-10-08",
+          "wcaId": "2019MALV01",
+          "anterior": 13.35,
+          "nuevo": 12.91,
+          "m": 0.032959
+        }
+      ],
       "lowerIsBetter": true,
       "note": null
     },
@@ -915,8 +2841,8 @@
       "nrAvg": 2.96,
       "nrDate": "2026-06-21",
       "nrAvgDate": "2026-06-21",
-      "days": 41,
-      "daysAvg": 41,
+      "days": 48,
+      "daysAvg": 48,
       "ppl": 30,
       "pplAllTime": 44,
       "m0": 0.097,
@@ -1005,6 +2931,339 @@
           "valor": 2.2
         }
       ],
+      "roturas": [
+        {
+          "fecha": "2016-02-14",
+          "wcaId": "2014CABR05",
+          "anterior": 76.04,
+          "nuevo": 17.52,
+          "m": 0.769595
+        },
+        {
+          "fecha": "2016-03-26",
+          "wcaId": "2014CABR05",
+          "anterior": 17.52,
+          "nuevo": 14.92,
+          "m": 0.148402
+        },
+        {
+          "fecha": "2017-03-05",
+          "wcaId": "2014CABR05",
+          "anterior": 14.92,
+          "nuevo": 13.03,
+          "m": 0.126676
+        },
+        {
+          "fecha": "2017-03-26",
+          "wcaId": "2014CABR05",
+          "anterior": 13.03,
+          "nuevo": 10.6,
+          "m": 0.186493
+        },
+        {
+          "fecha": "2017-08-20",
+          "wcaId": "2014ESTR01",
+          "anterior": 10.6,
+          "nuevo": 9.25,
+          "m": 0.127358
+        },
+        {
+          "fecha": "2017-09-24",
+          "wcaId": "2014ESTR01",
+          "anterior": 9.25,
+          "nuevo": 7.98,
+          "m": 0.137297
+        },
+        {
+          "fecha": "2017-11-05",
+          "wcaId": "2014ESTR01",
+          "anterior": 7.98,
+          "nuevo": 7.04,
+          "m": 0.117794
+        },
+        {
+          "fecha": "2022-05-28",
+          "wcaId": "2014ESTR01",
+          "anterior": 7.04,
+          "nuevo": 5.79,
+          "m": 0.177557
+        },
+        {
+          "fecha": "2022-08-28",
+          "wcaId": "2019GALV10",
+          "anterior": 5.79,
+          "nuevo": 5.72,
+          "m": 0.01209
+        },
+        {
+          "fecha": "2023-02-19",
+          "wcaId": "2019GALV10",
+          "anterior": 5.72,
+          "nuevo": 5.15,
+          "m": 0.09965
+        },
+        {
+          "fecha": "2023-05-14",
+          "wcaId": "2021LEON03",
+          "anterior": 5.15,
+          "nuevo": 4.53,
+          "m": 0.120388
+        },
+        {
+          "fecha": "2023-09-03",
+          "wcaId": "2021LEON03",
+          "anterior": 4.53,
+          "nuevo": 4.22,
+          "m": 0.068433
+        },
+        {
+          "fecha": "2023-12-03",
+          "wcaId": "2021LEON03",
+          "anterior": 4.22,
+          "nuevo": 4.01,
+          "m": 0.049763
+        },
+        {
+          "fecha": "2024-02-04",
+          "wcaId": "2023CABR01",
+          "anterior": 4.01,
+          "nuevo": 3.79,
+          "m": 0.054863
+        },
+        {
+          "fecha": "2024-02-04",
+          "wcaId": "2021LEON03",
+          "anterior": 3.79,
+          "nuevo": 3.7,
+          "m": 0.023747
+        },
+        {
+          "fecha": "2024-07-25",
+          "wcaId": "2023CABR01",
+          "anterior": 3.7,
+          "nuevo": 3.65,
+          "m": 0.013514
+        },
+        {
+          "fecha": "2024-07-25",
+          "wcaId": "2021LEON03",
+          "anterior": 3.65,
+          "nuevo": 3.44,
+          "m": 0.057534
+        },
+        {
+          "fecha": "2024-08-18",
+          "wcaId": "2023CABR01",
+          "anterior": 3.44,
+          "nuevo": 3.06,
+          "m": 0.110465
+        },
+        {
+          "fecha": "2024-10-20",
+          "wcaId": "2023CABR01",
+          "anterior": 3.06,
+          "nuevo": 2.97,
+          "m": 0.029412
+        },
+        {
+          "fecha": "2025-01-26",
+          "wcaId": "2023CABR01",
+          "anterior": 2.97,
+          "nuevo": 2.69,
+          "m": 0.094276
+        },
+        {
+          "fecha": "2025-06-01",
+          "wcaId": "2023CABR01",
+          "anterior": 2.69,
+          "nuevo": 2.64,
+          "m": 0.018587
+        },
+        {
+          "fecha": "2025-12-07",
+          "wcaId": "2023CABR01",
+          "anterior": 2.64,
+          "nuevo": 2.37,
+          "m": 0.102273
+        },
+        {
+          "fecha": "2026-06-15",
+          "wcaId": "2023CABR01",
+          "anterior": 2.37,
+          "nuevo": 2.26,
+          "m": 0.046414
+        },
+        {
+          "fecha": "2026-06-21",
+          "wcaId": "2023CABR01",
+          "anterior": 2.26,
+          "nuevo": 2.2,
+          "m": 0.026549
+        }
+      ],
+      "roturasAvg": [
+        {
+          "fecha": "2016-03-26",
+          "wcaId": "2014CABR05",
+          "anterior": 23.01,
+          "nuevo": 19.01,
+          "m": 0.173837
+        },
+        {
+          "fecha": "2017-03-05",
+          "wcaId": "2014CABR05",
+          "anterior": 19.01,
+          "nuevo": 17.16,
+          "m": 0.097317
+        },
+        {
+          "fecha": "2017-03-26",
+          "wcaId": "2014CABR05",
+          "anterior": 17.16,
+          "nuevo": 15.05,
+          "m": 0.12296
+        },
+        {
+          "fecha": "2017-11-05",
+          "wcaId": "2014ESTR01",
+          "anterior": 15.05,
+          "nuevo": 10.72,
+          "m": 0.287708
+        },
+        {
+          "fecha": "2018-03-25",
+          "wcaId": "2014ESTR01",
+          "anterior": 10.72,
+          "nuevo": 9.26,
+          "m": 0.136194
+        },
+        {
+          "fecha": "2022-05-28",
+          "wcaId": "2014ESTR01",
+          "anterior": 9.26,
+          "nuevo": 8.21,
+          "m": 0.113391
+        },
+        {
+          "fecha": "2022-08-28",
+          "wcaId": "2019GALV10",
+          "anterior": 8.21,
+          "nuevo": 7.77,
+          "m": 0.053593
+        },
+        {
+          "fecha": "2022-12-18",
+          "wcaId": "2019GALV10",
+          "anterior": 7.77,
+          "nuevo": 7.52,
+          "m": 0.032175
+        },
+        {
+          "fecha": "2023-02-19",
+          "wcaId": "2019GALV10",
+          "anterior": 7.52,
+          "nuevo": 7.03,
+          "m": 0.06516
+        },
+        {
+          "fecha": "2023-04-08",
+          "wcaId": "2021LEON03",
+          "anterior": 7.03,
+          "nuevo": 6.53,
+          "m": 0.071124
+        },
+        {
+          "fecha": "2023-05-14",
+          "wcaId": "2021LEON03",
+          "anterior": 6.53,
+          "nuevo": 5.81,
+          "m": 0.11026
+        },
+        {
+          "fecha": "2023-09-03",
+          "wcaId": "2021LEON03",
+          "anterior": 5.81,
+          "nuevo": 5.59,
+          "m": 0.037866
+        },
+        {
+          "fecha": "2023-10-08",
+          "wcaId": "2021LEON03",
+          "anterior": 5.59,
+          "nuevo": 5.51,
+          "m": 0.014311
+        },
+        {
+          "fecha": "2023-12-03",
+          "wcaId": "2021LEON03",
+          "anterior": 5.51,
+          "nuevo": 5.02,
+          "m": 0.088929
+        },
+        {
+          "fecha": "2024-02-04",
+          "wcaId": "2021LEON03",
+          "anterior": 5.02,
+          "nuevo": 4.69,
+          "m": 0.065737
+        },
+        {
+          "fecha": "2024-06-16",
+          "wcaId": "2021LEON03",
+          "anterior": 4.69,
+          "nuevo": 4.5,
+          "m": 0.040512
+        },
+        {
+          "fecha": "2024-07-25",
+          "wcaId": "2021LEON03",
+          "anterior": 4.5,
+          "nuevo": 4.34,
+          "m": 0.035556
+        },
+        {
+          "fecha": "2024-07-25",
+          "wcaId": "2021LEON03",
+          "anterior": 4.34,
+          "nuevo": 4.19,
+          "m": 0.034562
+        },
+        {
+          "fecha": "2024-08-18",
+          "wcaId": "2023CABR01",
+          "anterior": 4.19,
+          "nuevo": 3.73,
+          "m": 0.109785
+        },
+        {
+          "fecha": "2024-10-20",
+          "wcaId": "2023CABR01",
+          "anterior": 3.73,
+          "nuevo": 3.72,
+          "m": 0.002681
+        },
+        {
+          "fecha": "2025-01-26",
+          "wcaId": "2023CABR01",
+          "anterior": 3.72,
+          "nuevo": 3.26,
+          "m": 0.123656
+        },
+        {
+          "fecha": "2026-05-16",
+          "wcaId": "2023CABR01",
+          "anterior": 3.26,
+          "nuevo": 3.07,
+          "m": 0.058282
+        },
+        {
+          "fecha": "2026-06-21",
+          "wcaId": "2023CABR01",
+          "anterior": 3.07,
+          "nuevo": 2.96,
+          "m": 0.035831
+        }
+      ],
       "lowerIsBetter": true,
       "note": null
     },
@@ -1016,8 +3275,8 @@
       "nrAvg": 40.57,
       "nrDate": "2024-11-17",
       "nrAvgDate": "2024-07-25",
-      "days": 622,
-      "daysAvg": 737,
+      "days": 629,
+      "daysAvg": 744,
       "ppl": 22,
       "pplAllTime": 44,
       "m0": 0.0943,
@@ -1106,6 +3365,220 @@
           "valor": 22.98
         }
       ],
+      "roturas": [
+        {
+          "fecha": "2015-02-01",
+          "wcaId": "2013RODR11",
+          "anterior": 286.28,
+          "nuevo": 186.96,
+          "m": 0.346933
+        },
+        {
+          "fecha": "2015-05-24",
+          "wcaId": "2014TINT01",
+          "anterior": 186.96,
+          "nuevo": 146.26,
+          "m": 0.217694
+        },
+        {
+          "fecha": "2016-02-14",
+          "wcaId": "2014JORC01",
+          "anterior": 146.26,
+          "nuevo": 113.73,
+          "m": 0.222412
+        },
+        {
+          "fecha": "2016-02-14",
+          "wcaId": "2014JORC01",
+          "anterior": 113.73,
+          "nuevo": 101.88,
+          "m": 0.104194
+        },
+        {
+          "fecha": "2016-07-24",
+          "wcaId": "2014JORC01",
+          "anterior": 101.88,
+          "nuevo": 91.86,
+          "m": 0.098351
+        },
+        {
+          "fecha": "2017-01-28",
+          "wcaId": "2014GONI01",
+          "anterior": 91.86,
+          "nuevo": 87.21,
+          "m": 0.050621
+        },
+        {
+          "fecha": "2017-03-05",
+          "wcaId": "2014JORC01",
+          "anterior": 87.21,
+          "nuevo": 77.86,
+          "m": 0.107212
+        },
+        {
+          "fecha": "2018-07-14",
+          "wcaId": "2014LEZA02",
+          "anterior": 77.86,
+          "nuevo": 56.33,
+          "m": 0.276522
+        },
+        {
+          "fecha": "2021-09-19",
+          "wcaId": "2016HAMB02",
+          "anterior": 56.33,
+          "nuevo": 45.68,
+          "m": 0.189064
+        },
+        {
+          "fecha": "2022-02-06",
+          "wcaId": "2016HAMB02",
+          "anterior": 45.68,
+          "nuevo": 41.56,
+          "m": 0.090193
+        },
+        {
+          "fecha": "2022-08-28",
+          "wcaId": "2016HAMB02",
+          "anterior": 41.56,
+          "nuevo": 39.22,
+          "m": 0.056304
+        },
+        {
+          "fecha": "2023-02-19",
+          "wcaId": "2016HAMB02",
+          "anterior": 39.22,
+          "nuevo": 38.99,
+          "m": 0.005864
+        },
+        {
+          "fecha": "2023-03-19",
+          "wcaId": "2016HAMB02",
+          "anterior": 38.99,
+          "nuevo": 38.73,
+          "m": 0.006668
+        },
+        {
+          "fecha": "2024-07-25",
+          "wcaId": "2016HAMB02",
+          "anterior": 38.73,
+          "nuevo": 38.66,
+          "m": 0.001807
+        },
+        {
+          "fecha": "2024-10-20",
+          "wcaId": "2016HAMB02",
+          "anterior": 38.66,
+          "nuevo": 38.29,
+          "m": 0.009571
+        },
+        {
+          "fecha": "2024-11-17",
+          "wcaId": "2016HAMB02",
+          "anterior": 38.29,
+          "nuevo": 37.14,
+          "m": 0.030034
+        }
+      ],
+      "roturasAvg": [
+        {
+          "fecha": "2015-02-01",
+          "wcaId": "2013RODR11",
+          "anterior": 320.59,
+          "nuevo": 197.88,
+          "m": 0.382763
+        },
+        {
+          "fecha": "2015-05-24",
+          "wcaId": "2014TINT01",
+          "anterior": 197.88,
+          "nuevo": 152.98,
+          "m": 0.226905
+        },
+        {
+          "fecha": "2016-02-14",
+          "wcaId": "2014JORC01",
+          "anterior": 152.98,
+          "nuevo": 127.65,
+          "m": 0.165577
+        },
+        {
+          "fecha": "2016-07-24",
+          "wcaId": "2014JORC01",
+          "anterior": 127.65,
+          "nuevo": 102.83,
+          "m": 0.194438
+        },
+        {
+          "fecha": "2017-01-28",
+          "wcaId": "2014ALON05",
+          "anterior": 102.83,
+          "nuevo": 95.61,
+          "m": 0.070213
+        },
+        {
+          "fecha": "2017-01-28",
+          "wcaId": "2014JORC01",
+          "anterior": 95.61,
+          "nuevo": 93.45,
+          "m": 0.022592
+        },
+        {
+          "fecha": "2017-03-05",
+          "wcaId": "2014JORC01",
+          "anterior": 93.45,
+          "nuevo": 84.67,
+          "m": 0.093954
+        },
+        {
+          "fecha": "2018-07-14",
+          "wcaId": "2014LEZA02",
+          "anterior": 84.67,
+          "nuevo": 59.3,
+          "m": 0.299634
+        },
+        {
+          "fecha": "2021-09-19",
+          "wcaId": "2016HAMB02",
+          "anterior": 59.3,
+          "nuevo": 53.18,
+          "m": 0.103204
+        },
+        {
+          "fecha": "2021-12-12",
+          "wcaId": "2016HAMB02",
+          "anterior": 53.18,
+          "nuevo": 49.93,
+          "m": 0.061113
+        },
+        {
+          "fecha": "2022-02-06",
+          "wcaId": "2016HAMB02",
+          "anterior": 49.93,
+          "nuevo": 45.45,
+          "m": 0.089726
+        },
+        {
+          "fecha": "2022-08-28",
+          "wcaId": "2016HAMB02",
+          "anterior": 45.45,
+          "nuevo": 42.04,
+          "m": 0.075028
+        },
+        {
+          "fecha": "2023-02-19",
+          "wcaId": "2016HAMB02",
+          "anterior": 42.04,
+          "nuevo": 41.36,
+          "m": 0.016175
+        },
+        {
+          "fecha": "2024-07-25",
+          "wcaId": "2016HAMB02",
+          "anterior": 41.36,
+          "nuevo": 40.57,
+          "m": 0.019101
+        }
+      ],
       "lowerIsBetter": true,
       "note": null
     },
@@ -1117,8 +3590,8 @@
       "nrAvg": 2.22,
       "nrDate": "2023-02-19",
       "nrAvgDate": "2023-05-28",
-      "days": 1259,
-      "daysAvg": 1161,
+      "days": 1266,
+      "daysAvg": 1168,
       "ppl": 48,
       "pplAllTime": 147,
       "m0": 0.0952,
@@ -1207,6 +3680,213 @@
           "valor": 0.87
         }
       ],
+      "roturas": [
+        {
+          "fecha": "2015-05-24",
+          "wcaId": "2014ALON05",
+          "anterior": 9.78,
+          "nuevo": 6.62,
+          "m": 0.323108
+        },
+        {
+          "fecha": "2015-05-24",
+          "wcaId": "2014ALON05",
+          "anterior": 6.62,
+          "nuevo": 5.28,
+          "m": 0.202417
+        },
+        {
+          "fecha": "2016-02-14",
+          "wcaId": "2014LEZA02",
+          "anterior": 5.28,
+          "nuevo": 5.24,
+          "m": 0.007576
+        },
+        {
+          "fecha": "2016-02-14",
+          "wcaId": "2014ALON05",
+          "anterior": 5.24,
+          "nuevo": 4.75,
+          "m": 0.093511
+        },
+        {
+          "fecha": "2016-02-14",
+          "wcaId": "2014ALON05",
+          "anterior": 4.75,
+          "nuevo": 4.47,
+          "m": 0.058947
+        },
+        {
+          "fecha": "2016-03-26",
+          "wcaId": "2014ALON05",
+          "anterior": 4.47,
+          "nuevo": 4.44,
+          "m": 0.006711
+        },
+        {
+          "fecha": "2016-08-28",
+          "wcaId": "2014ALON05",
+          "anterior": 4.44,
+          "nuevo": 3.6,
+          "m": 0.189189
+        },
+        {
+          "fecha": "2018-03-25",
+          "wcaId": "2015SUZU03",
+          "anterior": 3.6,
+          "nuevo": 3.39,
+          "m": 0.058333
+        },
+        {
+          "fecha": "2018-07-14",
+          "wcaId": "2014BENA03",
+          "anterior": 3.39,
+          "nuevo": 3.15,
+          "m": 0.070796
+        },
+        {
+          "fecha": "2018-10-06",
+          "wcaId": "2014BENA03",
+          "anterior": 3.15,
+          "nuevo": 2.48,
+          "m": 0.212698
+        },
+        {
+          "fecha": "2019-05-18",
+          "wcaId": "2014BENA03",
+          "anterior": 2.48,
+          "nuevo": 2.19,
+          "m": 0.116935
+        },
+        {
+          "fecha": "2019-12-22",
+          "wcaId": "2014BENA03",
+          "anterior": 2.19,
+          "nuevo": 2.08,
+          "m": 0.050228
+        },
+        {
+          "fecha": "2021-09-19",
+          "wcaId": "2014BENA03",
+          "anterior": 2.08,
+          "nuevo": 1.68,
+          "m": 0.192308
+        },
+        {
+          "fecha": "2022-08-28",
+          "wcaId": "2014BENA03",
+          "anterior": 1.68,
+          "nuevo": 1.52,
+          "m": 0.095238
+        },
+        {
+          "fecha": "2023-02-19",
+          "wcaId": "2014BENA03",
+          "anterior": 1.52,
+          "nuevo": 1.23,
+          "m": 0.190789
+        }
+      ],
+      "roturasAvg": [
+        {
+          "fecha": "2015-02-01",
+          "wcaId": "2014GONI01",
+          "anterior": 14.91,
+          "nuevo": 14.85,
+          "m": 0.004024
+        },
+        {
+          "fecha": "2015-05-24",
+          "wcaId": "2014ALON05",
+          "anterior": 14.85,
+          "nuevo": 8.45,
+          "m": 0.430976
+        },
+        {
+          "fecha": "2015-05-24",
+          "wcaId": "2014ALON05",
+          "anterior": 8.45,
+          "nuevo": 7.1,
+          "m": 0.159763
+        },
+        {
+          "fecha": "2016-02-14",
+          "wcaId": "2014ALON05",
+          "anterior": 7.1,
+          "nuevo": 5.02,
+          "m": 0.292958
+        },
+        {
+          "fecha": "2016-08-28",
+          "wcaId": "2014ALON05",
+          "anterior": 5.02,
+          "nuevo": 4.27,
+          "m": 0.149402
+        },
+        {
+          "fecha": "2018-07-14",
+          "wcaId": "2014BENA03",
+          "anterior": 4.27,
+          "nuevo": 4.26,
+          "m": 0.002342
+        },
+        {
+          "fecha": "2018-10-06",
+          "wcaId": "2014BENA03",
+          "anterior": 4.26,
+          "nuevo": 4.1,
+          "m": 0.037559
+        },
+        {
+          "fecha": "2019-05-18",
+          "wcaId": "2014BENA03",
+          "anterior": 4.1,
+          "nuevo": 3.4,
+          "m": 0.170732
+        },
+        {
+          "fecha": "2019-12-22",
+          "wcaId": "2014BENA03",
+          "anterior": 3.4,
+          "nuevo": 3.29,
+          "m": 0.032353
+        },
+        {
+          "fecha": "2020-02-28",
+          "wcaId": "2014BENA03",
+          "anterior": 3.29,
+          "nuevo": 3.01,
+          "m": 0.085106
+        },
+        {
+          "fecha": "2021-09-19",
+          "wcaId": "2014BENA03",
+          "anterior": 3.01,
+          "nuevo": 2.69,
+          "m": 0.106312
+        },
+        {
+          "fecha": "2022-02-06",
+          "wcaId": "2014BENA03",
+          "anterior": 2.69,
+          "nuevo": 2.36,
+          "m": 0.122677
+        },
+        {
+          "fecha": "2022-08-14",
+          "wcaId": "2014BENA03",
+          "anterior": 2.36,
+          "nuevo": 2.34,
+          "m": 0.008475
+        },
+        {
+          "fecha": "2023-05-28",
+          "wcaId": "2014BENA03",
+          "anterior": 2.34,
+          "nuevo": 2.22,
+          "m": 0.051282
+        }
+      ],
       "lowerIsBetter": true,
       "note": null
     },
@@ -1218,8 +3898,8 @@
       "nrAvg": 2.74,
       "nrDate": "2024-12-15",
       "nrAvgDate": "2024-12-15",
-      "days": 594,
-      "daysAvg": 594,
+      "days": 601,
+      "daysAvg": 601,
       "ppl": 33,
       "pplAllTime": 79,
       "m0": 0.1411,
@@ -1308,6 +3988,227 @@
           "valor": 0.92
         }
       ],
+      "roturas": [
+        {
+          "fecha": "2015-05-09",
+          "wcaId": "2014TINT01",
+          "anterior": 10.17,
+          "nuevo": 8.15,
+          "m": 0.198623
+        },
+        {
+          "fecha": "2015-05-09",
+          "wcaId": "2014PIOT01",
+          "anterior": 8.15,
+          "nuevo": 7.77,
+          "m": 0.046626
+        },
+        {
+          "fecha": "2015-05-24",
+          "wcaId": "2014LEZA02",
+          "anterior": 7.77,
+          "nuevo": 5.65,
+          "m": 0.272844
+        },
+        {
+          "fecha": "2015-11-15",
+          "wcaId": "2014GONI01",
+          "anterior": 5.65,
+          "nuevo": 4.15,
+          "m": 0.265487
+        },
+        {
+          "fecha": "2016-02-14",
+          "wcaId": "2014LEZA02",
+          "anterior": 4.15,
+          "nuevo": 3.53,
+          "m": 0.149398
+        },
+        {
+          "fecha": "2017-03-05",
+          "wcaId": "2014LEZA02",
+          "anterior": 3.53,
+          "nuevo": 3.45,
+          "m": 0.022663
+        },
+        {
+          "fecha": "2017-03-05",
+          "wcaId": "2014ALON05",
+          "anterior": 3.45,
+          "nuevo": 3.44,
+          "m": 0.002899
+        },
+        {
+          "fecha": "2017-03-05",
+          "wcaId": "2015SUZU03",
+          "anterior": 3.44,
+          "nuevo": 2.86,
+          "m": 0.168605
+        },
+        {
+          "fecha": "2018-07-14",
+          "wcaId": "2014LEZA02",
+          "anterior": 2.86,
+          "nuevo": 2.48,
+          "m": 0.132867
+        },
+        {
+          "fecha": "2019-12-22",
+          "wcaId": "2014LEZA02",
+          "anterior": 2.48,
+          "nuevo": 2.45,
+          "m": 0.012097
+        },
+        {
+          "fecha": "2021-12-12",
+          "wcaId": "2014LEZA02",
+          "anterior": 2.45,
+          "nuevo": 2.39,
+          "m": 0.02449
+        },
+        {
+          "fecha": "2023-01-15",
+          "wcaId": "2019MALV01",
+          "anterior": 2.39,
+          "nuevo": 1.99,
+          "m": 0.167364
+        },
+        {
+          "fecha": "2023-01-15",
+          "wcaId": "2014LEZA02",
+          "anterior": 1.99,
+          "nuevo": 1.6,
+          "m": 0.19598
+        },
+        {
+          "fecha": "2024-12-15",
+          "wcaId": "2014LEZA02",
+          "anterior": 1.6,
+          "nuevo": 1.57,
+          "m": 0.01875
+        }
+      ],
+      "roturasAvg": [
+        {
+          "fecha": "2014-12-06",
+          "wcaId": "2014TINT01",
+          "anterior": 14.65,
+          "nuevo": 14.05,
+          "m": 0.040956
+        },
+        {
+          "fecha": "2014-12-06",
+          "wcaId": "2014LEZA02",
+          "anterior": 14.05,
+          "nuevo": 13.01,
+          "m": 0.074021
+        },
+        {
+          "fecha": "2015-05-09",
+          "wcaId": "2014TINT01",
+          "anterior": 13.01,
+          "nuevo": 10.96,
+          "m": 0.157571
+        },
+        {
+          "fecha": "2015-05-09",
+          "wcaId": "2014PIOT01",
+          "anterior": 10.96,
+          "nuevo": 9.76,
+          "m": 0.109489
+        },
+        {
+          "fecha": "2015-05-24",
+          "wcaId": "2014LEZA02",
+          "anterior": 9.76,
+          "nuevo": 7.04,
+          "m": 0.278689
+        },
+        {
+          "fecha": "2015-12-12",
+          "wcaId": "2014LEZA02",
+          "anterior": 7.04,
+          "nuevo": 6.49,
+          "m": 0.078125
+        },
+        {
+          "fecha": "2016-02-14",
+          "wcaId": "2014LEZA02",
+          "anterior": 6.49,
+          "nuevo": 6.17,
+          "m": 0.049307
+        },
+        {
+          "fecha": "2017-01-28",
+          "wcaId": "2014LEZA02",
+          "anterior": 6.17,
+          "nuevo": 5.81,
+          "m": 0.058347
+        },
+        {
+          "fecha": "2017-03-05",
+          "wcaId": "2014LEZA02",
+          "anterior": 5.81,
+          "nuevo": 5.4,
+          "m": 0.070568
+        },
+        {
+          "fecha": "2017-03-05",
+          "wcaId": "2014ALON05",
+          "anterior": 5.4,
+          "nuevo": 5.08,
+          "m": 0.059259
+        },
+        {
+          "fecha": "2017-04-28",
+          "wcaId": "2014LEZA02",
+          "anterior": 5.08,
+          "nuevo": 4.48,
+          "m": 0.11811
+        },
+        {
+          "fecha": "2018-03-25",
+          "wcaId": "2014LEZA02",
+          "anterior": 4.48,
+          "nuevo": 4.27,
+          "m": 0.046875
+        },
+        {
+          "fecha": "2018-03-25",
+          "wcaId": "2014LEZA02",
+          "anterior": 4.27,
+          "nuevo": 4.13,
+          "m": 0.032787
+        },
+        {
+          "fecha": "2021-12-12",
+          "wcaId": "2014LEZA02",
+          "anterior": 4.13,
+          "nuevo": 3.93,
+          "m": 0.048426
+        },
+        {
+          "fecha": "2021-12-12",
+          "wcaId": "2014LEZA02",
+          "anterior": 3.93,
+          "nuevo": 3.12,
+          "m": 0.206107
+        },
+        {
+          "fecha": "2024-09-15",
+          "wcaId": "2014LEZA02",
+          "anterior": 3.12,
+          "nuevo": 3.01,
+          "m": 0.035256
+        },
+        {
+          "fecha": "2024-12-15",
+          "wcaId": "2014LEZA02",
+          "anterior": 3.01,
+          "nuevo": 2.74,
+          "m": 0.089701
+        }
+      ],
       "lowerIsBetter": true,
       "note": null
     },
@@ -1319,8 +4220,8 @@
       "nrAvg": 11.36,
       "nrDate": "2026-05-16",
       "nrAvgDate": "2026-01-28",
-      "days": 77,
-      "daysAvg": 185,
+      "days": 84,
+      "daysAvg": 192,
       "ppl": 16,
       "pplAllTime": 40,
       "m0": 0.0689,
@@ -1409,6 +4310,129 @@
           "valor": 4.21
         }
       ],
+      "roturas": [
+        {
+          "fecha": "2016-02-14",
+          "wcaId": "2014GIAN05",
+          "anterior": 75.63,
+          "nuevo": 24.23,
+          "m": 0.679624
+        },
+        {
+          "fecha": "2017-01-28",
+          "wcaId": "2017ESCU01",
+          "anterior": 24.23,
+          "nuevo": 21.28,
+          "m": 0.12175
+        },
+        {
+          "fecha": "2017-09-24",
+          "wcaId": "2017ESCU01",
+          "anterior": 21.28,
+          "nuevo": 14.83,
+          "m": 0.303102
+        },
+        {
+          "fecha": "2018-03-25",
+          "wcaId": "2017ESCU01",
+          "anterior": 14.83,
+          "nuevo": 11.64,
+          "m": 0.215105
+        },
+        {
+          "fecha": "2018-03-25",
+          "wcaId": "2017ESCU01",
+          "anterior": 11.64,
+          "nuevo": 11.19,
+          "m": 0.03866
+        },
+        {
+          "fecha": "2018-07-14",
+          "wcaId": "2017ESCU01",
+          "anterior": 11.19,
+          "nuevo": 11.03,
+          "m": 0.014298
+        },
+        {
+          "fecha": "2022-02-06",
+          "wcaId": "2017ESCU01",
+          "anterior": 11.03,
+          "nuevo": 10.27,
+          "m": 0.068903
+        },
+        {
+          "fecha": "2023-01-28",
+          "wcaId": "2014LEZA02",
+          "anterior": 10.27,
+          "nuevo": 9.61,
+          "m": 0.064265
+        },
+        {
+          "fecha": "2023-02-19",
+          "wcaId": "2014LEZA02",
+          "anterior": 9.61,
+          "nuevo": 9.39,
+          "m": 0.022893
+        },
+        {
+          "fecha": "2026-01-28",
+          "wcaId": "2023CABR01",
+          "anterior": 9.39,
+          "nuevo": 8.94,
+          "m": 0.047923
+        },
+        {
+          "fecha": "2026-05-16",
+          "wcaId": "2023CABR01",
+          "anterior": 8.94,
+          "nuevo": 6.13,
+          "m": 0.314318
+        }
+      ],
+      "roturasAvg": [
+        {
+          "fecha": "2016-02-14",
+          "wcaId": "2014GIAN05",
+          "anterior": 141.12,
+          "nuevo": 30.49,
+          "m": 0.783943
+        },
+        {
+          "fecha": "2016-02-14",
+          "wcaId": "2014GIAN05",
+          "anterior": 30.49,
+          "nuevo": 26.97,
+          "m": 0.115448
+        },
+        {
+          "fecha": "2017-09-24",
+          "wcaId": "2017ESCU01",
+          "anterior": 26.97,
+          "nuevo": 18.25,
+          "m": 0.323322
+        },
+        {
+          "fecha": "2018-03-25",
+          "wcaId": "2017ESCU01",
+          "anterior": 18.25,
+          "nuevo": 13.37,
+          "m": 0.267397
+        },
+        {
+          "fecha": "2023-02-19",
+          "wcaId": "2014LEZA02",
+          "anterior": 13.37,
+          "nuevo": 11.4,
+          "m": 0.147345
+        },
+        {
+          "fecha": "2026-01-28",
+          "wcaId": "2023CABR01",
+          "anterior": 11.4,
+          "nuevo": 11.36,
+          "m": 0.003509
+        }
+      ],
       "lowerIsBetter": true,
       "note": null
     },
@@ -1420,8 +4444,8 @@
       "nrAvg": 335.9,
       "nrDate": "2024-07-25",
       "nrAvgDate": "2024-07-25",
-      "days": 737,
-      "daysAvg": 737,
+      "days": 744,
+      "daysAvg": 744,
       "ppl": 1,
       "pplAllTime": 3,
       "m0": 0.1032,
@@ -1510,6 +4534,73 @@
           "valor": 76.43
         }
       ],
+      "roturas": [
+        {
+          "fecha": "2016-06-11",
+          "wcaId": "2014ESTR01",
+          "anterior": 825.0,
+          "nuevo": 770.0,
+          "m": 0.066667
+        },
+        {
+          "fecha": "2017-02-19",
+          "wcaId": "2014ESTR01",
+          "anterior": 770.0,
+          "nuevo": 706.0,
+          "m": 0.083117
+        },
+        {
+          "fecha": "2017-03-05",
+          "wcaId": "2014ESTR01",
+          "anterior": 706.0,
+          "nuevo": 619.0,
+          "m": 0.123229
+        },
+        {
+          "fecha": "2023-02-12",
+          "wcaId": "2014LEZA02",
+          "anterior": 619.0,
+          "nuevo": 523.67,
+          "m": 0.154006
+        },
+        {
+          "fecha": "2023-05-14",
+          "wcaId": "2014LEZA02",
+          "anterior": 523.67,
+          "nuevo": 431.3,
+          "m": 0.17639
+        },
+        {
+          "fecha": "2023-08-13",
+          "wcaId": "2014LEZA02",
+          "anterior": 431.3,
+          "nuevo": 302.93,
+          "m": 0.297635
+        },
+        {
+          "fecha": "2023-12-03",
+          "wcaId": "2014LEZA02",
+          "anterior": 302.93,
+          "nuevo": 300.94,
+          "m": 0.006569
+        },
+        {
+          "fecha": "2024-07-25",
+          "wcaId": "2014LEZA02",
+          "anterior": 300.94,
+          "nuevo": 290.98,
+          "m": 0.033096
+        }
+      ],
+      "roturasAvg": [
+        {
+          "fecha": "2024-07-25",
+          "wcaId": "2014LEZA02",
+          "anterior": 351.82,
+          "nuevo": 335.9,
+          "m": 0.04525
+        }
+      ],
       "lowerIsBetter": true,
       "note": null
     },
@@ -1521,8 +4612,8 @@
       "nrAvg": 818.0,
       "nrDate": "2023-10-08",
       "nrAvgDate": "2023-10-08",
-      "days": 1028,
-      "daysAvg": 1028,
+      "days": 1035,
+      "daysAvg": 1035,
       "ppl": 1,
       "pplAllTime": 2,
       "m0": 0.1963,
@@ -1599,6 +4690,37 @@
           "valor": 197.39
         }
       ],
+      "roturas": [
+        {
+          "fecha": "2016-08-28",
+          "wcaId": "2014ESTR01",
+          "anterior": 1704.0,
+          "nuevo": 1558.0,
+          "m": 0.085681
+        },
+        {
+          "fecha": "2023-02-12",
+          "wcaId": "2014LEZA02",
+          "anterior": 1558.0,
+          "nuevo": 1381.0,
+          "m": 0.113607
+        },
+        {
+          "fecha": "2023-05-14",
+          "wcaId": "2014LEZA02",
+          "anterior": 1381.0,
+          "nuevo": 982.0,
+          "m": 0.288921
+        },
+        {
+          "fecha": "2023-10-08",
+          "wcaId": "2014LEZA02",
+          "anterior": 982.0,
+          "nuevo": 708.0,
+          "m": 0.279022
+        }
+      ],
+      "roturasAvg": [],
       "lowerIsBetter": true,
       "note": null
     },
@@ -1610,7 +4732,7 @@
       "nrAvg": null,
       "nrDate": "2023-10-08",
       "nrAvgDate": null,
-      "days": 1028,
+      "days": 1035,
       "daysAvg": null,
       "ppl": 4,
       "pplAllTime": 9,
@@ -1700,6 +4822,37 @@
           "valor": 40
         }
       ],
+      "roturas": [
+        {
+          "fecha": "2016-06-11",
+          "wcaId": "2014GONI01",
+          "anterior": 4,
+          "nuevo": 5,
+          "m": 0.25
+        },
+        {
+          "fecha": "2016-07-24",
+          "wcaId": "2014ESTR01",
+          "anterior": 5,
+          "nuevo": 8,
+          "m": 0.6
+        },
+        {
+          "fecha": "2023-03-19",
+          "wcaId": "2014LEZA02",
+          "anterior": 8,
+          "nuevo": 9,
+          "m": 0.125
+        },
+        {
+          "fecha": "2023-10-08",
+          "wcaId": "2014LEZA02",
+          "anterior": 9,
+          "nuevo": 13,
+          "m": 0.444444
+        }
+      ],
+      "roturasAvg": [],
       "lowerIsBetter": false,
       "note": "MBLD/FMC: revisar dificultad a mano"
     }

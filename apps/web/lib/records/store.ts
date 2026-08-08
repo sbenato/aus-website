@@ -1,7 +1,7 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
-import { DEFAULT_CONFIG, type PersistedState } from "./types";
+import { DEFAULT_CONFIG, type LedgerEntry, type PersistedState } from "./types";
 import type { WcaRecordsData } from "./types";
 
 /**
@@ -37,6 +37,19 @@ function emptyState(): PersistedState {
   };
 }
 
+/**
+ * Le pone `id` a los asientos guardados antes de que el campo existiera.
+ *
+ * Derivado del contenido, nunca aleatorio: `normalize` corre en cada lectura, y
+ * un id nuevo por lectura haría que el panel marcara como entregado un asiento
+ * distinto del que se ve en pantalla. Tampoco sirve la posición: el ledger se
+ * escribe con `unshift`, así que los índices se corren solos.
+ */
+function conId(entry: LedgerEntry): LedgerEntry {
+  if (entry.id) return entry;
+  return { ...entry, id: `legacy:${entry.type}:${entry.at}` };
+}
+
 /** Completa lo que falte para que un JSON viejo (o a mano) no rompa la app. */
 function normalize(raw: unknown): PersistedState {
   const base = emptyState();
@@ -45,7 +58,7 @@ function normalize(raw: unknown): PersistedState {
   return {
     config: { ...base.config, ...(s.config ?? {}) },
     balances: s.balances ?? {},
-    ledger: Array.isArray(s.ledger) ? s.ledger : [],
+    ledger: Array.isArray(s.ledger) ? s.ledger.map(conId) : [],
     updatedAt: s.updatedAt ?? base.updatedAt,
     live: s.live,
     seen: s.seen ?? {},
@@ -212,7 +225,21 @@ function backend(): Backend {
   const forced = process.env.RECORDS_STORE;
   if (forced === "postgres") return pgBackend;
   if (forced === "fs") return fsBackend;
-  return PG_URL ? pgBackend : fsBackend;
+  if (PG_URL) return pgBackend;
+
+  // Sin esto, olvidarse `RECORDS_DATABASE_URL` en Vercel no rompe nada visible:
+  // la app arranca, un delegado carga plata, ve el saldo actualizado, y la
+  // escritura se pierde cuando recicla la lambda. Un fondo de plata auditable no
+  // puede fallar en silencio. `RECORDS_STORE=fs` sigue siendo la salida explícita
+  // para quien de verdad quiera disco (un servidor propio con volumen).
+  if (process.env.NODE_ENV === "production") {
+    throw new Error(
+      "Falta RECORDS_DATABASE_URL. En producción el backend `fs` pierde las " +
+        "escrituras (disco efímero). Configurá la base, o poné RECORDS_STORE=fs " +
+        "a propósito si el disco de este servidor es persistente."
+    );
+  }
+  return fsBackend;
 }
 
 export function storeBackendName(): "fs" | "postgres" {

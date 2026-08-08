@@ -2,7 +2,7 @@ import { fundsFor, requireEditor } from "@/lib/records/service";
 import { rateLimit, readJsonBody } from "@/lib/records/guard";
 import { mutateState } from "@/lib/records/store";
 import type { FundConfig, LedgerEntry } from "@/lib/records/types";
-import { totalFund } from "@/lib/records/engine";
+import { nuevoLedgerId, totalFund } from "@/lib/records/engine";
 
 export const dynamic = "force-dynamic";
 
@@ -78,6 +78,7 @@ export async function PUT(request: Request) {
       if ("error" in validated) throw new BadRequest(validated.error);
 
       const entry: LedgerEntry = {
+        id: nuevoLedgerId(),
         type: "config",
         at: new Date().toISOString(),
         by: guard.editor.actor,
