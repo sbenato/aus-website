@@ -1,0 +1,1707 @@
+{
+  "meta": {
+    "fuente": "WCA results export",
+    "pais": "Uruguay",
+    "continente": "_South America",
+    "ventana_meses": 24,
+    "generado": "2026-08-01",
+    "m0_fallback": 0.03,
+    "m0_min_roturas": 3,
+    "aviso": "Datos de la World Cube Association (worldcubeassociation.org/results). Los montos los carga la AUS a mano; este script nunca toca plata."
+  },
+  "events": {
+    "333": {
+      "name": "3x3x3",
+      "wr": 2.76,
+      "nr": 6.0,
+      "wrAvg": 3.51,
+      "nrAvg": 8.17,
+      "nrDate": "2023-10-08",
+      "nrAvgDate": "2024-03-24",
+      "days": 1028,
+      "daysAvg": 860,
+      "ppl": 133,
+      "pplAllTime": 509,
+      "m0": 0.0399,
+      "m0Roturas": 24,
+      "m0Fallback": false,
+      "m0Avg": 0.0274,
+      "m0AvgRoturas": 30,
+      "m0AvgFallback": false,
+      "sar": 3.74,
+      "sarPais": "Chile",
+      "sarWcaId": "2019BRUN02",
+      "sarAvg": 5.28,
+      "sarAvgPais": "Brazil",
+      "sarEsNuestro": false,
+      "sarHist": [
+        {
+          "fecha": "2016-08-28",
+          "pais": "Peru",
+          "wca_id": "2013HUAN30",
+          "valor": 6.39
+        },
+        {
+          "fecha": "2016-08-28",
+          "pais": "Peru",
+          "wca_id": "2013LEON05",
+          "valor": 6.32
+        },
+        {
+          "fecha": "2017-08-27",
+          "pais": "Peru",
+          "wca_id": "2013LEON05",
+          "valor": 6.11
+        },
+        {
+          "fecha": "2018-04-28",
+          "pais": "Argentina",
+          "wca_id": "2014BONA02",
+          "valor": 5.85
+        },
+        {
+          "fecha": "2018-10-14",
+          "pais": "Argentina",
+          "wca_id": "2014BONA02",
+          "valor": 5.77
+        },
+        {
+          "fecha": "2018-12-16",
+          "pais": "Brazil",
+          "wca_id": "2015SILV55",
+          "valor": 5.58
+        },
+        {
+          "fecha": "2018-12-23",
+          "pais": "Peru",
+          "wca_id": "2013LEON05",
+          "valor": 5.52
+        },
+        {
+          "fecha": "2019-06-22",
+          "pais": "Argentina",
+          "wca_id": "2014BONA02",
+          "valor": 5.5
+        },
+        {
+          "fecha": "2022-03-13",
+          "pais": "Peru",
+          "wca_id": "2022NUNE01",
+          "valor": 4.65
+        },
+        {
+          "fecha": "2022-11-06",
+          "pais": "Brazil",
+          "wca_id": "2016SATO01",
+          "valor": 4.37
+        },
+        {
+          "fecha": "2024-01-27",
+          "pais": "Chile",
+          "wca_id": "2019LAND01",
+          "valor": 4.24
+        },
+        {
+          "fecha": "2024-03-23",
+          "pais": "Chile",
+          "wca_id": "2019BRUN02",
+          "valor": 3.74
+        }
+      ],
+      "lowerIsBetter": true,
+      "note": null
+    },
+    "222": {
+      "name": "2x2x2",
+      "wr": 0.39,
+      "nr": 0.91,
+      "wrAvg": 0.86,
+      "nrAvg": 2.25,
+      "nrDate": "2025-06-01",
+      "nrAvgDate": "2026-05-16",
+      "days": 426,
+      "daysAvg": 77,
+      "ppl": 75,
+      "pplAllTime": 274,
+      "m0": 0.1194,
+      "m0Roturas": 18,
+      "m0Fallback": false,
+      "m0Avg": 0.0401,
+      "m0AvgRoturas": 27,
+      "m0AvgFallback": false,
+      "sar": 0.59,
+      "sarPais": "Peru",
+      "sarWcaId": "2019MAGU04",
+      "sarAvg": 1.19,
+      "sarAvgPais": "Colombia",
+      "sarEsNuestro": false,
+      "sarHist": [
+        {
+          "fecha": "2011-04-28",
+          "pais": "Peru",
+          "wca_id": "2011CORA01",
+          "valor": 2.33
+        },
+        {
+          "fecha": "2011-07-17",
+          "pais": "Brazil",
+          "wca_id": "2010SILV02",
+          "valor": 2.15
+        },
+        {
+          "fecha": "2011-10-09",
+          "pais": "Brazil",
+          "wca_id": "2009BARB01",
+          "valor": 1.86
+        },
+        {
+          "fecha": "2012-04-28",
+          "pais": "Chile",
+          "wca_id": "2010SERR02",
+          "valor": 1.81
+        },
+        {
+          "fecha": "2012-06-03",
+          "pais": "Chile",
+          "wca_id": "2009GARR01",
+          "valor": 1.59
+        },
+        {
+          "fecha": "2013-10-06",
+          "pais": "Brazil",
+          "wca_id": "2012ROQU01",
+          "valor": 0.93
+        },
+        {
+          "fecha": "2017-03-26",
+          "pais": "Brazil",
+          "wca_id": "2013WANK01",
+          "valor": 0.92
+        },
+        {
+          "fecha": "2017-10-21",
+          "pais": "Argentina",
+          "wca_id": "2012HAML01",
+          "valor": 0.72
+        },
+        {
+          "fecha": "2023-09-03",
+          "pais": "Argentina",
+          "wca_id": "2017GOLU01",
+          "valor": 0.67
+        },
+        {
+          "fecha": "2023-09-03",
+          "pais": "Argentina",
+          "wca_id": "2018LAPE01",
+          "valor": 0.63
+        },
+        {
+          "fecha": "2023-11-26",
+          "pais": "Peru",
+          "wca_id": "2019MAGU04",
+          "valor": 0.62
+        },
+        {
+          "fecha": "2025-01-05",
+          "pais": "Peru",
+          "wca_id": "2019MAGU04",
+          "valor": 0.59
+        }
+      ],
+      "lowerIsBetter": true,
+      "note": null
+    },
+    "444": {
+      "name": "4x4x4",
+      "wr": 15.18,
+      "nr": 25.28,
+      "wrAvg": 18.56,
+      "nrAvg": 30.32,
+      "nrDate": "2023-02-12",
+      "nrAvgDate": "2021-12-12",
+      "days": 1266,
+      "daysAvg": 1693,
+      "ppl": 41,
+      "pplAllTime": 110,
+      "m0": 0.056,
+      "m0Roturas": 11,
+      "m0Fallback": false,
+      "m0Avg": 0.0453,
+      "m0AvgRoturas": 15,
+      "m0AvgFallback": false,
+      "sar": 18.84,
+      "sarPais": "Argentina",
+      "sarWcaId": "2017GOLU01",
+      "sarAvg": 23.7,
+      "sarAvgPais": "Chile",
+      "sarEsNuestro": false,
+      "sarHist": [
+        {
+          "fecha": "2015-11-15",
+          "pais": "Brazil",
+          "wca_id": "2012ROQU01",
+          "valor": 27.63
+        },
+        {
+          "fecha": "2016-08-14",
+          "pais": "Peru",
+          "wca_id": "2011CUBA02",
+          "valor": 27.6
+        },
+        {
+          "fecha": "2017-07-28",
+          "pais": "Brazil",
+          "wca_id": "2012ROQU01",
+          "valor": 25.78
+        },
+        {
+          "fecha": "2018-01-28",
+          "pais": "Peru",
+          "wca_id": "2015TELL01",
+          "valor": 25.64
+        },
+        {
+          "fecha": "2018-04-08",
+          "pais": "Brazil",
+          "wca_id": "2012ROQU01",
+          "valor": 25.49
+        },
+        {
+          "fecha": "2018-04-22",
+          "pais": "Peru",
+          "wca_id": "2015TELL01",
+          "valor": 24.81
+        },
+        {
+          "fecha": "2021-11-21",
+          "pais": "Argentina",
+          "wca_id": "2017GOLU01",
+          "valor": 24.23
+        },
+        {
+          "fecha": "2022-07-10",
+          "pais": "Argentina",
+          "wca_id": "2014BONA02",
+          "valor": 22.45
+        },
+        {
+          "fecha": "2022-11-20",
+          "pais": "Brazil",
+          "wca_id": "2015CECC01",
+          "valor": 22.29
+        },
+        {
+          "fecha": "2023-06-18",
+          "pais": "Argentina",
+          "wca_id": "2017GOLU01",
+          "valor": 21.91
+        },
+        {
+          "fecha": "2023-06-18",
+          "pais": "Argentina",
+          "wca_id": "2017GOLU01",
+          "valor": 19.5
+        },
+        {
+          "fecha": "2024-11-03",
+          "pais": "Argentina",
+          "wca_id": "2017GOLU01",
+          "valor": 18.84
+        }
+      ],
+      "lowerIsBetter": true,
+      "note": null
+    },
+    "555": {
+      "name": "5x5x5",
+      "wr": 29.49,
+      "nr": 56.14,
+      "wrAvg": 33.73,
+      "nrAvg": 62.31,
+      "nrDate": "2026-01-28",
+      "nrAvgDate": "2026-01-28",
+      "days": 185,
+      "daysAvg": 185,
+      "ppl": 29,
+      "pplAllTime": 55,
+      "m0": 0.0416,
+      "m0Roturas": 19,
+      "m0Fallback": false,
+      "m0Avg": 0.0421,
+      "m0AvgRoturas": 15,
+      "m0AvgFallback": false,
+      "sar": 40.53,
+      "sarPais": "Peru",
+      "sarWcaId": "2015TELL01",
+      "sarAvg": 43.08,
+      "sarAvgPais": "Argentina",
+      "sarEsNuestro": false,
+      "sarHist": [
+        {
+          "fecha": "2011-10-09",
+          "pais": "Brazil",
+          "wca_id": "2009BARB01",
+          "valor": 87.25
+        },
+        {
+          "fecha": "2012-03-25",
+          "pais": "Colombia",
+          "wca_id": "2011VARG01",
+          "valor": 85.9
+        },
+        {
+          "fecha": "2012-04-15",
+          "pais": "Brazil",
+          "wca_id": "2009BARB01",
+          "valor": 76.53
+        },
+        {
+          "fecha": "2013-08-25",
+          "pais": "Colombia",
+          "wca_id": "2011SALG01",
+          "valor": 75.72
+        },
+        {
+          "fecha": "2013-10-06",
+          "pais": "Brazil",
+          "wca_id": "2012ROQU01",
+          "valor": 69.66
+        },
+        {
+          "fecha": "2014-07-27",
+          "pais": "Brazil",
+          "wca_id": "2012ROQU01",
+          "valor": 56.99
+        },
+        {
+          "fecha": "2015-07-05",
+          "pais": "Brazil",
+          "wca_id": "2012ROQU01",
+          "valor": 53.01
+        },
+        {
+          "fecha": "2017-08-27",
+          "pais": "Peru",
+          "wca_id": "2015TELL01",
+          "valor": 52.88
+        },
+        {
+          "fecha": "2017-08-27",
+          "pais": "Peru",
+          "wca_id": "2015TELL01",
+          "valor": 47.43
+        },
+        {
+          "fecha": "2018-07-22",
+          "pais": "Peru",
+          "wca_id": "2015TELL01",
+          "valor": 44.81
+        },
+        {
+          "fecha": "2018-07-22",
+          "pais": "Peru",
+          "wca_id": "2015TELL01",
+          "valor": 42.4
+        },
+        {
+          "fecha": "2023-09-17",
+          "pais": "Peru",
+          "wca_id": "2015TELL01",
+          "valor": 40.53
+        }
+      ],
+      "lowerIsBetter": true,
+      "note": null
+    },
+    "666": {
+      "name": "6x6x6",
+      "wr": 57.69,
+      "nr": 111.96,
+      "wrAvg": 64.94,
+      "nrAvg": 119.73,
+      "nrDate": "2024-09-15",
+      "nrAvgDate": "2024-09-15",
+      "days": 685,
+      "daysAvg": 685,
+      "ppl": 17,
+      "pplAllTime": 26,
+      "m0": 0.0469,
+      "m0Roturas": 15,
+      "m0Fallback": false,
+      "m0Avg": 0.0536,
+      "m0AvgRoturas": 14,
+      "m0AvgFallback": false,
+      "sar": 74.92,
+      "sarPais": "Argentina",
+      "sarWcaId": "2017GOLU01",
+      "sarAvg": 78.66,
+      "sarAvgPais": "Argentina",
+      "sarEsNuestro": false,
+      "sarHist": [
+        {
+          "fecha": "2017-07-23",
+          "pais": "Peru",
+          "wca_id": "2015TELL01",
+          "valor": 103.43
+        },
+        {
+          "fecha": "2017-10-28",
+          "pais": "Brazil",
+          "wca_id": "2015MARB01",
+          "valor": 102.77
+        },
+        {
+          "fecha": "2017-12-17",
+          "pais": "Peru",
+          "wca_id": "2015TELL01",
+          "valor": 99.73
+        },
+        {
+          "fecha": "2018-03-11",
+          "pais": "Peru",
+          "wca_id": "2015TELL01",
+          "valor": 99.66
+        },
+        {
+          "fecha": "2018-07-22",
+          "pais": "Peru",
+          "wca_id": "2015TELL01",
+          "valor": 92.36
+        },
+        {
+          "fecha": "2019-08-19",
+          "pais": "Colombia",
+          "wca_id": "2016GONZ52",
+          "valor": 90.93
+        },
+        {
+          "fecha": "2022-10-28",
+          "pais": "Brazil",
+          "wca_id": "2017MAND13",
+          "valor": 86.71
+        },
+        {
+          "fecha": "2023-02-05",
+          "pais": "Colombia",
+          "wca_id": "2016GONZ52",
+          "valor": 83.44
+        },
+        {
+          "fecha": "2023-10-01",
+          "pais": "Peru",
+          "wca_id": "2015TELL01",
+          "valor": 82.13
+        },
+        {
+          "fecha": "2024-01-14",
+          "pais": "Peru",
+          "wca_id": "2015TELL01",
+          "valor": 81.59
+        },
+        {
+          "fecha": "2024-08-25",
+          "pais": "Brazil",
+          "wca_id": "2017MAND13",
+          "valor": 76.68
+        },
+        {
+          "fecha": "2026-03-28",
+          "pais": "Argentina",
+          "wca_id": "2017GOLU01",
+          "valor": 74.92
+        }
+      ],
+      "lowerIsBetter": true,
+      "note": null
+    },
+    "777": {
+      "name": "7x7x7",
+      "wr": 90.59,
+      "nr": 170.59,
+      "wrAvg": 96.86,
+      "nrAvg": 181.47,
+      "nrDate": "2024-08-18",
+      "nrAvgDate": "2024-10-20",
+      "days": 713,
+      "daysAvg": 650,
+      "ppl": 13,
+      "pplAllTime": 22,
+      "m0": 0.0568,
+      "m0Roturas": 12,
+      "m0Fallback": false,
+      "m0Avg": 0.0551,
+      "m0AvgRoturas": 12,
+      "m0AvgFallback": false,
+      "sar": 115.06,
+      "sarPais": "Argentina",
+      "sarWcaId": "2017GOLU01",
+      "sarAvg": 118.74,
+      "sarAvgPais": "Argentina",
+      "sarEsNuestro": false,
+      "sarHist": [
+        {
+          "fecha": "2016-03-20",
+          "pais": "Peru",
+          "wca_id": "2015TELL01",
+          "valor": 169.2
+        },
+        {
+          "fecha": "2017-02-05",
+          "pais": "Peru",
+          "wca_id": "2015TELL01",
+          "valor": 158.4
+        },
+        {
+          "fecha": "2017-06-25",
+          "pais": "Peru",
+          "wca_id": "2015TELL01",
+          "valor": 147.94
+        },
+        {
+          "fecha": "2017-12-17",
+          "pais": "Peru",
+          "wca_id": "2015TELL01",
+          "valor": 140.91
+        },
+        {
+          "fecha": "2018-03-11",
+          "pais": "Peru",
+          "wca_id": "2015TELL01",
+          "valor": 132.14
+        },
+        {
+          "fecha": "2023-05-22",
+          "pais": "Colombia",
+          "wca_id": "2016GONZ52",
+          "valor": 126.0
+        },
+        {
+          "fecha": "2023-10-01",
+          "pais": "Colombia",
+          "wca_id": "2016GONZ52",
+          "valor": 125.32
+        },
+        {
+          "fecha": "2025-01-26",
+          "pais": "Colombia",
+          "wca_id": "2016GONZ52",
+          "valor": 124.64
+        },
+        {
+          "fecha": "2025-02-16",
+          "pais": "Brazil",
+          "wca_id": "2022SASA03",
+          "valor": 122.76
+        },
+        {
+          "fecha": "2026-03-08",
+          "pais": "Peru",
+          "wca_id": "2017HUAN07",
+          "valor": 121.38
+        },
+        {
+          "fecha": "2026-05-03",
+          "pais": "Argentina",
+          "wca_id": "2017GOLU01",
+          "valor": 117.53
+        },
+        {
+          "fecha": "2026-06-15",
+          "pais": "Argentina",
+          "wca_id": "2017GOLU01",
+          "valor": 115.06
+        }
+      ],
+      "lowerIsBetter": true,
+      "note": null
+    },
+    "333bf": {
+      "name": "3x3 a ciegas",
+      "wr": 11.56,
+      "nr": 36.95,
+      "wrAvg": 14.05,
+      "nrAvg": 48.62,
+      "nrDate": "2023-01-28",
+      "nrAvgDate": "2023-01-28",
+      "days": 1281,
+      "daysAvg": 1281,
+      "ppl": 9,
+      "pplAllTime": 34,
+      "m0": 0.1575,
+      "m0Roturas": 9,
+      "m0Fallback": false,
+      "m0Avg": 0.2101,
+      "m0AvgRoturas": 5,
+      "m0AvgFallback": false,
+      "sar": 13.29,
+      "sarPais": "Argentina",
+      "sarWcaId": "2017GUTM01",
+      "sarAvg": 15.92,
+      "sarAvgPais": "Argentina",
+      "sarEsNuestro": false,
+      "sarHist": [
+        {
+          "fecha": "2018-12-09",
+          "pais": "Argentina",
+          "wca_id": "2013DIPI01",
+          "valor": 18.1
+        },
+        {
+          "fecha": "2019-12-22",
+          "pais": "Peru",
+          "wca_id": "2013HUAN29",
+          "valor": 17.6
+        },
+        {
+          "fecha": "2020-01-19",
+          "pais": "Peru",
+          "wca_id": "2013HUAN29",
+          "valor": 17.0
+        },
+        {
+          "fecha": "2022-02-26",
+          "pais": "Peru",
+          "wca_id": "2013HUAN29",
+          "valor": 16.79
+        },
+        {
+          "fecha": "2022-12-10",
+          "pais": "Peru",
+          "wca_id": "2013HUAN29",
+          "valor": 16.28
+        },
+        {
+          "fecha": "2023-03-19",
+          "pais": "Argentina",
+          "wca_id": "2017GUTM01",
+          "valor": 16.18
+        },
+        {
+          "fecha": "2023-04-02",
+          "pais": "Peru",
+          "wca_id": "2013HUAN29",
+          "valor": 16.15
+        },
+        {
+          "fecha": "2023-05-14",
+          "pais": "Argentina",
+          "wca_id": "2017GUTM01",
+          "valor": 15.96
+        },
+        {
+          "fecha": "2023-06-17",
+          "pais": "Peru",
+          "wca_id": "2013HUAN29",
+          "valor": 15.7
+        },
+        {
+          "fecha": "2023-08-06",
+          "pais": "Peru",
+          "wca_id": "2013HUAN29",
+          "valor": 15.64
+        },
+        {
+          "fecha": "2023-09-03",
+          "pais": "Peru",
+          "wca_id": "2013HUAN29",
+          "valor": 14.66
+        },
+        {
+          "fecha": "2024-01-28",
+          "pais": "Argentina",
+          "wca_id": "2017GUTM01",
+          "valor": 13.29
+        }
+      ],
+      "lowerIsBetter": true,
+      "note": null
+    },
+    "333fm": {
+      "name": "Menos movimientos",
+      "wr": 16,
+      "nr": 23,
+      "wrAvg": 19.0,
+      "nrAvg": 28.33,
+      "nrDate": "2025-03-23",
+      "nrAvgDate": "2025-03-23",
+      "days": 496,
+      "daysAvg": 496,
+      "ppl": 7,
+      "pplAllTime": 36,
+      "m0": 0.0938,
+      "m0Roturas": 7,
+      "m0Fallback": false,
+      "m0Avg": 0.1455,
+      "m0AvgRoturas": 3,
+      "m0AvgFallback": false,
+      "sar": 17,
+      "sarPais": "Brazil",
+      "sarWcaId": "2015ONOF01",
+      "sarAvg": 21.33,
+      "sarAvgPais": "Colombia",
+      "sarEsNuestro": false,
+      "sarHist": [
+        {
+          "fecha": "2008-05-03",
+          "pais": "Argentina",
+          "wca_id": "2008NUNE01",
+          "valor": 46
+        },
+        {
+          "fecha": "2008-07-20",
+          "pais": "Brazil",
+          "wca_id": "2007TAMB01",
+          "valor": 36
+        },
+        {
+          "fecha": "2010-07-25",
+          "pais": "Brazil",
+          "wca_id": "2007ALCA01",
+          "valor": 30
+        },
+        {
+          "fecha": "2014-05-04",
+          "pais": "Brazil",
+          "wca_id": "2012MENE01",
+          "valor": 29
+        },
+        {
+          "fecha": "2014-07-27",
+          "pais": "Brazil",
+          "wca_id": "2013COST02",
+          "valor": 25
+        },
+        {
+          "fecha": "2015-01-25",
+          "pais": "Brazil",
+          "wca_id": "2013COST02",
+          "valor": 23
+        },
+        {
+          "fecha": "2018-05-20",
+          "pais": "Brazil",
+          "wca_id": "2015CAMP17",
+          "valor": 22
+        },
+        {
+          "fecha": "2022-07-24",
+          "pais": "Argentina",
+          "wca_id": "2013DIPI01",
+          "valor": 20
+        },
+        {
+          "fecha": "2023-05-28",
+          "pais": "Argentina",
+          "wca_id": "2013DIPI01",
+          "valor": 18
+        },
+        {
+          "fecha": "2025-07-13",
+          "pais": "Brazil",
+          "wca_id": "2015ONOF01",
+          "valor": 17
+        }
+      ],
+      "lowerIsBetter": true,
+      "note": "MBLD/FMC: revisar dificultad a mano"
+    },
+    "333oh": {
+      "name": "A una mano",
+      "wr": 5.66,
+      "nr": 10.3,
+      "wrAvg": 7.72,
+      "nrAvg": 12.91,
+      "nrDate": "2023-02-19",
+      "nrAvgDate": "2023-10-08",
+      "days": 1259,
+      "daysAvg": 1028,
+      "ppl": 28,
+      "pplAllTime": 98,
+      "m0": 0.0931,
+      "m0Roturas": 14,
+      "m0Fallback": false,
+      "m0Avg": 0.07,
+      "m0AvgRoturas": 20,
+      "m0AvgFallback": false,
+      "sar": 6.8,
+      "sarPais": "Argentina",
+      "sarWcaId": "2017GOLU01",
+      "sarAvg": 8.82,
+      "sarAvgPais": "Brazil",
+      "sarEsNuestro": false,
+      "sarHist": [
+        {
+          "fecha": "2009-10-11",
+          "pais": "Brazil",
+          "wca_id": "2007GUIM01",
+          "valor": 18.27
+        },
+        {
+          "fecha": "2010-03-21",
+          "pais": "Brazil",
+          "wca_id": "2007GUIM01",
+          "valor": 16.38
+        },
+        {
+          "fecha": "2010-07-25",
+          "pais": "Brazil",
+          "wca_id": "2009BARB01",
+          "valor": 14.58
+        },
+        {
+          "fecha": "2011-07-17",
+          "pais": "Brazil",
+          "wca_id": "2009BARB01",
+          "valor": 13.28
+        },
+        {
+          "fecha": "2012-04-15",
+          "pais": "Brazil",
+          "wca_id": "2009BARB01",
+          "valor": 12.86
+        },
+        {
+          "fecha": "2012-06-24",
+          "pais": "Brazil",
+          "wca_id": "2009BARB01",
+          "valor": 10.77
+        },
+        {
+          "fecha": "2013-10-13",
+          "pais": "Brazil",
+          "wca_id": "2009BARB01",
+          "valor": 9.5
+        },
+        {
+          "fecha": "2016-07-17",
+          "pais": "Peru",
+          "wca_id": "2015TELL01",
+          "valor": 9.28
+        },
+        {
+          "fecha": "2017-08-27",
+          "pais": "Peru",
+          "wca_id": "2015TELL01",
+          "valor": 9.07
+        },
+        {
+          "fecha": "2018-02-25",
+          "pais": "Peru",
+          "wca_id": "2015TELL01",
+          "valor": 8.11
+        },
+        {
+          "fecha": "2023-04-08",
+          "pais": "Argentina",
+          "wca_id": "2017GOLU01",
+          "valor": 7.08
+        },
+        {
+          "fecha": "2024-06-28",
+          "pais": "Argentina",
+          "wca_id": "2017GOLU01",
+          "valor": 6.8
+        }
+      ],
+      "lowerIsBetter": true,
+      "note": null
+    },
+    "clock": {
+      "name": "Clock",
+      "wr": 1.53,
+      "nr": 2.2,
+      "wrAvg": 2.14,
+      "nrAvg": 2.96,
+      "nrDate": "2026-06-21",
+      "nrAvgDate": "2026-06-21",
+      "days": 41,
+      "daysAvg": 41,
+      "ppl": 30,
+      "pplAllTime": 44,
+      "m0": 0.097,
+      "m0Roturas": 24,
+      "m0Fallback": false,
+      "m0Avg": 0.0657,
+      "m0AvgRoturas": 23,
+      "m0AvgFallback": false,
+      "sar": 2.2,
+      "sarPais": "Uruguay",
+      "sarWcaId": "2023CABR01",
+      "sarAvg": 2.96,
+      "sarAvgPais": "Uruguay",
+      "sarEsNuestro": true,
+      "sarHist": [
+        {
+          "fecha": "2016-05-14",
+          "pais": "Venezuela",
+          "wca_id": "2013FILI01",
+          "valor": 4.91
+        },
+        {
+          "fecha": "2022-04-16",
+          "pais": "Argentina",
+          "wca_id": "2018LAPE01",
+          "valor": 3.97
+        },
+        {
+          "fecha": "2023-02-19",
+          "pais": "Argentina",
+          "wca_id": "2018LAPE01",
+          "valor": 3.56
+        },
+        {
+          "fecha": "2024-07-25",
+          "pais": "Uruguay",
+          "wca_id": "2021LEON03",
+          "valor": 3.44
+        },
+        {
+          "fecha": "2024-07-28",
+          "pais": "Brazil",
+          "wca_id": "2022NEVE01",
+          "valor": 3.11
+        },
+        {
+          "fecha": "2024-08-18",
+          "pais": "Uruguay",
+          "wca_id": "2023CABR01",
+          "valor": 3.06
+        },
+        {
+          "fecha": "2024-10-20",
+          "pais": "Uruguay",
+          "wca_id": "2023CABR01",
+          "valor": 2.97
+        },
+        {
+          "fecha": "2025-01-26",
+          "pais": "Uruguay",
+          "wca_id": "2023CABR01",
+          "valor": 2.69
+        },
+        {
+          "fecha": "2025-06-01",
+          "pais": "Uruguay",
+          "wca_id": "2023CABR01",
+          "valor": 2.64
+        },
+        {
+          "fecha": "2025-12-07",
+          "pais": "Uruguay",
+          "wca_id": "2023CABR01",
+          "valor": 2.37
+        },
+        {
+          "fecha": "2026-06-15",
+          "pais": "Uruguay",
+          "wca_id": "2023CABR01",
+          "valor": 2.26
+        },
+        {
+          "fecha": "2026-06-21",
+          "pais": "Uruguay",
+          "wca_id": "2023CABR01",
+          "valor": 2.2
+        }
+      ],
+      "lowerIsBetter": true,
+      "note": null
+    },
+    "minx": {
+      "name": "Megaminx",
+      "wr": 21.04,
+      "nr": 37.14,
+      "wrAvg": 24.38,
+      "nrAvg": 40.57,
+      "nrDate": "2024-11-17",
+      "nrAvgDate": "2024-07-25",
+      "days": 622,
+      "daysAvg": 737,
+      "ppl": 22,
+      "pplAllTime": 44,
+      "m0": 0.0943,
+      "m0Roturas": 16,
+      "m0Fallback": false,
+      "m0Avg": 0.0918,
+      "m0AvgRoturas": 14,
+      "m0AvgFallback": false,
+      "sar": 22.98,
+      "sarPais": "Argentina",
+      "sarWcaId": "2018LOPE22",
+      "sarAvg": 25.4,
+      "sarAvgPais": "Argentina",
+      "sarEsNuestro": false,
+      "sarHist": [
+        {
+          "fecha": "2017-05-21",
+          "pais": "Peru",
+          "wca_id": "2013HUAN30",
+          "valor": 31.53
+        },
+        {
+          "fecha": "2017-06-11",
+          "pais": "Peru",
+          "wca_id": "2013HUAN30",
+          "valor": 29.93
+        },
+        {
+          "fecha": "2018-07-22",
+          "pais": "Peru",
+          "wca_id": "2013HUAN30",
+          "valor": 29.49
+        },
+        {
+          "fecha": "2018-07-28",
+          "pais": "Peru",
+          "wca_id": "2013HUAN30",
+          "valor": 27.81
+        },
+        {
+          "fecha": "2019-12-22",
+          "pais": "Peru",
+          "wca_id": "2013HUAN30",
+          "valor": 27.22
+        },
+        {
+          "fecha": "2022-03-13",
+          "pais": "Peru",
+          "wca_id": "2013HUAN30",
+          "valor": 25.24
+        },
+        {
+          "fecha": "2023-03-19",
+          "pais": "Argentina",
+          "wca_id": "2018LOPE22",
+          "valor": 24.92
+        },
+        {
+          "fecha": "2023-05-28",
+          "pais": "Argentina",
+          "wca_id": "2018LOPE22",
+          "valor": 24.83
+        },
+        {
+          "fecha": "2023-07-23",
+          "pais": "Argentina",
+          "wca_id": "2018LOPE22",
+          "valor": 24.44
+        },
+        {
+          "fecha": "2023-12-09",
+          "pais": "Argentina",
+          "wca_id": "2018LOPE22",
+          "valor": 24.12
+        },
+        {
+          "fecha": "2024-04-13",
+          "pais": "Argentina",
+          "wca_id": "2018LOPE22",
+          "valor": 23.18
+        },
+        {
+          "fecha": "2025-05-25",
+          "pais": "Argentina",
+          "wca_id": "2018LOPE22",
+          "valor": 22.98
+        }
+      ],
+      "lowerIsBetter": true,
+      "note": null
+    },
+    "pyram": {
+      "name": "Pyraminx",
+      "wr": 0.73,
+      "nr": 1.23,
+      "wrAvg": 1.14,
+      "nrAvg": 2.22,
+      "nrDate": "2023-02-19",
+      "nrAvgDate": "2023-05-28",
+      "days": 1259,
+      "daysAvg": 1161,
+      "ppl": 48,
+      "pplAllTime": 147,
+      "m0": 0.0952,
+      "m0Roturas": 15,
+      "m0Fallback": false,
+      "m0Avg": 0.0957,
+      "m0AvgRoturas": 14,
+      "m0AvgFallback": false,
+      "sar": 0.87,
+      "sarPais": "Colombia",
+      "sarWcaId": "2023BELT07",
+      "sarAvg": 1.59,
+      "sarAvgPais": "Colombia",
+      "sarEsNuestro": false,
+      "sarHist": [
+        {
+          "fecha": "2010-12-11",
+          "pais": "Chile",
+          "wca_id": "2010VARA01",
+          "valor": 4.15
+        },
+        {
+          "fecha": "2011-05-14",
+          "pais": "Chile",
+          "wca_id": "2010ALVA01",
+          "valor": 2.94
+        },
+        {
+          "fecha": "2012-09-09",
+          "pais": "Brazil",
+          "wca_id": "2010BUEN01",
+          "valor": 2.3
+        },
+        {
+          "fecha": "2013-05-26",
+          "pais": "Brazil",
+          "wca_id": "2011JESU01",
+          "valor": 2.19
+        },
+        {
+          "fecha": "2013-05-26",
+          "pais": "Brazil",
+          "wca_id": "2012SALE02",
+          "valor": 2.13
+        },
+        {
+          "fecha": "2015-05-17",
+          "pais": "Venezuela",
+          "wca_id": "2013DUGA02",
+          "valor": 2.04
+        },
+        {
+          "fecha": "2015-05-24",
+          "pais": "Brazil",
+          "wca_id": "2011JESU01",
+          "valor": 1.81
+        },
+        {
+          "fecha": "2018-07-01",
+          "pais": "Peru",
+          "wca_id": "2017CORI01",
+          "valor": 1.77
+        },
+        {
+          "fecha": "2018-08-26",
+          "pais": "Brazil",
+          "wca_id": "2017MART58",
+          "valor": 1.31
+        },
+        {
+          "fecha": "2023-01-15",
+          "pais": "Argentina",
+          "wca_id": "2018LAPE01",
+          "valor": 1.03
+        },
+        {
+          "fecha": "2023-09-17",
+          "pais": "Argentina",
+          "wca_id": "2017GOLU01",
+          "valor": 0.97
+        },
+        {
+          "fecha": "2025-12-14",
+          "pais": "Colombia",
+          "wca_id": "2023BELT07",
+          "valor": 0.87
+        }
+      ],
+      "lowerIsBetter": true,
+      "note": null
+    },
+    "skewb": {
+      "name": "Skewb",
+      "wr": 0.73,
+      "nr": 1.57,
+      "wrAvg": 1.37,
+      "nrAvg": 2.74,
+      "nrDate": "2024-12-15",
+      "nrAvgDate": "2024-12-15",
+      "days": 594,
+      "daysAvg": 594,
+      "ppl": 33,
+      "pplAllTime": 79,
+      "m0": 0.1411,
+      "m0Roturas": 14,
+      "m0Fallback": false,
+      "m0Avg": 0.0706,
+      "m0AvgRoturas": 17,
+      "m0AvgFallback": false,
+      "sar": 0.92,
+      "sarPais": "Brazil",
+      "sarWcaId": "2022MEDE02",
+      "sarAvg": 2.07,
+      "sarAvgPais": "Chile",
+      "sarEsNuestro": false,
+      "sarHist": [
+        {
+          "fecha": "2015-05-03",
+          "pais": "Peru",
+          "wca_id": "2013TEMP01",
+          "valor": 2.84
+        },
+        {
+          "fecha": "2015-05-03",
+          "pais": "Peru",
+          "wca_id": "2014CORD04",
+          "valor": 2.58
+        },
+        {
+          "fecha": "2015-05-03",
+          "pais": "Peru",
+          "wca_id": "2012PUPP01",
+          "valor": 2.25
+        },
+        {
+          "fecha": "2015-05-03",
+          "pais": "Peru",
+          "wca_id": "2013TEMP01",
+          "valor": 1.84
+        },
+        {
+          "fecha": "2017-02-19",
+          "pais": "Argentina",
+          "wca_id": "2015FONS02",
+          "valor": 1.8
+        },
+        {
+          "fecha": "2017-03-26",
+          "pais": "Argentina",
+          "wca_id": "2014BONA02",
+          "valor": 1.64
+        },
+        {
+          "fecha": "2017-10-22",
+          "pais": "Brazil",
+          "wca_id": "2015IACO01",
+          "valor": 1.46
+        },
+        {
+          "fecha": "2017-12-17",
+          "pais": "Peru",
+          "wca_id": "2013TEMP01",
+          "valor": 1.32
+        },
+        {
+          "fecha": "2023-01-28",
+          "pais": "Colombia",
+          "wca_id": "2018MART75",
+          "valor": 1.26
+        },
+        {
+          "fecha": "2023-07-09",
+          "pais": "Argentina",
+          "wca_id": "2015FONS02",
+          "valor": 1.17
+        },
+        {
+          "fecha": "2024-11-17",
+          "pais": "Brazil",
+          "wca_id": "2023STRA33",
+          "valor": 1.0
+        },
+        {
+          "fecha": "2025-02-16",
+          "pais": "Brazil",
+          "wca_id": "2022MEDE02",
+          "valor": 0.92
+        }
+      ],
+      "lowerIsBetter": true,
+      "note": null
+    },
+    "sq1": {
+      "name": "Square-1",
+      "wr": 2.85,
+      "nr": 6.13,
+      "wrAvg": 4.63,
+      "nrAvg": 11.36,
+      "nrDate": "2026-05-16",
+      "nrAvgDate": "2026-01-28",
+      "days": 77,
+      "daysAvg": 185,
+      "ppl": 16,
+      "pplAllTime": 40,
+      "m0": 0.0689,
+      "m0Roturas": 11,
+      "m0Fallback": false,
+      "m0Avg": 0.2074,
+      "m0AvgRoturas": 6,
+      "m0AvgFallback": false,
+      "sar": 4.21,
+      "sarPais": "Colombia",
+      "sarWcaId": "2014ARGA01",
+      "sarAvg": 5.46,
+      "sarAvgPais": "Brazil",
+      "sarEsNuestro": false,
+      "sarHist": [
+        {
+          "fecha": "2016-02-14",
+          "pais": "Chile",
+          "wca_id": "2011BEAT01",
+          "valor": 10.55
+        },
+        {
+          "fecha": "2016-04-24",
+          "pais": "Chile",
+          "wca_id": "2011BEAT01",
+          "valor": 10.1
+        },
+        {
+          "fecha": "2016-06-19",
+          "pais": "Argentina",
+          "wca_id": "2015LOMA01",
+          "valor": 8.08
+        },
+        {
+          "fecha": "2017-06-25",
+          "pais": "Argentina",
+          "wca_id": "2015LOMA01",
+          "valor": 7.91
+        },
+        {
+          "fecha": "2017-10-22",
+          "pais": "Brazil",
+          "wca_id": "2015CECC01",
+          "valor": 7.15
+        },
+        {
+          "fecha": "2018-07-01",
+          "pais": "Brazil",
+          "wca_id": "2015CECC01",
+          "valor": 7.13
+        },
+        {
+          "fecha": "2018-07-22",
+          "pais": "Brazil",
+          "wca_id": "2015ONOF01",
+          "valor": 6.44
+        },
+        {
+          "fecha": "2018-09-02",
+          "pais": "Brazil",
+          "wca_id": "2015CECC01",
+          "valor": 5.95
+        },
+        {
+          "fecha": "2018-10-21",
+          "pais": "Brazil",
+          "wca_id": "2015CECC01",
+          "valor": 5.0
+        },
+        {
+          "fecha": "2023-03-19",
+          "pais": "Brazil",
+          "wca_id": "2015CECC01",
+          "valor": 4.68
+        },
+        {
+          "fecha": "2023-09-24",
+          "pais": "Brazil",
+          "wca_id": "2015CECC01",
+          "valor": 4.49
+        },
+        {
+          "fecha": "2024-07-21",
+          "pais": "Colombia",
+          "wca_id": "2014ARGA01",
+          "valor": 4.21
+        }
+      ],
+      "lowerIsBetter": true,
+      "note": null
+    },
+    "444bf": {
+      "name": "4x4 a ciegas",
+      "wr": 51.96,
+      "nr": 290.98,
+      "wrAvg": 59.39,
+      "nrAvg": 335.9,
+      "nrDate": "2024-07-25",
+      "nrAvgDate": "2024-07-25",
+      "days": 737,
+      "daysAvg": 737,
+      "ppl": 1,
+      "pplAllTime": 3,
+      "m0": 0.1032,
+      "m0Roturas": 8,
+      "m0Fallback": false,
+      "m0Avg": 0.03,
+      "m0AvgRoturas": 1,
+      "m0AvgFallback": true,
+      "sar": 76.43,
+      "sarPais": "Argentina",
+      "sarWcaId": "2017GUTM01",
+      "sarAvg": 86.75,
+      "sarAvgPais": "Argentina",
+      "sarEsNuestro": false,
+      "sarHist": [
+        {
+          "fecha": "2016-10-03",
+          "pais": "Peru",
+          "wca_id": "2013HUAN29",
+          "valor": 216.41
+        },
+        {
+          "fecha": "2017-07-09",
+          "pais": "Peru",
+          "wca_id": "2013HUAN29",
+          "valor": 168.14
+        },
+        {
+          "fecha": "2018-05-27",
+          "pais": "Argentina",
+          "wca_id": "2013DIPI01",
+          "valor": 147.56
+        },
+        {
+          "fecha": "2018-12-09",
+          "pais": "Argentina",
+          "wca_id": "2017GUTM01",
+          "valor": 143.52
+        },
+        {
+          "fecha": "2019-09-28",
+          "pais": "Argentina",
+          "wca_id": "2017GUTM01",
+          "valor": 108.16
+        },
+        {
+          "fecha": "2023-04-28",
+          "pais": "Argentina",
+          "wca_id": "2017GUTM01",
+          "valor": 95.24
+        },
+        {
+          "fecha": "2023-05-14",
+          "pais": "Argentina",
+          "wca_id": "2017GUTM01",
+          "valor": 85.73
+        },
+        {
+          "fecha": "2023-05-28",
+          "pais": "Argentina",
+          "wca_id": "2017GUTM01",
+          "valor": 84.09
+        },
+        {
+          "fecha": "2023-07-09",
+          "pais": "Argentina",
+          "wca_id": "2017GUTM01",
+          "valor": 81.04
+        },
+        {
+          "fecha": "2023-09-03",
+          "pais": "Argentina",
+          "wca_id": "2017GUTM01",
+          "valor": 80.63
+        },
+        {
+          "fecha": "2023-11-04",
+          "pais": "Argentina",
+          "wca_id": "2017GUTM01",
+          "valor": 78.86
+        },
+        {
+          "fecha": "2025-07-27",
+          "pais": "Argentina",
+          "wca_id": "2017GUTM01",
+          "valor": 76.43
+        }
+      ],
+      "lowerIsBetter": true,
+      "note": null
+    },
+    "555bf": {
+      "name": "5x5 a ciegas",
+      "wr": 118.59,
+      "nr": 708.0,
+      "wrAvg": 147.63,
+      "nrAvg": 818.0,
+      "nrDate": "2023-10-08",
+      "nrAvgDate": "2023-10-08",
+      "days": 1028,
+      "daysAvg": 1028,
+      "ppl": 1,
+      "pplAllTime": 2,
+      "m0": 0.1963,
+      "m0Roturas": 4,
+      "m0Fallback": false,
+      "m0Avg": 0.03,
+      "m0AvgRoturas": 0,
+      "m0AvgFallback": true,
+      "sar": 197.39,
+      "sarPais": "Argentina",
+      "sarWcaId": "2017GUTM01",
+      "sarAvg": 276.66,
+      "sarAvgPais": "Argentina",
+      "sarEsNuestro": false,
+      "sarHist": [
+        {
+          "fecha": "2013-01-27",
+          "pais": "Brazil",
+          "wca_id": "2010SOUZ01",
+          "valor": 1685.0
+        },
+        {
+          "fecha": "2015-07-12",
+          "pais": "Peru",
+          "wca_id": "2013HUAN29",
+          "valor": 1076.0
+        },
+        {
+          "fecha": "2015-07-19",
+          "pais": "Peru",
+          "wca_id": "2013HUAN29",
+          "valor": 833.0
+        },
+        {
+          "fecha": "2016-07-17",
+          "pais": "Peru",
+          "wca_id": "2013HUAN29",
+          "valor": 547.47
+        },
+        {
+          "fecha": "2018-12-09",
+          "pais": "Argentina",
+          "wca_id": "2017GUTM01",
+          "valor": 427.82
+        },
+        {
+          "fecha": "2019-07-14",
+          "pais": "Argentina",
+          "wca_id": "2017GUTM01",
+          "valor": 373.53
+        },
+        {
+          "fecha": "2019-09-28",
+          "pais": "Argentina",
+          "wca_id": "2017GUTM01",
+          "valor": 328.82
+        },
+        {
+          "fecha": "2019-12-08",
+          "pais": "Argentina",
+          "wca_id": "2017GUTM01",
+          "valor": 289.65
+        },
+        {
+          "fecha": "2023-05-28",
+          "pais": "Argentina",
+          "wca_id": "2017GUTM01",
+          "valor": 230.25
+        },
+        {
+          "fecha": "2023-07-09",
+          "pais": "Argentina",
+          "wca_id": "2017GUTM01",
+          "valor": 197.39
+        }
+      ],
+      "lowerIsBetter": true,
+      "note": null
+    },
+    "333mbf": {
+      "name": "Multi a ciegas",
+      "wr": 60,
+      "nr": 13,
+      "wrAvg": null,
+      "nrAvg": null,
+      "nrDate": "2023-10-08",
+      "nrAvgDate": null,
+      "days": 1028,
+      "daysAvg": null,
+      "ppl": 4,
+      "pplAllTime": 9,
+      "m0": 0.3472,
+      "m0Roturas": 4,
+      "m0Fallback": false,
+      "m0Avg": null,
+      "m0AvgRoturas": 0,
+      "m0AvgFallback": true,
+      "sar": 40,
+      "sarPais": "Brazil",
+      "sarWcaId": "2017SEMO02",
+      "sarAvg": null,
+      "sarAvgPais": null,
+      "sarEsNuestro": false,
+      "sarHist": [
+        {
+          "fecha": "2011-07-17",
+          "pais": "Brazil",
+          "wca_id": "2011SOAR01",
+          "valor": 4
+        },
+        {
+          "fecha": "2011-11-20",
+          "pais": "Brazil",
+          "wca_id": "2010SOUZ01",
+          "valor": 8
+        },
+        {
+          "fecha": "2013-04-06",
+          "pais": "Peru",
+          "wca_id": "2011RIGG03",
+          "valor": 10
+        },
+        {
+          "fecha": "2014-02-02",
+          "pais": "Brazil",
+          "wca_id": "2009BARB01",
+          "valor": 11
+        },
+        {
+          "fecha": "2014-03-09",
+          "pais": "Peru",
+          "wca_id": "2011RIGG03",
+          "valor": 12
+        },
+        {
+          "fecha": "2014-06-21",
+          "pais": "Peru",
+          "wca_id": "2013HUAN29",
+          "valor": 13
+        },
+        {
+          "fecha": "2014-10-25",
+          "pais": "Peru",
+          "wca_id": "2013HUAN29",
+          "valor": 18
+        },
+        {
+          "fecha": "2015-09-12",
+          "pais": "Peru",
+          "wca_id": "2013HUAN29",
+          "valor": 24
+        },
+        {
+          "fecha": "2016-02-14",
+          "pais": "Peru",
+          "wca_id": "2013HUAN29",
+          "valor": 26
+        },
+        {
+          "fecha": "2017-04-23",
+          "pais": "Peru",
+          "wca_id": "2013HUAN29",
+          "valor": 27
+        },
+        {
+          "fecha": "2022-11-19",
+          "pais": "Brazil",
+          "wca_id": "2016BRIS02",
+          "valor": 37
+        },
+        {
+          "fecha": "2025-06-15",
+          "pais": "Brazil",
+          "wca_id": "2017SEMO02",
+          "valor": 40
+        }
+      ],
+      "lowerIsBetter": false,
+      "note": "MBLD/FMC: revisar dificultad a mano"
+    }
+  }
+}

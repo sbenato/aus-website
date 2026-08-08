@@ -14,7 +14,7 @@ export const WCA_EVENTS: Record<string, WCAEventInfo> = {
   "333bf":  { name: "3x3 Blindfolded",      nameEs: "3x3 A Ciegas",            shortName: "3BLD" },
   "333fm":  { name: "3x3 Fewest Moves",     nameEs: "3x3 Menos Movimientos",   shortName: "FMC" },
   "333oh":  { name: "3x3 One-Handed",       nameEs: "3x3 Con Una Mano",        shortName: "OH" },
-  "clock":  { name: "Clock",               nameEs: "Reloj",                   shortName: "CLK" },
+  "clock":  { name: "Clock",               nameEs: "Clock",                   shortName: "CLK" },
   "minx":   { name: "Megaminx",            nameEs: "Megaminx",                shortName: "MGA" },
   "pyram":  { name: "Pyraminx",            nameEs: "Pyraminx",                shortName: "PYR" },
   "skewb":  { name: "Skewb",              nameEs: "Skewb",                   shortName: "SKB" },

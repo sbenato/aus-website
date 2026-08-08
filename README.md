@@ -22,6 +22,13 @@ AUS/
   package.json      Raíz: workspaces + scripts
 ```
 
+## Features
+
+| Feature | Doc | Estado |
+|---|---|---|
+| Fondo de Récords Nacionales | [`docs/fondo-records.md`](docs/fondo-records.md) | valores públicos en `/records`, edición para delegados |
+| Scramble del día | [`docs/plan`](docs/plan) | en curso |
+
 ## Comandos (desde la raíz)
 
 ```bash
