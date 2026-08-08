@@ -26,7 +26,7 @@ AUS/
 
 | Feature | Doc | Estado |
 |---|---|---|
-| Fondo de Récords Nacionales | [`docs/fondo-records.md`](docs/fondo-records.md) | valores públicos en `/records`, edición para delegados |
+| Fondo de Récords Nacionales | [`docs/fondo-records.md`](docs/fondo-records.md) | en producción; pendientes en [`docs/fondo-records-pendientes.md`](docs/fondo-records-pendientes.md) |
 | Scramble del día | [`docs/plan`](docs/plan) | en curso |
 
 ## Comandos (desde la raíz)
