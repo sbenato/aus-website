@@ -3,10 +3,12 @@ import type { Session } from "next-auth";
 /**
  * Quién puede editar las variables del fondo.
  *
- * - Delegados WCA de Uruguay (`delegate_status` no vacío + país UY), automático.
- * - Allowlist manual `AUS_RECORDS_ADMINS` (WCA IDs separados por coma), para la
- *   directiva de la AUS que no es delegada.
- * - Banlist `AUS_RECORDS_BANNED`: gana siempre, incluso sobre un delegado.
+ * **Solo delegados de la WCA que representan a Uruguay.** No hay allowlist: la
+ * autoridad para mover plata del fondo se deriva de un rol que otorga y revoca
+ * la WCA, no de una variable de entorno que se puede editar sin dejar rastro.
+ *
+ * La banlist `AUS_RECORDS_BANNED` sigue existiendo y gana sobre todo: sirve para
+ * cortarle el acceso a alguien sin esperar a que la WCA le saque el rol.
  *
  * Los valores de los premios son públicos; esto solo controla la escritura.
  */
@@ -21,14 +23,13 @@ function idSet(envValue: string | undefined): Set<string> {
 }
 
 /** Acepta WCA IDs (2023CABR01) y también el id interno numérico de la WCA. */
-export const ADMIN_IDS = () => idSet(process.env.AUS_RECORDS_ADMINS);
 export const BANNED_IDS = () => idSet(process.env.AUS_RECORDS_BANNED);
 
 /** País cuyos récords administra esta instancia. */
 export const PAIS = process.env.AUS_RECORDS_COUNTRY ?? "Uruguay";
 const PAIS_ISO2 = process.env.AUS_RECORDS_COUNTRY_ISO2 ?? "UY";
 
-export type EditorReason = "delegado" | "admin" | null;
+export type EditorReason = "delegado" | null;
 
 export interface EditorCheck {
   canEdit: boolean;
@@ -67,13 +68,6 @@ export function checkEditor(session: Session | null): EditorCheck {
     user.countryIso2.toUpperCase() === PAIS_ISO2.toUpperCase();
   if (isDelegate) {
     return { canEdit: true, reason: "delegado", actor, wcaId, banned: false };
-  }
-
-  if (
-    (wcaId && ADMIN_IDS().has(wcaId)) ||
-    (internalId && ADMIN_IDS().has(internalId))
-  ) {
-    return { canEdit: true, reason: "admin", actor, wcaId, banned: false };
   }
 
   return { canEdit: false, reason: null, actor, wcaId, banned: false };

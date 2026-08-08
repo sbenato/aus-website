@@ -20,9 +20,9 @@ export default async function PanelPage() {
       <div className="max-w-2xl mx-auto px-4 py-16 text-center">
         <h1 className="text-2xl font-bold text-gray-900">Acceso restringido</h1>
         <p className="text-gray-600 mt-2">
-          El panel del fondo es para los delegados de la WCA en Uruguay y los
-          administradores de la AUS. Los valores de los premios son públicos y los
-          podés ver sin permiso.
+          El panel del fondo es solo para los delegados de la WCA que representan
+          a Uruguay. Los valores de los premios son públicos y los podés ver sin
+          permiso.
         </p>
         <Link
           href="/records"
@@ -45,11 +45,8 @@ export default async function PanelPage() {
       <header className="mt-4 mb-6">
         <h1 className="text-2xl font-bold text-gray-900">Panel del fondo</h1>
         <p className="text-gray-500 mt-1 text-sm">
-          Entrás como{" "}
-          {editor.reason === "delegado"
-            ? "delegado de la WCA"
-            : "administrador de la AUS"}{" "}
-          ({editor.actor}). Todo lo que hagas queda firmado en el historial público.
+          Entrás como delegado de la WCA ({editor.actor}). Todo lo que hagas queda
+          firmado en el historial público.
         </p>
       </header>
 
@@ -61,7 +58,6 @@ export default async function PanelPage() {
         pendingBreaks={snapshot.pendingBreaks}
         recordsFetchedAt={snapshot.recordsFetchedAt}
         ledgerTotal={snapshot.ledgerTotal}
-        reason={editor.reason === "admin" ? "admin" : "delegado"}
       />
     </div>
   );

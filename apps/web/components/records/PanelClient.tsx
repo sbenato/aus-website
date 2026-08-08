@@ -25,7 +25,6 @@ export function PanelClient({
   pendingBreaks: initialBreaks,
   recordsFetchedAt,
   ledgerTotal,
-  reason,
 }: {
   funds: RecordFund[];
   config: FundConfig;
@@ -34,7 +33,6 @@ export function PanelClient({
   pendingBreaks: PendingBreak[];
   recordsFetchedAt: string | null;
   ledgerTotal: number;
-  reason: "delegado" | "admin";
 }) {
   const [funds, setFunds] = useState(initialFunds);
   const [config, setConfig] = useState(initialConfig);
@@ -70,7 +68,6 @@ export function PanelClient({
       <AdminPanel
         funds={funds}
         config={config}
-        reason={reason}
         recordsFetchedAt={recordsFetchedAt}
         pendingBreaks={breaks}
         onApplied={onApplied}

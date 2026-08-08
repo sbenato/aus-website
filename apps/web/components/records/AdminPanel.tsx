@@ -33,14 +33,12 @@ export interface AdminApiResult {
 export function AdminPanel({
   funds,
   config,
-  reason,
   recordsFetchedAt,
   pendingBreaks,
   onApplied,
 }: {
   funds: RecordFund[];
   config: FundConfig;
-  reason: "delegado" | "admin";
   recordsFetchedAt: string | null;
   pendingBreaks: PendingBreak[];
   onApplied: (data: AdminApiResult) => void;
@@ -83,8 +81,8 @@ export function AdminPanel({
         <div>
           <h2 className="font-bold text-gray-900">Panel de delegados</h2>
           <p className="text-xs text-gray-600">
-            Entrás como {reason === "delegado" ? "delegado de la WCA" : "administrador de la AUS"}.
-            Todo lo que hagas queda firmado en el historial público.
+            Solo delegados de la WCA por Uruguay. Todo lo que hagas queda firmado
+            en el historial público.
           </p>
         </div>
         <div className="flex flex-wrap gap-1">

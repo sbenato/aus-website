@@ -3,9 +3,10 @@
 Implementación en `apps/web` de la especificación de [`records-spec.md`](records-spec.md).
 
 **Regla de acceso:** los valores de los premios son **públicos** (cualquiera, sin
-login, ve saldos, política vigente e historial). Editar es solo para **delegados de
-la WCA en Uruguay** y para la **allowlist de administradores de la AUS**, con una
-**banlist** que gana sobre las dos vías.
+login, ve saldos, política vigente e historial). Editar es **solo para delegados de
+la WCA que representan a Uruguay**: la autoridad para mover plata se deriva de un
+rol que otorga y revoca la WCA, no de una variable de entorno. Una **banlist**
+gana sobre el rol, para cortar acceso sin esperar a la WCA.
 
 ## Piezas
 
@@ -15,7 +16,7 @@ la WCA en Uruguay** y para la **allowlist de administradores de la AUS**, con un
 | `lib/records/engine.ts` | Fórmulas puras: reparto (§3), pago (§4), bonus continental (§4.3). |
 | `lib/records/wca-live.ts` | Fetch de WR, SAR y NR a la API oficial de la WCA. |
 | `lib/records/store.ts` | Persistencia (JSON en disco o Postgres) + serialización de escrituras. |
-| `lib/records/permissions.ts` | Quién puede editar: delegados + allowlist − banlist. |
+| `lib/records/permissions.ts` | Quién puede editar: delegados UY − banlist. |
 | `lib/records/service.ts` | Snapshot público y guard de escritura para las rutas. |
 | `app/(site)/records/page.tsx` | Página pública. |
 | `components/records/*` | Tabla de fondos, calculadora pública, panel de delegados, historial. |
@@ -41,8 +42,7 @@ trazabilidad).
 
 ```bash
 # Permisos
-AUS_RECORDS_ADMINS=2015BENA01,2019LEZA01   # allowlist extra (WCA IDs)
-AUS_RECORDS_BANNED=2020XXXX01              # banlist: gana sobre delegado y allowlist
+AUS_RECORDS_BANNED=2020XXXX01              # banlist: gana sobre el rol de delegado
 AUS_RECORDS_COUNTRY=Uruguay                # país para el bonus continental
 AUS_RECORDS_COUNTRY_ISO2=UY                # país que habilita a los delegados
 
