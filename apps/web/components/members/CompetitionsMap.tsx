@@ -7,10 +7,13 @@ import { MapContainer, Marker, TileLayer, CircleMarker, Popup, useMap } from "re
 import type { MapCompetition } from "@/app/api/map/[wca_id]/route";
 import { subscribeToMap } from "@/lib/competitions-cache";
 
-const TODAY = new Date().toISOString().split("T")[0];
+/** Se calcula al llamar: congelarlo al importar rompía las pestañas que quedan días abiertas. */
+function hoy() {
+  return new Date().toISOString().split("T")[0];
+}
 
-function isUpcoming(comp: MapCompetition) {
-  return comp.startDate >= TODAY;
+function isUpcoming(comp: MapCompetition, today = hoy()) {
+  return comp.startDate >= today;
 }
 
 function markerColor(comp: MapCompetition) {
@@ -33,7 +36,7 @@ function haversineMeters(lat1: number, lng1: number, lat2: number, lng2: number)
   return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 }
 
-type Cluster = { lat: number; lng: number; comps: MapCompetition[] };
+type Cluster = { id: string; lat: number; lng: number; comps: MapCompetition[] };
 
 function buildClusters(competitions: MapCompetition[], threshold = 20): Cluster[] {
   const clusters: Cluster[] = [];
@@ -54,7 +57,10 @@ function buildClusters(competitions: MapCompetition[], threshold = 20): Cluster[
 
     const lat = group.reduce((s, c) => s + c.lat, 0) / group.length;
     const lng = group.reduce((s, c) => s + c.lng, 0) / group.length;
-    clusters.push({ lat, lng, comps: group });
+    // La key sale de la competencia semilla, que no cambia al agregarse otras:
+    // con el centroide, cada marcador que llegaba remontaba todo el mapa y
+    // cerraba los popups abiertos.
+    clusters.push({ id: comp.id, lat, lng, comps: group });
   }
 
   return clusters;
@@ -105,12 +111,24 @@ function MapEvents({
     return () => { map.off("zoomend", handler); };
   }, [map, onZoomChange]);
 
+  // El promedio de coordenadas caía en el medio de la nada (Montevideo + Bogotá
+  // daba Corrientes) y con zoom fijo dejaba marcadores fuera de pantalla.
+  // fitBounds encuadra todo lo que hay.
   useEffect(() => {
-    if (centered.current || competitions.length === 0) return;
+    if (competitions.length === 0) return;
+    const bounds = L.latLngBounds(
+      competitions.map((c) => [c.lat, c.lng] as [number, number])
+    );
+    if (!bounds.isValid()) return;
+    const opciones = { padding: [40, 40] as [number, number], maxZoom: 12 };
+    if (centered.current) {
+      // Ya encuadró una vez: solo amplía si entran marcadores nuevos afuera.
+      if (map.getBounds().contains(bounds)) return;
+      map.flyToBounds(bounds, { ...opciones, animate: true, duration: 0.8 });
+      return;
+    }
     centered.current = true;
-    const lat = competitions.reduce((s, c) => s + c.lat, 0) / competitions.length;
-    const lng = competitions.reduce((s, c) => s + c.lng, 0) / competitions.length;
-    map.flyTo([lat, lng], 4, { animate: true, duration: 1 });
+    map.fitBounds(bounds, opciones);
   }, [competitions, map]);
 
   return null;
@@ -122,6 +140,7 @@ export default function CompetitionsMap({ wcaId }: { wcaId: string }) {
   const [competitions, setCompetitions] = useState<MapCompetition[]>([]);
   const [phase, setPhase] = useState("Iniciando…");
   const [done, setDone] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [zoom, setZoom] = useState(2);
 
   useEffect(() => {
@@ -130,6 +149,7 @@ export default function CompetitionsMap({ wcaId }: { wcaId: string }) {
       onCompetition: (comp) => setCompetitions((prev) => [...prev, comp]),
       onPhase: setPhase,
       onDone: () => setDone(true),
+      onError: setError,
     });
   }, [wcaId]);
 
@@ -140,7 +160,10 @@ export default function CompetitionsMap({ wcaId }: { wcaId: string }) {
     const avgLat = competitions.reduce((s, c) => s + c.lat, 0) / competitions.length;
     return buildClusters(competitions, clusterThreshold(zoom, avgLat));
   }, [competitions, zoom]);
-  const upcomingCount = useMemo(() => competitions.filter(isUpcoming).length, [competitions]);
+  const upcomingCount = useMemo(
+    () => competitions.filter((c) => isUpcoming(c)).length,
+    [competitions]
+  );
   const pastCount = competitions.length - upcomingCount;
 
   return (
@@ -159,9 +182,17 @@ export default function CompetitionsMap({ wcaId }: { wcaId: string }) {
               {upcomingCount} próxima{upcomingCount !== 1 ? "s" : ""}
             </span>
           )}
-          {!done && <span className="ml-2 animate-pulse">· {phase}</span>}
+          {!done && !error && (
+            <span className="ml-2 animate-pulse">· {phase}</span>
+          )}
         </span>
       </div>
+
+      {error && (
+        <p className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg px-3 py-2">
+          {error} Recargá la página para reintentar.
+        </p>
+      )}
 
       {/* Mapa */}
       <MapContainer
@@ -217,7 +248,7 @@ export default function CompetitionsMap({ wcaId }: { wcaId: string }) {
           // Cluster: varias competencias agrupadas
           return (
             <Marker
-              key={`cluster-${lat.toFixed(5)}-${lng.toFixed(5)}`}
+              key={`cluster-${cluster.id}`}
               position={[lat, lng]}
               icon={clusterIcon(comps.length)}
             >

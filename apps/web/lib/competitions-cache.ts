@@ -5,11 +5,13 @@ type Subscriber = {
   onCompetition: (comp: MapCompetition) => void;
   onPhase: (phase: string) => void;
   onDone: () => void;
+  onError?: (mensaje: string) => void;
 };
 
 type CacheEntry = {
   competitions: MapCompetition[];
   done: boolean;
+  error: string | null;
   subscribers: Set<Subscriber>;
 };
 
@@ -25,6 +27,14 @@ const cache = new Map<string, CacheEntry>();
 export function subscribeToMap(wcaId: string, subscriber: Subscriber): () => void {
   let entry = cache.get(wcaId);
 
+  // Una entrada que terminó en error no sirve de caché: se descarta para que el
+  // próximo montaje reintente. Antes quedaba pegada y el mapa de esa persona
+  // mostraba "cargando…" para siempre durante toda la sesión.
+  if (entry?.error) {
+    cache.delete(wcaId);
+    entry = undefined;
+  }
+
   if (entry) {
     // Snapshot del array para que mutaciones futuras no afecten el estado de React
     subscriber.onInit([...entry.competitions]);
@@ -37,7 +47,12 @@ export function subscribeToMap(wcaId: string, subscriber: Subscriber): () => voi
   }
 
   // Primera vez: crear entrada y arrancar el stream
-  entry = { competitions: [], done: false, subscribers: new Set([subscriber]) };
+  entry = {
+    competitions: [],
+    done: false,
+    error: null,
+    subscribers: new Set([subscriber]),
+  };
   cache.set(wcaId, entry);
   subscriber.onInit([]);
   fetchAndStream(wcaId, entry);
@@ -45,10 +60,22 @@ export function subscribeToMap(wcaId: string, subscriber: Subscriber): () => voi
   return () => { entry!.subscribers.delete(subscriber); };
 }
 
+function marcarError(entry: CacheEntry, mensaje: string) {
+  entry.error = mensaje;
+  entry.done = true;
+  for (const sub of entry.subscribers) {
+    sub.onError?.(mensaje);
+    sub.onDone();
+  }
+}
+
 async function fetchAndStream(wcaId: string, entry: CacheEntry) {
   try {
-    const res = await fetch(`/api/map/${wcaId}`);
-    if (!res.ok || !res.body) return;
+    const res = await fetch(`/api/map/${encodeURIComponent(wcaId)}`);
+    if (!res.ok || !res.body) {
+      marcarError(entry, "No se pudo cargar el mapa.");
+      return;
+    }
 
     const reader = res.body.getReader();
     const decoder = new TextDecoder();
@@ -68,7 +95,8 @@ async function fetchAndStream(wcaId: string, entry: CacheEntry) {
           const msg = JSON.parse(line) as
             | { type: "competition"; data: MapCompetition }
             | { type: "phase"; data: string }
-            | { type: "done" };
+            | { type: "done" }
+            | { type: "error"; data: string };
 
           if (msg.type === "competition") {
             entry.competitions.push(msg.data);
@@ -78,11 +106,16 @@ async function fetchAndStream(wcaId: string, entry: CacheEntry) {
           } else if (msg.type === "done") {
             entry.done = true;
             for (const sub of entry.subscribers) sub.onDone();
+          } else if (msg.type === "error") {
+            marcarError(entry, msg.data);
           }
         } catch { /* línea malformada */ }
       }
     }
+    // El stream cortó sin decir "done": tampoco puede quedar cargando eterno.
+    if (!entry.done) marcarError(entry, "La carga del mapa se interrumpió.");
   } catch (err) {
     console.error("[competitions-cache]", err);
+    marcarError(entry, "Error de red al cargar el mapa.");
   }
 }

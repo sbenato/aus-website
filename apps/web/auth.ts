@@ -39,8 +39,16 @@ const WCAProvider = {
   },
 };
 
+/** Cada cuánto se vuelve a preguntarle a la WCA por el rol de la persona. */
+const PERMS_TTL_MS = 15 * 60 * 1000;
+
 export const { handlers, auth, signIn, signOut } = NextAuth({
   providers: [WCAProvider],
+  session: {
+    // Con 30 días (el default) alguien dado de baja como delegado seguía
+    // pudiendo mover plata durante un mes.
+    maxAge: 12 * 60 * 60,
+  },
   callbacks: {
     async jwt({ token, account, profile }) {
       // On first sign-in `account` and `profile` are populated
@@ -48,9 +56,41 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         token.accessToken = account.access_token;
         const p = profile as AnyProfile | undefined;
         token.wcaId = p?.wca_id ?? null;
-        token.countryIso2 = p?.country_iso2 ?? "UY";
+        // Nunca asumir el país: el default de un campo que concede permiso no
+        // puede ser el valor que lo concede.
+        token.countryIso2 = p?.country_iso2 ?? null;
         token.delegateStatus = p?.delegate_status ?? null;
         token.wcaInternalId = p?.id;
+        token.permsCheckedAt = Date.now();
+        return token;
+      }
+
+      // Re-consultar el perfil cada tanto: si a alguien lo dan de baja como
+      // delegado, deja de poder editar sin esperar a que expire la sesión.
+      const checked = typeof token.permsCheckedAt === "number" ? token.permsCheckedAt : 0;
+      if (token.accessToken && Date.now() - checked > PERMS_TTL_MS) {
+        token.permsCheckedAt = Date.now();
+        try {
+          const res = await fetch(
+            "https://www.worldcubeassociation.org/api/v0/me",
+            {
+              headers: { Authorization: `Bearer ${token.accessToken}` },
+              signal: AbortSignal.timeout(8000),
+            }
+          );
+          if (res.ok) {
+            const json = await res.json();
+            const me: AnyProfile = json.me ?? json;
+            token.wcaId = me.wca_id ?? null;
+            token.countryIso2 = me.country_iso2 ?? null;
+            token.delegateStatus = me.delegate_status ?? null;
+          } else if (res.status === 401) {
+            // Token revocado del lado de la WCA: se cae el permiso, no la sesión.
+            token.delegateStatus = null;
+          }
+        } catch {
+          // La WCA no contesta: se conserva lo que había hasta el próximo intento.
+        }
       }
       return token;
     },

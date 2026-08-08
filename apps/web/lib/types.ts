@@ -7,7 +7,7 @@ declare module "next-auth" {
     accessToken?: string;
     user: {
       wcaId?: string | null;
-      countryIso2?: string;
+      countryIso2?: string | null;
       delegateStatus?: string | null;
       wcaInternalId?: number;
     } & DefaultSession["user"];
@@ -18,9 +18,11 @@ declare module "next-auth/jwt" {
   interface JWT {
     accessToken?: string;
     wcaId?: string | null;
-    countryIso2?: string;
+    countryIso2?: string | null;
     delegateStatus?: string | null;
     wcaInternalId?: number;
+    /** Cuándo se revalidó el rol contra la WCA. */
+    permsCheckedAt?: number;
   }
 }
 

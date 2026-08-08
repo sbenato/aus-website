@@ -7,6 +7,7 @@ export const navLinks = [
   { href: "/", label: "Inicio" },
   { href: "/competitions", label: "Competencias" },
   { href: "/members", label: "Miembros" },
+  { href: "/records", label: "Récords" },
   { href: "/about", label: "Sobre AUS" },
 ];
 
