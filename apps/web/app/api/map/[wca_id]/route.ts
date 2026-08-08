@@ -32,21 +32,42 @@ export interface MapCompetition {
 type StreamMessage =
   | { type: "competition"; data: MapCompetition }
   | { type: "phase"; data: string }
-  | { type: "done" };
+  /** Competencias con rol que la WCA publica sin coordenadas usables. */
+  | { type: "done"; withoutLocation?: number }
+  | { type: "error"; data: string };
+
+/** Formato de WCA ID: evita que se interpole cualquier cosa en la URL de la WCA. */
+const WCA_ID_RE = /^\d{4}[A-Z]{4}\d{2}$/;
+
+/** Tope de páginas por listado: la WCA no debería devolver más, pero por las dudas. */
+const MAX_PAGES = 50;
 
 /** Paginate through a WCA API competitions list endpoint. */
 async function fetchAllPages(url: string): Promise<WCACompWithRoles[]> {
   const all: WCACompWithRoles[] = [];
   let page = 1;
-  while (true) {
-    const res = await fetch(`${url}&page=${page}`);
+  while (page <= MAX_PAGES) {
+    const res = await fetch(`${url}&page=${page}`, {
+      signal: AbortSignal.timeout(20_000),
+    });
     if (!res.ok) break;
-    const data: WCACompWithRoles[] = await res.json();
-    all.push(...data);
+    const data: unknown = await res.json();
+    // Una respuesta que no sea lista rompía el spread y mataba el stream entero.
+    if (!Array.isArray(data)) break;
+    all.push(...(data as WCACompWithRoles[]));
     if (data.length < 100) break;
     page++;
   }
   return all;
+}
+
+/** Coordenadas usables. `0,0` es el Golfo de Guinea: la WCA lo usa como "sin dato". */
+function hasLocation(c: WCACompShort): boolean {
+  const { latitude_degrees: lat, longitude_degrees: lng } = c;
+  if (typeof lat !== "number" || typeof lng !== "number") return false;
+  if (!Number.isFinite(lat) || !Number.isFinite(lng)) return false;
+  if (lat === 0 && lng === 0) return false;
+  return Math.abs(lat) <= 90 && Math.abs(lng) <= 180;
 }
 
 /** Add 30 days to a YYYY-MM-DD date string. */
@@ -61,6 +82,11 @@ export async function GET(
   { params }: { params: Promise<{ wca_id: string }> },
 ) {
   const { wca_id } = await params;
+
+  if (!WCA_ID_RE.test(wca_id)) {
+    return Response.json({ error: "WCA ID inválido." }, { status: 400 });
+  }
+
   const encoder = new TextEncoder();
   let cancelled = false;
 
@@ -184,15 +210,23 @@ export async function GET(
         if (cancelled) return;
 
         // 6. Stream the competitions that have a delegate/organizer role.
+        //    Se cuentan las dibujables, no las encontradas: antes el mensaje decía
+        //    31 y se dibujaban 30, sin explicar la diferencia.
+        const conRol = [...roleMap.keys()]
+          .map((id) => ({ id, comp: compById.get(id) }))
+          .filter((x): x is { id: string; comp: WCACompShort } => !!x.comp);
+        const ubicables = conRol.filter((x) => hasLocation(x.comp));
+        const sinUbicacion = conRol.length - ubicables.length;
+
         send({
           type: "phase",
-          data: `${roleMap.size} competencias con rol encontradas`,
+          data:
+            `${ubicables.length} competencias con rol` +
+            (sinUbicacion > 0 ? ` (${sinUbicacion} sin ubicación)` : ""),
         });
 
-        for (const [id, roles] of roleMap.entries()) {
-          const comp = compById.get(id);
-          if (!comp || !comp.latitude_degrees || !comp.longitude_degrees)
-            continue;
+        for (const { id, comp } of ubicables) {
+          const roles = roleMap.get(id)!;
 
           send({
             type: "competition",
@@ -210,9 +244,15 @@ export async function GET(
           });
         }
 
-        send({ type: "done" });
+        send({ type: "done", withoutLocation: sinUbicacion });
       } catch (err) {
         console.error("[map/stream]", err);
+        // Sin esto el cliente no podía distinguir "no tiene competencias" de
+        // "se rompió", y quedaba cargando para siempre.
+        send({
+          type: "error",
+          data: "No se pudieron cargar las competencias desde la WCA.",
+        });
       } finally {
         if (!cancelled) controller.close();
       }

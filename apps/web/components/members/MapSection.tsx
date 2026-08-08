@@ -20,7 +20,9 @@ export function MapSection({ wcaId }: { wcaId: string }) {
   const [open, setOpen] = useState(false);
   const [delegated, setDelegated] = useState(0);
   const [organized, setOrganized] = useState(0);
+  const [cantidad, setCantidad] = useState(0);
   const [done, setDone] = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     return subscribeToMap(wcaId, {
@@ -32,18 +34,23 @@ export function MapSection({ wcaId }: { wcaId: string }) {
         }
         setDelegated(d);
         setOrganized(o);
+        setCantidad(comps.length);
       },
       onCompetition: (comp) => {
         if (comp.delegated) setDelegated((d) => d + 1);
         if (comp.organized) setOrganized((o) => o + 1);
+        setCantidad((n) => n + 1);
       },
       onPhase: () => {},
       onDone: () => setDone(true),
+      onError: () => setError(true),
     });
   }, [wcaId]);
 
-  const total = delegated + organized;
-  if (done && total === 0) return null;
+  // `cantidad` cuenta competencias; sumar delegadas + organizadas contaba dos
+  // veces las que son ambas cosas.
+  const total = cantidad;
+  if ((done || error) && total === 0) return null;
 
   return (
     <div className="border border-gray-100 rounded-xl shadow-sm bg-white overflow-hidden">
@@ -69,7 +76,15 @@ export function MapSection({ wcaId }: { wcaId: string }) {
               )}
             </span>
           ) : (
-            <span className="text-xs text-gray-400 animate-pulse">cargando…</span>
+            <span className="text-xs text-gray-400">
+              {error ? (
+                "no se pudo cargar"
+              ) : done ? (
+                "sin competencias"
+              ) : (
+                <span className="animate-pulse">cargando…</span>
+              )}
+            </span>
           )}
         </div>
         <svg
