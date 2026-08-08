@@ -132,18 +132,14 @@ let pgPool: any = null;
 
 async function getPool() {
   if (pgPool) return pgPool;
-  // Especificador en variable: `pg` es opcional, no debe resolverse en build.
-  const spec = "pg";
+  // Import dinámico con especificador LITERAL: sigue siendo perezoso (quien use
+  // el backend `fs` no carga el driver) pero el tracer de Next lo ve y lo mete
+  // en el bundle de la lambda. Con el especificador en una variable y
+  // `webpackIgnore` no lo rastreaba, y en Vercel `pg` no llegaba al servidor
+  // aunque estuviera en package.json: local andaba por el node_modules del disco.
+  const pg = await import("pg");
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  let pg: any;
-  try {
-    pg = await import(/* webpackIgnore: true */ spec);
-  } catch {
-    throw new Error(
-      "RECORDS_STORE=postgres pero el paquete `pg` no está instalado. Corré `npm i pg --workspace apps/web`."
-    );
-  }
-  const Pool = pg.Pool ?? pg.default?.Pool;
+  const Pool = (pg as any).Pool ?? (pg as any).default?.Pool;
   if (typeof Pool !== "function") {
     throw new Error(
       "El paquete `pg` no expone `Pool`: revisá la versión instalada."
