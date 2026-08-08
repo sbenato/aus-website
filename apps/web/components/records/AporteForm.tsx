@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
+import type { AdminApiResult } from "./AdminPanel";
 import { Button } from "@/components/ui/Button";
 import { distribute } from "@/lib/records/engine";
 import { fundLabel, money, money2 } from "@/lib/records/format";
@@ -13,12 +14,20 @@ import type { RecordFund } from "@/lib/records/types";
 /**
  * Carga de plata al fondo.
  *
- * Vive fuera del panel principal y a propósito cuesta: es la única operación que
- * mete plata nueva, dispara el recálculo de los 33 fondos y no se deshace con un
- * botón. Tres pasos: cargar, revisar el reparto completo, y confirmar tipeando el
- * monto de nuevo.
+ * A propósito cuesta: es la única operación que mete plata nueva, dispara el
+ * recálculo de los 33 fondos y no se deshace con un botón. Tres pasos: cargar,
+ * revisar el reparto completo, y confirmar tipeando el monto de nuevo. La
+ * fricción es el formulario, no estar en otra página.
  */
-export function AporteForm({ funds }: { funds: RecordFund[] }) {
+export function AporteForm({
+  funds,
+  onApplied,
+}: {
+  funds: RecordFund[];
+  /** Avisa al panel para que refresque saldos e historial sin recargar. Sin
+   *  esto, `router.refresh()` actualiza las props pero no el estado ya montado. */
+  onApplied?: (data: AdminApiResult) => void;
+}) {
   const router = useRouter();
   const [step, setStep] = useState<"carga" | "revision">("carga");
   const [amount, setAmount] = useState("");
@@ -68,6 +77,7 @@ export function AporteForm({ funds }: { funds: RecordFund[] }) {
         warning: data.refreshWarning ?? null,
         repetido: !!data.repetido,
       });
+      onApplied?.(data);
       router.refresh();
     } catch {
       setError("Error de red. El aporte no se cargó.");

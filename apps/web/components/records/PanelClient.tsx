@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 import { AdminPanel, type AdminApiResult } from "./AdminPanel";
+import { AporteForm } from "./AporteForm";
 import { LedgerList } from "./LedgerList";
 import { money } from "@/lib/records/format";
 import type {
@@ -55,6 +56,16 @@ export function PanelClient({
         Hay <strong className="text-gray-900">{money(total)}</strong> repartidos
         entre los {funds.length} fondos.
       </p>
+
+      {/* Primero cargar plata: es lo que recalcula el reparto que usa todo lo
+          de abajo. El formulario ya trae sus tres pasos de confirmación. */}
+      <section>
+        <h2 className="font-bold text-gray-900">Cargar aporte</h2>
+        <p className="text-xs text-gray-500 mt-0.5 mb-3">
+          Lo único que mete plata nueva y rehace el reparto de los 33 fondos.
+        </p>
+        <AporteForm funds={funds} onApplied={onApplied} />
+      </section>
 
       <AdminPanel
         funds={funds}

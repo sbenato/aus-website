@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 
 import { Button } from "@/components/ui/Button";
 import { fechaHora, fundLabel, money, money2, pct, unidad, valueLabel } from "@/lib/records/format";
@@ -184,27 +183,6 @@ function RecordsBar({
         )}
         . Se actualizan al cargar plata.
       </p>
-
-      <Link
-        href="/records/aportes"
-        className="mt-2 inline-flex items-center gap-1.5 text-xs text-amber-800 hover:text-amber-900 hover:underline"
-      >
-        <svg
-          className="h-3.5 w-3.5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={2}
-          aria-hidden="true"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-          />
-        </svg>
-        Cargar plata al fondo
-      </Link>
 
       {pendingBreaks.length > 0 && (
         <div className="mt-3 rounded-lg bg-amber-50 border border-amber-200 p-3">
