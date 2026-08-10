@@ -54,7 +54,8 @@ export function PrizeCalculator({
     <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-4 sm:p-6">
       <h2 className="font-bold text-gray-900">¿Cuánto cobraría?</h2>
       <p className="text-xs text-gray-500 mt-0.5">
-        Cálculo público con la política vigente. El pago real lo registra un delegado.
+        Cálculo orientativo con la política vigente. El monto que se abona lo resuelve
+        la AUS y lo registra un delegado.
       </p>
 
       <div className="grid sm:grid-cols-3 gap-3 mt-4">
@@ -106,7 +107,7 @@ export function PrizeCalculator({
         ) : (
           <div className="flex flex-wrap items-end gap-x-6 gap-y-2">
             <div>
-              <p className="text-xs text-gray-500">Premio</p>
+              <p className="text-xs text-gray-500">Premio estimado</p>
               <p className="text-2xl font-bold text-brand-blue tabular-nums">
                 {money2(payout.prize)}
               </p>
@@ -123,7 +124,7 @@ export function PrizeCalculator({
               {payout.continentalFlip && (
                 <p className="text-brand-gold-dark font-medium">
                   Además le saca el sudamericano a {fund.sarPais || "otro país"}: con tu WCA ID el
-                  delegado paga el bonus ({pct(config.fBonus)}), una sola vez por
+                  delegado puede pagar el bonus ({pct(config.fBonus)}), una sola vez por
                   persona y evento.
                 </p>
               )}
@@ -137,7 +138,7 @@ export function PrizeCalculator({
           Qué pagaría cada mejora
         </h3>
         <p className="text-xs text-gray-500 mt-0.5">
-          Ejemplos concretos sobre el récord actual, con el fondo de hoy.
+          Ejemplos orientativos sobre el récord actual, con el fondo de hoy.
         </p>
         <div className="overflow-x-auto">
           <table className="w-full mt-2 text-xs min-w-80">

@@ -6,7 +6,7 @@ import { currentEditor, getSnapshot } from "@/lib/records/service";
 export const metadata: Metadata = {
   title: "Fondo de Récords",
   description:
-    "Cuánta plata acumula cada récord nacional uruguayo de la WCA y cuánto cobra quien lo rompe.",
+    "Cuánta plata acumula cada récord nacional uruguayo de la WCA y cuánto puede cobrar quien lo rompe.",
 };
 
 // Los saldos cambian cuando un delegado carga un aporte o un pago.
@@ -23,7 +23,7 @@ export default async function RecordsPage() {
           La AUS premia a quien rompe un récord nacional uruguayo de la WCA. Cada
           récord tiene su propio fondo: la plata que aporta la asociación se reparte
           según qué tan difícil, viejo y disputado está cada récord, y quien lo rompe
-          cobra una fracción de ese fondo.
+          puede cobrar una fracción de ese fondo.
         </p>
         <p className="text-sm text-gray-500 mt-3">
           Los valores son públicos. Editar la política, cargar aportes y registrar
@@ -67,20 +67,34 @@ export default async function RecordsPage() {
           <div>
             <dt className="font-semibold text-gray-900">Pago parcial</dt>
             <dd className="text-gray-600 mt-0.5">
-              Romper un récord no vacía el fondo: se paga una fracción que crece con
-              el margen de mejora. En equilibrio se cobra lo mismo, pero nunca queda
-              una categoría en cero y una disputa cerrada premia a los dos.
+              Romper un récord no vacía el fondo: el criterio es pagar una fracción
+              que crece con el margen de mejora. En equilibrio se cobra lo mismo, pero
+              nunca queda una categoría en cero y una disputa cerrada premia a los dos.
             </dd>
           </div>
           <div>
             <dt className="font-semibold text-gray-900">Bonus continental</dt>
             <dd className="text-gray-600 mt-0.5">
-              Si además el récord sudamericano pasa de otro país a Uruguay, se paga
-              una fracción mayor. Una sola vez por persona y por evento.
+              Si además el récord sudamericano pasa de otro país a Uruguay,
+              corresponde una fracción mayor. Una sola vez por persona y por evento.
             </dd>
           </div>
         </dl>
       </section>
+
+      <aside className="mt-6 rounded-xl border border-gray-200 bg-gray-50 p-5">
+        <h2 className="text-sm font-semibold text-gray-900">
+          Sobre los montos publicados
+        </h2>
+        <p className="text-xs text-gray-500 mt-1.5 leading-relaxed">
+          Los importes de esta página, incluidos los del simulador, son una
+          estimación calculada con la política y los datos vigentes en este momento,
+          y no constituyen un compromiso de pago. La AUS resuelve en cada caso el
+          monto que efectivamente abona y puede apartarse del resultado del cálculo
+          cuando lo considere pertinente. Un premio queda firme recién cuando un
+          delegado autorizado lo registra en el historial de movimientos.
+        </p>
+      </aside>
     </div>
   );
 }

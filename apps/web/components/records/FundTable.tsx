@@ -57,7 +57,7 @@ export function FundTable({ funds }: { funds: RecordFund[] }) {
           <thead className="bg-gray-50 text-gray-500">
             <tr className="text-left">
               <th className="px-4 sm:px-6 py-2 font-medium">Récord</th>
-              <th className="px-3 py-2 font-medium text-right">Premio disponible</th>
+              <th className="px-3 py-2 font-medium text-right">Fondo acumulado</th>
               <th className="px-3 py-2 font-medium text-right hidden sm:table-cell">
                 % del reparto
               </th>

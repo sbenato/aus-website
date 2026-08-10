@@ -38,7 +38,7 @@ export function RecordsDashboard(props: DashboardProps) {
           hint={`${conPlata} de ${funds.length} récords con plata`}
         />
         <Stat
-          label="Premio más grande hoy"
+          label="Fondo más grande hoy"
           value={mayor ? money(mayor.fund) : "$0"}
           hint={
             mayor
