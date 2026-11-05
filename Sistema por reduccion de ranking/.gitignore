@@ -1,0 +1,8 @@
+# Datos pesados / regenerables (export público de la WCA)
+WCA.db
+WCA_export_tsv/
+sqlite3.exe
+# Resultados no oficiales (contienen emails de competidores)
+no_oficiales/
+__pycache__/
+.vscode/
